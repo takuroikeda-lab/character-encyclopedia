@@ -1,9 +1,10 @@
-name: Import legacy character images
+name: Import character assets
 
 on:
   push:
     paths:
       - "imports/character_encyclopedia_legacy_import.zip"
+      - "imports/character_encyclopedia_regenerated_import.zip"
   workflow_dispatch:
 
 permissions:
@@ -17,12 +18,19 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Extract legacy import
+        if: hashFiles('imports/character_encyclopedia_legacy_import.zip') != ''
         run: |
-          test -f imports/character_encyclopedia_legacy_import.zip
           unzip -o imports/character_encyclopedia_legacy_import.zip -d .
           rm imports/character_encyclopedia_legacy_import.zip
 
-      - name: Commit extracted assets
+      - name: Extract regenerated import
+        if: hashFiles('imports/character_encyclopedia_regenerated_import.zip') != ''
+        run: |
+          unzip -o imports/character_encyclopedia_regenerated_import.zip -d .
+          rm imports/character_encyclopedia_regenerated_import.zip
+          node scripts/apply-regenerated.mjs
+
+      - name: Commit imported assets
         run: |
           git config user.name "character-encyclopedia-bot"
           git config user.email "actions@users.noreply.github.com"
@@ -31,5 +39,5 @@ jobs:
             echo "No changes to commit"
             exit 0
           fi
-          git commit -m "Import legacy character images"
+          git commit -m "Import regenerated character images"
           git push
