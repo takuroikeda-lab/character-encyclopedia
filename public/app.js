@@ -3,6 +3,7 @@ const search = document.querySelector("#search");
 const sort = document.querySelector("#sort");
 const statusFilter = document.querySelector("#statusFilter");
 const selectedOnly = document.querySelector("#selectedOnly");
+const latestOnly = document.querySelector("#latestOnly");
 const count = document.querySelector("#count");
 const selectedCount = document.querySelector("#selectedCount");
 const selectionSummary = document.querySelector("#selectionSummary");
@@ -40,6 +41,67 @@ function legacyStyle(c, img) {
   return `background-image:url('${img}');background-size:${sizeX}% ${sizeY}%;background-position:${posX}% ${posY}%;`;
 }
 
+
+function openDetail(c) {
+  let modal = document.querySelector("#characterModal");
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.id = "characterModal";
+    modal.className = "modal";
+    modal.innerHTML = `
+      <div class="modal-backdrop" data-close-modal></div>
+      <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" type="button" data-close-modal aria-label="閉じる">×</button>
+        <div id="modalContent"></div>
+      </section>`;
+    document.body.appendChild(modal);
+    modal.addEventListener("click", (e) => {
+      if (e.target.matches("[data-close-modal]")) closeDetail();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeDetail();
+    });
+  }
+
+  const main = c.images?.main || c.images?.normal || c.images?.graphic || "";
+  const normal = c.images?.normal || "";
+  const graphic = c.images?.graphic || "";
+  const content = modal.querySelector("#modalContent");
+
+  const renderImg = (src, label) => {
+    if (!src) return "";
+    if (c.legacyCrop && src.includes("legacy_archive")) {
+      return `<div class="detail-image legacy-image" role="img" aria-label="${esc(label)}" style="${legacyStyle(c, src)}"></div>`;
+    }
+    return `<img class="detail-image" src="${esc(src)}" alt="${esc(label)}">`;
+  };
+
+  content.innerHTML = `
+    <div class="detail-head">
+      <div class="id">#${pad(c.id)}</div>
+      <h2 id="modalTitle">${esc(c.nameJa)}</h2>
+      <div class="name-en">${esc(c.nameEn)}</div>
+      ${c.animal ? `<div class="meta">MOTIF · ${esc(c.animal)}</div>` : ""}
+    </div>
+    <div class="detail-gallery">
+      ${renderImg(main, c.nameJa)}
+      ${normal && normal !== main ? renderImg(normal, c.nameJa + " 通常版") : ""}
+      ${graphic && graphic !== main ? renderImg(graphic, c.nameJa + " グラフィック版") : ""}
+    </div>
+    ${c.concept ? `<p class="detail-concept">${esc(c.concept)}</p>` : ""}
+    ${(c.emotionTheme || []).length ? `<div class="detail-tags">${c.emotionTheme.map(t=>`<span>${esc(t)}</span>`).join("")}</div>` : ""}
+  `;
+
+  modal.classList.add("open");
+  document.body.classList.add("modal-open");
+}
+
+function closeDetail() {
+  const modal = document.querySelector("#characterModal");
+  if (modal) modal.classList.remove("open");
+  document.body.classList.remove("modal-open");
+}
+
 function render() {
   const q = search.value.trim().toLowerCase();
 
@@ -51,7 +113,8 @@ function render() {
     const searchOK = haystack.includes(q);
     const statusOK = statusFilter.value === "ALL" || (c.status || "MAYBE") === statusFilter.value;
     const selectedOK = !selectedOnly.checked || selected.has(c.id);
-    return searchOK && statusOK && selectedOK;
+    const latestOK = !latestOnly.checked || c.id >= 31;
+    return searchOK && statusOK && selectedOK && latestOK;
   });
 
   list.sort((a, b) => {
@@ -72,7 +135,7 @@ function render() {
     const img = imageFor(c);
     const isSelected = selected.has(c.id);
     return `
-      <article class="card ${isSelected ? "is-selected" : ""}" data-id="${c.id}">
+      <article class="card ${isSelected ? "is-selected" : ""}" data-id="${c.id}" tabindex="0" role="button" aria-label="${esc(c.nameJa)} の詳細を開く">
         <div class="card-top">
           <div class="id">#${pad(c.id)}</div>
           <span class="status status-${esc((c.status || "MAYBE").toLowerCase())}">${esc(c.status || "MAYBE")}</span>
@@ -93,6 +156,21 @@ function render() {
       </article>
     `;
   }).join("");
+
+  grid.querySelectorAll(".card").forEach((card) => {
+    const id = Number(card.dataset.id);
+    const character = characters.find(c => c.id === id);
+    card.addEventListener("click", (e) => {
+      if (e.target.closest("[data-select]")) return;
+      openDetail(character);
+    });
+    card.addEventListener("keydown", (e) => {
+      if ((e.key === "Enter" || e.key === " ") && !e.target.closest("[data-select]")) {
+        e.preventDefault();
+        openDetail(character);
+      }
+    });
+  });
 
   grid.querySelectorAll("[data-select]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -116,7 +194,7 @@ async function init() {
   render();
 }
 
-[search, sort, statusFilter, selectedOnly].forEach((el) => {
+[search, sort, statusFilter, selectedOnly, latestOnly].forEach((el) => {
   el.addEventListener(el === search ? "input" : "change", render);
 });
 
