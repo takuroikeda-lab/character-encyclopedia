@@ -28,10 +28,14 @@
         <option value="DROP">DROP</option>
       </select>
       <select id="sort" aria-label="並び順">
+        <option value="desc" selected>最新順</option>
         <option value="asc">番号：昇順</option>
-        <option value="desc">番号：降順</option>
         <option value="name">名前順</option>
       </select>
+      <label class="toggle">
+        <input id="latestOnly" type="checkbox" />
+        <span>今週生成だけ</span>
+      </label>
       <label class="toggle">
         <input id="selectedOnly" type="checkbox" />
         <span>正式候補だけ</span>
