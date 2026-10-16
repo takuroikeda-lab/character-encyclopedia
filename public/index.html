@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Character Encyclopedia</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <h1>CHARACTER ENCYCLOPEDIA</h1>
+      <p class="sub">Original IP archive</p>
+    </div>
+    <p class="sub" id="count"></p>
+  </header>
+  <main>
+    <section class="controls">
+      <input id="search" type="search" placeholder="Search characters" />
+      <select id="sort">
+        <option value="asc">番号：昇順</option>
+        <option value="desc">番号：降順</option>
+      </select>
+    </section>
+    <section id="grid" class="grid"></section>
+    <p class="empty">Images and full metadata will be added incrementally from the character archive.</p>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
