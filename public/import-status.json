@@ -1,0 +1,8 @@
+{
+  "registry": "partial_verified",
+  "verifiedCharacterCount": 15,
+  "latestVerifiedId": 35,
+  "legacyAssetsPrepared": true,
+  "legacyBinaryImportPending": true,
+  "notes": "Historical assets are preserved separately until mappings are verified."
+}
