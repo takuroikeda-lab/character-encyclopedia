@@ -1,0 +1,122 @@
+[
+  {
+    "key": "tsumiki",
+    "nameJa": "つみき",
+    "nameEn": "TSUMIKI",
+    "status": "SUPERSEDED",
+    "reason": "旧#007。後に#007は『たより』へ正式差し替え。",
+    "sourceArchive": [
+      "ARCHIVE012"
+    ]
+  },
+  {
+    "key": "nagarebo",
+    "nameJa": "ながれぼう",
+    "nameEn": "NAGAREBO",
+    "status": "SUPERSEDED",
+    "reason": "旧#008。後に#008は『まもる』へ正式差し替え。",
+    "sourceArchive": [
+      "ARCHIVE012"
+    ]
+  },
+  {
+    "key": "hitoyasumi",
+    "nameJa": "ひとやすみ",
+    "nameEn": "HITOYASUMI",
+    "status": "SUPERSEDED",
+    "reason": "旧#007候補。正式#007は『たより』。",
+    "sourceArchive": [
+      "ARCHIVE013",
+      "ARCHIVE014",
+      "ARCHIVE017",
+      "ARCHIVE018"
+    ]
+  },
+  {
+    "key": "atsumeru",
+    "nameJa": "あつめる",
+    "nameEn": "ATSUMERU",
+    "status": "SUPERSEDED",
+    "reason": "旧#008候補。正式#008は『まもる』。",
+    "sourceArchive": [
+      "ARCHIVE013",
+      "ARCHIVE014",
+      "ARCHIVE017",
+      "ARCHIVE018"
+    ]
+  },
+  {
+    "key": "issho",
+    "nameJa": "いっしょ",
+    "nameEn": "ISSHO",
+    "status": "REJECTED",
+    "reason": "人物＋犬方向を停止したため正式図鑑から除外。",
+    "sourceArchive": [
+      "ARCHIVE015",
+      "ARCHIVE016"
+    ]
+  },
+  {
+    "key": "tabiru",
+    "nameJa": "たびる",
+    "nameEn": "TABIRU",
+    "status": "REJECTED",
+    "reason": "人物＋犬方向を停止したため正式図鑑から除外。",
+    "sourceArchive": [
+      "ARCHIVE015",
+      "ARCHIVE016"
+    ]
+  },
+  {
+    "key": "nagare",
+    "nameJa": "ながれる",
+    "nameEn": "NAGARERU",
+    "status": "SUPERSEDED",
+    "reason": "旧#012候補。正式#012は『ながめる』。",
+    "sourceArchive": [
+      "ARCHIVE019"
+    ]
+  },
+  {
+    "key": "tsumekomu",
+    "nameJa": "つめこむ",
+    "nameEn": "TSUMEKOMU",
+    "status": "SUPERSEDED",
+    "reason": "#029で生成されたが、最終採用#029は『もちだす』。",
+    "sourceFiles": [
+      "つめこむ_キャラクター図鑑シート.png"
+    ]
+  },
+  {
+    "key": "posthashi",
+    "nameJa": "ポスハシ",
+    "nameEn": "POSTHASHI",
+    "status": "REJECTED",
+    "reason": "誤生成として不採用。",
+    "sourceFiles": [
+      "ポスハシ図鑑_不器用な配達屋.png",
+      "ポスハシ_キャラクター設定図鑑.png"
+    ]
+  },
+  {
+    "key": "noropen",
+    "nameJa": "ノロペン",
+    "nameEn": "NOROPEN",
+    "status": "REJECTED",
+    "reason": "誤生成として不採用。",
+    "sourceFiles": [
+      "ノロペン_キャラクター図鑑シート.png"
+    ]
+  },
+  {
+    "key": "hashio",
+    "nameJa": "ハシオ",
+    "nameEn": "HASHIO",
+    "status": "REJECTED",
+    "reason": "誤番号・誤生成として不採用。",
+    "sourceFiles": [
+      "ハシオ_キャラクターデザイン図鑑シート.png",
+      "ハシオ図鑑_静かな優しさ.png"
+    ]
+  }
+]
