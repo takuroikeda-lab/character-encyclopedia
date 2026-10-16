@@ -6,9 +6,18 @@
     "nameEn": "POKETTO",
     "status": "MAYBE",
     "verified": true,
+    "provenance": "canonical",
     "emotionTheme": [],
     "concept": "",
-    "images": {}
+    "images": {
+      "main": "/archive/legacy_archive.webp"
+    },
+    "legacyCrop": {
+      "x": 0,
+      "y": 14.285714285714286,
+      "w": 25,
+      "h": 14.285714285714286
+    }
   },
   {
     "id": 2,
@@ -17,9 +26,18 @@
     "nameEn": "MACHIBO",
     "status": "MAYBE",
     "verified": true,
+    "provenance": "canonical",
     "emotionTheme": [],
     "concept": "",
-    "images": {}
+    "images": {
+      "main": "/archive/legacy_archive.webp"
+    },
+    "legacyCrop": {
+      "x": 25,
+      "y": 14.285714285714286,
+      "w": 25,
+      "h": 14.285714285714286
+    }
   },
   {
     "id": 3,
@@ -28,9 +46,18 @@
     "nameEn": "NOKOSU",
     "status": "MAYBE",
     "verified": true,
+    "provenance": "canonical",
     "emotionTheme": [],
     "concept": "",
-    "images": {}
+    "images": {
+      "main": "/archive/legacy_archive.webp"
+    },
+    "legacyCrop": {
+      "x": 50,
+      "y": 0,
+      "w": 12.5,
+      "h": 14.285714285714286
+    }
   },
   {
     "id": 4,
@@ -39,9 +66,18 @@
     "nameEn": "USHIRO",
     "status": "MAYBE",
     "verified": true,
+    "provenance": "canonical",
     "emotionTheme": [],
     "concept": "",
-    "images": {}
+    "images": {
+      "main": "/archive/legacy_archive.webp"
+    },
+    "legacyCrop": {
+      "x": 62.5,
+      "y": 0,
+      "w": 12.5,
+      "h": 14.285714285714286
+    }
   },
   {
     "id": 5,
@@ -50,9 +86,18 @@
     "nameEn": "YORIMICHI",
     "status": "MAYBE",
     "verified": true,
+    "provenance": "canonical",
     "emotionTheme": [],
     "concept": "",
-    "images": {}
+    "images": {
+      "main": "/archive/legacy_archive.webp"
+    },
+    "legacyCrop": {
+      "x": 0,
+      "y": 0,
+      "w": 6.25,
+      "h": 14.285714285714286
+    }
   },
   {
     "id": 6,
@@ -61,9 +106,218 @@
     "nameEn": "HANBUN",
     "status": "MAYBE",
     "verified": true,
+    "provenance": "canonical",
     "emotionTheme": [],
     "concept": "",
-    "images": {}
+    "images": {
+      "main": "/archive/legacy_archive.webp"
+    },
+    "legacyCrop": {
+      "x": 6.25,
+      "y": 0,
+      "w": 6.25,
+      "h": 14.285714285714286
+    }
+  },
+  {
+    "id": 7,
+    "slug": "tayori",
+    "nameJa": "たより",
+    "nameEn": "TAYORI",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "canonical",
+    "emotionTheme": [],
+    "concept": "頼ることも、小さなやさしさ。",
+    "images": {
+      "main": "/archive/legacy_archive.webp"
+    },
+    "legacyCrop": {
+      "x": 50,
+      "y": 71.42857142857143,
+      "w": 12.5,
+      "h": 14.285714285714286
+    }
+  },
+  {
+    "id": 8,
+    "slug": "mamoru-008",
+    "nameJa": "まもる",
+    "nameEn": "MAMORU",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "canonical",
+    "emotionTheme": [],
+    "concept": "そばにいて、静かに守る。",
+    "images": {
+      "main": "/archive/legacy_archive.webp"
+    },
+    "legacyCrop": {
+      "x": 62.5,
+      "y": 71.42857142857143,
+      "w": 12.5,
+      "h": 14.285714285714286
+    }
+  },
+  {
+    "id": 9,
+    "slug": "hakobu",
+    "nameJa": "はこぶ",
+    "nameEn": "HAKOBU",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "canonical",
+    "emotionTheme": [],
+    "concept": "",
+    "images": {
+      "main": "/archive/legacy_archive.webp"
+    },
+    "legacyCrop": {
+      "x": 75,
+      "y": 71.42857142857143,
+      "w": 12.5,
+      "h": 14.285714285714286
+    }
+  },
+  {
+    "id": 10,
+    "slug": "hirou",
+    "nameJa": "ひろう",
+    "nameEn": "HIROU",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "canonical",
+    "emotionTheme": [],
+    "concept": "",
+    "images": {
+      "main": "/archive/legacy_archive.webp"
+    },
+    "legacyCrop": {
+      "x": 87.5,
+      "y": 71.42857142857143,
+      "w": 12.5,
+      "h": 14.285714285714286
+    }
+  },
+  {
+    "id": 11,
+    "slug": "todomaru",
+    "nameJa": "とどまる",
+    "nameEn": "TODOMARU",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "canonical",
+    "emotionTheme": [],
+    "concept": "動かないことで、見えるものもある。",
+    "images": {
+      "main": "/archive/legacy_archive.webp"
+    },
+    "legacyCrop": {
+      "x": 0,
+      "y": 85.71428571428572,
+      "w": 25,
+      "h": 14.285714285714286
+    }
+  },
+  {
+    "id": 12,
+    "slug": "nagameru",
+    "nameJa": "ながめる",
+    "nameEn": "NAGAMERU",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "canonical",
+    "emotionTheme": [],
+    "concept": "少し離れて眺める。",
+    "images": {
+      "main": "/archive/legacy_archive.webp"
+    },
+    "legacyCrop": {
+      "x": 25,
+      "y": 85.71428571428572,
+      "w": 25,
+      "h": 14.285714285714286
+    }
+  },
+  {
+    "id": 13,
+    "slug": "kakureru",
+    "nameJa": "かくれる",
+    "nameEn": "KAKURERU",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "canonical",
+    "emotionTheme": [],
+    "concept": "",
+    "images": {
+      "main": "/archive/legacy_archive.webp"
+    },
+    "legacyCrop": {
+      "x": 75,
+      "y": 57.142857142857146,
+      "w": 12.5,
+      "h": 14.285714285714286
+    }
+  },
+  {
+    "id": 14,
+    "slug": "okuru",
+    "nameJa": "おくる",
+    "nameEn": "OKURU",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "canonical",
+    "emotionTheme": [],
+    "concept": "",
+    "images": {
+      "main": "/archive/legacy_archive.webp"
+    },
+    "legacyCrop": {
+      "x": 87.5,
+      "y": 57.142857142857146,
+      "w": 12.5,
+      "h": 14.285714285714286
+    }
+  },
+  {
+    "id": 15,
+    "slug": "noseru",
+    "nameJa": "のせる",
+    "nameEn": "NOSERU",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "canonical",
+    "emotionTheme": [],
+    "concept": "",
+    "images": {
+      "main": "/archive/legacy_archive.webp"
+    },
+    "legacyCrop": {
+      "x": 0,
+      "y": 71.42857142857143,
+      "w": 12.5,
+      "h": 14.285714285714286
+    }
+  },
+  {
+    "id": 16,
+    "slug": "tameru",
+    "nameJa": "ためる",
+    "nameEn": "TAMERU",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "canonical",
+    "emotionTheme": [],
+    "concept": "",
+    "images": {
+      "main": "/archive/legacy_archive.webp"
+    },
+    "legacyCrop": {
+      "x": 12.5,
+      "y": 71.42857142857143,
+      "w": 12.5,
+      "h": 14.285714285714286
+    }
   },
   {
     "id": 17,
@@ -72,28 +326,46 @@
     "nameEn": "KASANERU",
     "status": "MAYBE",
     "verified": true,
+    "provenance": "canonical",
     "emotionTheme": [
       "前向き",
       "積み重ね",
       "小さな幸せ"
     ],
     "concept": "小さないいことを重ねて、今日もなんとかやっていく。",
-    "images": {}
+    "images": {
+      "main": "/archive/legacy_archive.webp"
+    },
+    "legacyCrop": {
+      "x": 25,
+      "y": 71.42857142857143,
+      "w": 12.5,
+      "h": 14.285714285714286
+    }
   },
   {
     "id": 18,
-    "slug": "mamoru",
+    "slug": "mamoru-018",
     "nameJa": "まもる",
     "nameEn": "MAMORU",
     "status": "MAYBE",
     "verified": true,
+    "provenance": "canonical",
     "emotionTheme": [
       "安心",
       "寄り添い",
       "やさしさ"
     ],
     "concept": "だいじなものを、そっとまもる。",
-    "images": {}
+    "images": {
+      "main": "/archive/legacy_archive.webp"
+    },
+    "legacyCrop": {
+      "x": 37.5,
+      "y": 71.42857142857143,
+      "w": 12.5,
+      "h": 14.285714285714286
+    }
   },
   {
     "id": 29,
@@ -102,6 +374,7 @@
     "nameEn": "MOCHIDASU",
     "status": "MAYBE",
     "verified": true,
+    "provenance": "canonical",
     "emotionTheme": [
       "逃避",
       "再出発"
@@ -118,6 +391,7 @@
     "nameEn": "AKETOKU",
     "status": "MAYBE",
     "verified": true,
+    "provenance": "canonical",
     "emotionTheme": [
       "遠慮",
       "小さな親切"
@@ -136,6 +410,7 @@
     "nameEn": "NORONORO",
     "status": "MAYBE",
     "verified": true,
+    "provenance": "canonical",
     "emotionTheme": [
       "マイペース",
       "置いていかれる不安",
@@ -156,6 +431,7 @@
     "animal": "ハシビロコウ",
     "status": "MAYBE",
     "verified": true,
+    "provenance": "canonical",
     "emotionTheme": [
       "マイペース",
       "観察",
@@ -175,6 +451,7 @@
     "animal": "カエル",
     "status": "MAYBE",
     "verified": true,
+    "provenance": "canonical",
     "emotionTheme": [
       "気まずい親切",
       "不器用な思いやり"
@@ -194,6 +471,7 @@
     "animal": "ヤドカリ",
     "status": "MAYBE",
     "verified": true,
+    "provenance": "canonical",
     "emotionTheme": [
       "孤独",
       "おすそわけ"
@@ -213,6 +491,7 @@
     "animal": "カモノハシ",
     "status": "MAYBE",
     "verified": true,
+    "provenance": "canonical",
     "emotionTheme": [
       "照れ隠し",
       "ささやかな親切"
