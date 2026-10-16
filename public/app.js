@@ -30,6 +30,16 @@ function imageFor(c) {
   return c.images?.normal || c.images?.main || c.images?.graphic || "";
 }
 
+function legacyStyle(c, img) {
+  const crop = c.legacyCrop;
+  if (!crop) return "";
+  const sizeX = 10000 / crop.w;
+  const sizeY = 10000 / crop.h;
+  const posX = crop.x === 0 ? 0 : (crop.x / (100 - crop.w)) * 100;
+  const posY = crop.y === 0 ? 0 : (crop.y / (100 - crop.h)) * 100;
+  return `background-image:url('${img}');background-size:${sizeX}% ${sizeY}%;background-position:${posX}% ${posY}%;`;
+}
+
 function render() {
   const q = search.value.trim().toLowerCase();
 
@@ -68,7 +78,10 @@ function render() {
           <span class="status status-${esc((c.status || "MAYBE").toLowerCase())}">${esc(c.status || "MAYBE")}</span>
         </div>
         <div class="thumb ${img ? "" : "placeholder"}">
-          ${img ? `<img src="${esc(img)}" alt="${esc(c.nameJa)}">` : `<span>#${pad(c.id)}</span>`}
+          ${img ? (c.legacyCrop
+            ? `<div class="legacy-image" role="img" aria-label="${esc(c.nameJa)}" style="${legacyStyle(c, img)}"></div>`
+            : `<img src="${esc(img)}" alt="${esc(c.nameJa)}">`)
+          : `<span>#${pad(c.id)}</span>`}
         </div>
         <div class="name-ja">${esc(c.nameJa)}</div>
         <div class="name-en">${esc(c.nameEn)}</div>
