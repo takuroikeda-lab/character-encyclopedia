@@ -1,0 +1,20 @@
+{
+  "policy": "Do not invent or renumber historical characters. Only verified mappings are published in characters.json.",
+  "verified_ranges": [
+    "001-006",
+    "017-018",
+    "029-035"
+  ],
+  "unresolved_ranges": [
+    {
+      "range": "007-016",
+      "reason": "Historical conversation reused these numbers for multiple different candidates."
+    },
+    {
+      "range": "019-028",
+      "reason": "Legacy image archive exists, but exact one-character-to-number mapping is not verified."
+    }
+  ],
+  "legacyArchive": "/archive/legacy_archive.webp",
+  "nextRule": "New characters must use the next unused verified number and never reuse a number."
+}
