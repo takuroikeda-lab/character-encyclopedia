@@ -1,0 +1,56 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f4f2;
+  color: #111;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 36px 40px 20px;
+  border-bottom: 1px solid #d9d9d4;
+  background: #fafaf8;
+}
+h1 { margin: 0; font-size: clamp(28px, 4vw, 54px); letter-spacing: -0.04em; }
+.sub { margin: 0; color: #666; font-size: 14px; }
+main { padding: 24px 40px 64px; }
+.controls { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+select, input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: white;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 18px;
+  padding: 18px;
+  min-height: 210px;
+}
+.id { color: #777; font-size: 13px; margin-bottom: 14px; }
+.name-ja { font-size: 26px; font-weight: 700; margin-bottom: 2px; }
+.name-en { font-size: 13px; color: #777; letter-spacing: .08em; margin-bottom: 20px; }
+.status {
+  display: inline-block;
+  padding: 5px 8px;
+  border: 1px solid #bbb;
+  border-radius: 999px;
+  font-size: 11px;
+}
+.empty {
+  margin-top: 24px;
+  color: #777;
+  font-size: 13px;
+}
+@media (max-width: 640px) {
+  header, main { padding-left: 20px; padding-right: 20px; }
+}
