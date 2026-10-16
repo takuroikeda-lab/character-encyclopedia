@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "slug": "poketto",
+    "nameJa": "ぽけっと",
+    "nameEn": "POKETTO",
+    "status": "MAYBE",
+    "emotionTheme": [],
+    "concept": "",
+    "images": {}
+  },
+  {
+    "id": 2,
+    "slug": "machibo",
+    "nameJa": "まちぼう",
+    "nameEn": "MACHIBO",
+    "status": "MAYBE",
+    "emotionTheme": [],
+    "concept": "",
+    "images": {}
+  },
+  {
+    "id": 3,
+    "slug": "nokosu",
+    "nameJa": "のこす",
+    "nameEn": "NOKOSU",
+    "status": "MAYBE",
+    "emotionTheme": [],
+    "concept": "",
+    "images": {}
+  },
+  {
+    "id": 4,
+    "slug": "ushiro",
+    "nameJa": "うしろ",
+    "nameEn": "USHIRO",
+    "status": "MAYBE",
+    "emotionTheme": [],
+    "concept": "",
+    "images": {}
+  },
+  {
+    "id": 5,
+    "slug": "yorimichi",
+    "nameJa": "よりみち",
+    "nameEn": "YORIMICHI",
+    "status": "MAYBE",
+    "emotionTheme": [],
+    "concept": "",
+    "images": {}
+  },
+  {
+    "id": 6,
+    "slug": "hanbun",
+    "nameJa": "はんぶん",
+    "nameEn": "HANBUN",
+    "status": "MAYBE",
+    "emotionTheme": [],
+    "concept": "",
+    "images": {}
+  }
+]
