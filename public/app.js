@@ -87,6 +87,7 @@ function openDetail(c) {
       ${renderImg(main, c.nameJa)}
       ${normal && normal !== main ? renderImg(normal, c.nameJa + " 通常版") : ""}
       ${graphic && graphic !== main ? renderImg(graphic, c.nameJa + " グラフィック版") : ""}
+      ${c.regeneratedDraft ? `<div class="draft-block"><div class="draft-label">REGENERATED DRAFT</div>${renderImg(c.regeneratedDraft, c.nameJa + " 再生成ドラフト")}</div>` : ""}
     </div>
     ${c.concept ? `<p class="detail-concept">${esc(c.concept)}</p>` : ""}
     ${(c.emotionTheme || []).length ? `<div class="detail-tags">${c.emotionTheme.map(t=>`<span>${esc(t)}</span>`).join("")}</div>` : ""}
