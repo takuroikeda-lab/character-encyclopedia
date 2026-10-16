@@ -5,6 +5,7 @@
     "nameJa": "ぽけっと",
     "nameEn": "POKETTO",
     "status": "MAYBE",
+    "verified": true,
     "emotionTheme": [],
     "concept": "",
     "images": {}
@@ -15,6 +16,7 @@
     "nameJa": "まちぼう",
     "nameEn": "MACHIBO",
     "status": "MAYBE",
+    "verified": true,
     "emotionTheme": [],
     "concept": "",
     "images": {}
@@ -25,6 +27,7 @@
     "nameJa": "のこす",
     "nameEn": "NOKOSU",
     "status": "MAYBE",
+    "verified": true,
     "emotionTheme": [],
     "concept": "",
     "images": {}
@@ -35,6 +38,7 @@
     "nameJa": "うしろ",
     "nameEn": "USHIRO",
     "status": "MAYBE",
+    "verified": true,
     "emotionTheme": [],
     "concept": "",
     "images": {}
@@ -45,6 +49,7 @@
     "nameJa": "よりみち",
     "nameEn": "YORIMICHI",
     "status": "MAYBE",
+    "verified": true,
     "emotionTheme": [],
     "concept": "",
     "images": {}
@@ -55,8 +60,168 @@
     "nameJa": "はんぶん",
     "nameEn": "HANBUN",
     "status": "MAYBE",
+    "verified": true,
     "emotionTheme": [],
     "concept": "",
     "images": {}
+  },
+  {
+    "id": 17,
+    "slug": "kasaneru",
+    "nameJa": "かさねる",
+    "nameEn": "KASANERU",
+    "status": "MAYBE",
+    "verified": true,
+    "emotionTheme": [
+      "前向き",
+      "積み重ね",
+      "小さな幸せ"
+    ],
+    "concept": "小さないいことを重ねて、今日もなんとかやっていく。",
+    "images": {}
+  },
+  {
+    "id": 18,
+    "slug": "mamoru",
+    "nameJa": "まもる",
+    "nameEn": "MAMORU",
+    "status": "MAYBE",
+    "verified": true,
+    "emotionTheme": [
+      "安心",
+      "寄り添い",
+      "やさしさ"
+    ],
+    "concept": "だいじなものを、そっとまもる。",
+    "images": {}
+  },
+  {
+    "id": 29,
+    "slug": "mochidasu",
+    "nameJa": "もちだす",
+    "nameEn": "MOCHIDASU",
+    "status": "MAYBE",
+    "verified": true,
+    "emotionTheme": [
+      "逃避",
+      "再出発"
+    ],
+    "concept": "何もかもを持ち出して、どこでもないどこかへ。",
+    "images": {
+      "main": "/characters/029/main.webp"
+    }
+  },
+  {
+    "id": 30,
+    "slug": "aketoku",
+    "nameJa": "あけとく",
+    "nameEn": "AKETOKU",
+    "status": "MAYBE",
+    "verified": true,
+    "emotionTheme": [
+      "遠慮",
+      "小さな親切"
+    ],
+    "concept": "自分は狭いのに、誰かのために場所を空けておく。",
+    "images": {
+      "main": "/characters/030/main.webp",
+      "normal": "/characters/030/a.webp",
+      "graphic": "/characters/030/b.webp"
+    }
+  },
+  {
+    "id": 31,
+    "slug": "noronoro",
+    "nameJa": "のろのろ",
+    "nameEn": "NORONORO",
+    "status": "MAYBE",
+    "verified": true,
+    "emotionTheme": [
+      "マイペース",
+      "置いていかれる不安",
+      "自己受容"
+    ],
+    "concept": "急がないことで、なんとかやっていく。",
+    "images": {
+      "main": "/characters/031/main.webp",
+      "normal": "/characters/031/a.webp",
+      "graphic": "/characters/031/b.webp"
+    }
+  },
+  {
+    "id": 32,
+    "slug": "nonbiri",
+    "nameJa": "のんびり",
+    "nameEn": "NONBIRI",
+    "animal": "ハシビロコウ",
+    "status": "MAYBE",
+    "verified": true,
+    "emotionTheme": [
+      "マイペース",
+      "観察",
+      "距離感",
+      "静かな優しさ"
+    ],
+    "concept": "止まってるようで、いつもどこかへ向かってる。",
+    "images": {
+      "main": "/characters/032/main.webp"
+    }
+  },
+  {
+    "id": 33,
+    "slug": "kasaashi",
+    "nameJa": "かさあし",
+    "nameEn": "KASAASHI",
+    "animal": "カエル",
+    "status": "MAYBE",
+    "verified": true,
+    "emotionTheme": [
+      "気まずい親切",
+      "不器用な思いやり"
+    ],
+    "concept": "自分は濡れても、誰かを雨から守る。",
+    "images": {
+      "main": "/characters/033/main.webp",
+      "normal": "/characters/033/a.webp",
+      "graphic": "/characters/033/b.webp"
+    }
+  },
+  {
+    "id": 34,
+    "slug": "akegara",
+    "nameJa": "あけがら",
+    "nameEn": "AKEGARA",
+    "animal": "ヤドカリ",
+    "status": "MAYBE",
+    "verified": true,
+    "emotionTheme": [
+      "孤独",
+      "おすそわけ"
+    ],
+    "concept": "居場所は、いつも半分あけてある。",
+    "images": {
+      "main": "/characters/034/main.webp",
+      "normal": "/characters/034/a.webp",
+      "graphic": "/characters/034/b.webp"
+    }
+  },
+  {
+    "id": 35,
+    "slug": "tsuide",
+    "nameJa": "ついで",
+    "nameEn": "TSUIDE",
+    "animal": "カモノハシ",
+    "status": "MAYBE",
+    "verified": true,
+    "emotionTheme": [
+      "照れ隠し",
+      "ささやかな親切"
+    ],
+    "concept": "何でも「ついで」にして、さりげなく助ける。",
+    "images": {
+      "main": "/characters/035/main.webp",
+      "normal": "/characters/035/a.webp",
+      "graphic": "/characters/035/b.webp"
+    }
   }
 ]
