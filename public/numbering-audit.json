@@ -1,20 +1,91 @@
 {
-  "policy": "Do not invent or renumber historical characters. Only verified mappings are published in characters.json.",
-  "verified_ranges": [
-    "001-006",
-    "017-018",
-    "029-035"
+  "policy": "Canonical IDs preserve the latest explicitly adopted numbering. Superseded/rejected designs are formally linked in archive-characters.json rather than silently deleted or renumbered.",
+  "canonicalIds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
   ],
-  "unresolved_ranges": [
+  "reservedUnassignedIds": [
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+  ],
+  "explanation": "#019-#028 have no reliably established final canonical character mapping in the surviving project history. They remain reserved; later adopted characters retain their published #029-#035 IDs.",
+  "duplicateHistoricalNumbers": [
     {
-      "range": "007-016",
-      "reason": "Historical conversation reused these numbers for multiple different candidates."
+      "id": 7,
+      "superseded": [
+        "つみき",
+        "ひとやすみ"
+      ],
+      "canonical": "たより"
     },
     {
-      "range": "019-028",
-      "reason": "Legacy image archive exists, but exact one-character-to-number mapping is not verified."
+      "id": 8,
+      "superseded": [
+        "ながれぼう",
+        "あつめる"
+      ],
+      "canonical": "まもる"
+    },
+    {
+      "id": 11,
+      "superseded": [
+        "かさねる"
+      ],
+      "canonical": "とどまる"
+    },
+    {
+      "id": 12,
+      "superseded": [
+        "ながれる",
+        "のせる（誤番号表示）"
+      ],
+      "canonical": "ながめる"
+    },
+    {
+      "id": 29,
+      "superseded": [
+        "つめこむ"
+      ],
+      "canonical": "もちだす"
     }
   ],
-  "legacyArchive": "/archive/legacy_archive.webp",
-  "nextRule": "New characters must use the next unused verified number and never reuse a number."
+  "rejected": [
+    "いっしょ",
+    "たびる",
+    "ポスハシ",
+    "ノロペン",
+    "ハシオ"
+  ],
+  "nextRule": "New characters use max canonical id + 1. Reserved historical gaps are never auto-filled."
 }
