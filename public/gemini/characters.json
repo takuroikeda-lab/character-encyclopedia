@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": 49,
+    "slug": "amaoto",
+    "nameJa": "アマオト",
+    "nameEn": "AMAOTO",
+    "animal": "カエル",
+    "concept": "雨は嫌いだけど、誰かの雨宿りには付き合う。",
+    "emotionTheme": [
+      "物憂げな優しさ",
+      "マイペース"
+    ],
+    "status": "MAYBE",
+    "verified": true,
+    "source": "gemini",
+    "images": {
+      "main": "/gemini/characters/049/main.webp",
+      "normal": "/gemini/characters/049/a.webp",
+      "graphic": "/gemini/characters/049/b.webp"
+    }
+  }
+]
