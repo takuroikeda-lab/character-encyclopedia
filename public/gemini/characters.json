@@ -14,9 +14,7 @@
     "verified": true,
     "source": "gemini",
     "images": {
-      "main": "/gemini/characters/049/main.webp",
-      "normal": "/gemini/characters/049/a.webp",
-      "graphic": "/gemini/characters/049/b.webp"
+      "main": "/gemini/characters/049/main.webp"
     }
   }
 ]
