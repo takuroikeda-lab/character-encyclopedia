@@ -5,6 +5,7 @@ on:
     paths:
       - "imports/character_encyclopedia_legacy_import.zip"
       - "imports/character_encyclopedia_regenerated_import.zip"
+      - "imports/gemini_daily_import.zip"
   workflow_dispatch:
 
 permissions:
@@ -29,6 +30,13 @@ jobs:
           unzip -o imports/character_encyclopedia_regenerated_import.zip -d .
           rm imports/character_encyclopedia_regenerated_import.zip
           node scripts/apply-regenerated.mjs
+
+      - name: Extract Gemini daily import
+        if: hashFiles('imports/gemini_daily_import.zip') != ''
+        run: |
+          unzip -o imports/gemini_daily_import.zip -d .
+          rm imports/gemini_daily_import.zip
+          node scripts/apply-gemini-import.mjs
 
       - name: Commit imported assets
         run: |
