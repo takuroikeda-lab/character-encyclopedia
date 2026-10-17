@@ -539,5 +539,26 @@
       "graphic": "/characters/035/b.webp"
     },
     "regeneratedDraft": "/characters/035/draft.webp"
+  },
+  {
+    "id": 36,
+    "slug": "ashitabun",
+    "nameJa": "あしたぶん",
+    "nameEn": "ASHITABUN",
+    "animal": "ペリカン",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "canonical",
+    "emotionTheme": [
+      "心配性",
+      "ためらい",
+      "小さな親切"
+    ],
+    "concept": "明日のために取っておいたものを、結局、今日誰かにあげてしまう。",
+    "images": {
+      "main": "/characters/036/main.webp",
+      "normal": "/characters/036/a.webp",
+      "graphic": "/characters/036/b.webp"
+    }
   }
 ]
