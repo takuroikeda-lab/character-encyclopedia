@@ -12,7 +12,9 @@ const clearSelection = document.querySelector("#clearSelection");
 const empty = document.querySelector("#empty");
 
 let characters = [];
-const STORAGE_KEY = "character-encyclopedia:selected";
+const SOURCE = document.body.dataset.source || "chatgpt";
+const DATA_URL = document.body.dataset.dataUrl || "/characters.json";
+const STORAGE_KEY = `character-encyclopedia:${SOURCE}:selected`;
 let selected = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"));
 
 const pad = (n) => String(n).padStart(3, "0");
@@ -114,7 +116,8 @@ function render() {
     const searchOK = haystack.includes(q);
     const statusOK = statusFilter.value === "ALL" || (c.status || "MAYBE") === statusFilter.value;
     const selectedOK = !selectedOnly.checked || selected.has(c.id);
-    const latestOK = !latestOnly.checked || c.id >= 31;
+    const maxId = characters.length ? Math.max(...characters.map(x => Number(x.id) || 0)) : 0;
+    const latestOK = !latestOnly.checked || c.id >= Math.max(1, maxId - 6);
     return searchOK && statusOK && selectedOK && latestOK;
   });
 
@@ -185,7 +188,7 @@ function render() {
 }
 
 async function init() {
-  const res = await fetch("/characters.json", { cache: "no-store" });
+  const res = await fetch(DATA_URL, { cache: "no-store" });
   if (!res.ok) throw new Error("characters.json could not be loaded");
   characters = await res.json();
 
@@ -212,7 +215,7 @@ exportSelection.addEventListener("click", () => {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = "official-character-selection.json";
+  a.download = `${SOURCE}-official-character-selection.json`;
   a.click();
   URL.revokeObjectURL(url);
 });
