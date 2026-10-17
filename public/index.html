@@ -6,57 +6,28 @@
   <title>Character Encyclopedia</title>
   <link rel="stylesheet" href="/styles.css" />
 </head>
-<body>
-  <header>
-    <div>
-      <h1>CHARACTER ENCYCLOPEDIA</h1>
-      <p class="sub">Original IP archive</p>
-    </div>
-    <div class="header-counts">
-      <span id="count">0 characters</span>
-      <span id="selectedCount">0 selected</span>
-    </div>
-  </header>
-
-  <main>
-    <section class="controls" aria-label="図鑑フィルター">
-      <input id="search" type="search" placeholder="名前・番号で検索" aria-label="キャラクター検索" />
-      <select id="statusFilter" aria-label="ステータス">
-        <option value="ALL">すべてのステータス</option>
-        <option value="KEEP">KEEP</option>
-        <option value="MAYBE">MAYBE</option>
-        <option value="DROP">DROP</option>
-      </select>
-      <select id="sort" aria-label="並び順">
-        <option value="desc" selected>最新順</option>
-        <option value="asc">番号：昇順</option>
-        <option value="name">名前順</option>
-      </select>
-      <label class="toggle">
-        <input id="latestOnly" type="checkbox" />
-        <span>今週生成だけ</span>
-      </label>
-      <label class="toggle">
-        <input id="selectedOnly" type="checkbox" />
-        <span>正式候補だけ</span>
-      </label>
+<body class="portal">
+  <main class="portal-main">
+    <div class="portal-kicker">ORIGINAL IP ARCHIVE</div>
+    <h1>CHARACTER ENCYCLOPEDIA</h1>
+    <p class="portal-intro">生成元ごとに分けて蓄積し、最後にOFFICIALへ選抜するアーカイブ。</p>
+    <section class="portal-grid">
+      <a class="portal-card" href="/chatgpt/">
+        <span class="portal-label">CHATGPT</span>
+        <strong>ChatGPT Encyclopedia</strong>
+        <span>現在のメイン図鑑</span>
+      </a>
+      <a class="portal-card" href="/gemini/">
+        <span class="portal-label">GEMINI</span>
+        <strong>Gemini Encyclopedia</strong>
+        <span>1日1体の別系統アーカイブ</span>
+      </a>
+      <a class="portal-card" href="/official/">
+        <span class="portal-label">OFFICIAL</span>
+        <strong>Official Selection</strong>
+        <span>両方から選抜した正式候補</span>
+      </a>
     </section>
-
-    <section class="selection-bar" aria-label="正式図鑑セレクション">
-      <div>
-        <strong>OFFICIAL SELECTION</strong>
-        <span id="selectionSummary">正式候補を選択してください</span>
-      </div>
-      <div class="selection-actions">
-        <button id="exportSelection" type="button">選択をJSON保存</button>
-        <button id="clearSelection" type="button" class="ghost">選択解除</button>
-      </div>
-    </section>
-
-    <section id="grid" class="grid" aria-live="polite"></section>
-    <p id="empty" class="empty" hidden>該当するキャラクターがありません。</p>
   </main>
-
-  <script src="/app.js"></script>
 </body>
 </html>
