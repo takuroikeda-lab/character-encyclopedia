@@ -15,7 +15,7 @@ import urllib.request
 import zipfile
 from zoneinfo import ZoneInfo
 from PIL import Image
-from character_import import apply, audit
+from character_import import apply, audit, next_id
 
 ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/interactions'
 FIELDS = ('slug', 'nameJa', 'nameEn', 'animal', 'concept', 'silhouette', 'asymmetry', 'personality', 'signatureAction', 'plushConcept', 'internationalMessage')
@@ -84,7 +84,7 @@ def write_json(path, value):
 def generate(root, out, client, day=None):
     day = day or datetime.now(ZoneInfo('Asia/Tokyo')).date().isoformat()
     datetime.strptime(day, '%Y-%m-%d')
-    rows, _ = audit(root, 'gemini')
+    rows, numbering = audit(root, 'gemini')
     if any(row.get('generationDateTokyo') == day for row in rows):
         return None
     if out.exists():
@@ -92,7 +92,7 @@ def generate(root, out, client, day=None):
     out.mkdir(parents=True)
     config = json.loads((root / 'config/gemini-automation.json').read_text())
     brief = (root / 'prompts/gemini-creative-brief.md').read_text()
-    ident = max(row['id'] for row in rows) + 1
+    ident = next_id(rows, numbering, 'gemini')
     existing = [{k: row.get(k) for k in ('id', 'slug', 'nameJa', 'animal', 'concept', 'emotionTheme')} for row in rows]
     plan_prompt = f'{brief}\nCreate one NEW character for Gemini #{ident:03d}. Return Japanese settings and a unique lowercase ASCII slug, 3 comic ideas. Avoid these existing designs:\n' + json.dumps(existing, ensure_ascii=False)
     plan = client.structured(config['textModel'], [text(plan_prompt)], PLAN_SCHEMA)

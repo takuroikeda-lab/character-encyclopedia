@@ -8,7 +8,7 @@ import unittest
 import zipfile
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from PIL import Image
-from character_import import apply, audit
+from character_import import apply, audit, next_id
 
 
 class GeminiImportTests(unittest.TestCase):
@@ -17,8 +17,8 @@ class GeminiImportTests(unittest.TestCase):
         self.addCleanup(self.tmp.cleanup)
         self.root = Path(self.tmp.name)
         shutil.copytree(Path(__file__).resolve().parents[2] / 'public', self.root / 'public')
-        rows, _ = audit(self.root, 'gemini')
-        self.ident = max(r['id'] for r in rows) + 1
+        rows, numbering = audit(self.root, 'gemini')
+        self.ident = next_id(rows, numbering, 'gemini')
         n = self.ident
         self.entry = dict(id=n, slug='gemini-test-only', nameJa='試験', nameEn='TEST', concept='fixture', verified=True, source='gemini', status='MAYBE', emotionTheme=[], images=dict(main=f'/gemini/characters/{n:03d}/main.webp', normal=f'/gemini/characters/{n:03d}/a.webp', graphic=f'/gemini/characters/{n:03d}/b.webp'))
 
@@ -61,3 +61,15 @@ class GeminiImportTests(unittest.TestCase):
         self.entry['source'] = 'canonical'
         with self.assertRaises(ValueError):
             apply(self.root, self.package(), 'gemini')
+
+    def test_historical_reservations_are_skipped_and_cannot_be_imported(self):
+        path = self.root / 'public/gemini/numbering-audit.json'
+        numbering = json.loads(path.read_text())
+        numbering['reservedUnassignedIds'].extend([self.ident, self.ident + 1])
+        path.write_text(json.dumps(numbering))
+        rows, numbering = audit(self.root, 'gemini')
+        self.assertEqual(next_id(rows, numbering, 'gemini'), self.ident + 2)
+        before = (self.root / 'public/gemini/characters.json').read_bytes()
+        with self.assertRaisesRegex(ValueError, 'next unused'):
+            apply(self.root, self.package(), 'gemini')
+        self.assertEqual(before, (self.root / 'public/gemini/characters.json').read_bytes())

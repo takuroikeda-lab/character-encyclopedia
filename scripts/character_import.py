@@ -55,6 +55,14 @@ def audit(root, source='canonical'):
     return rows, numbering
 
 
+def next_id(rows, numbering, source='canonical'):
+    # Historical Gemini numbers remain unavailable even when their files are missing.
+    ids = [r['id'] for r in rows]
+    if source == 'gemini':
+        ids += numbering['reservedUnassignedIds']
+    return max(ids) + 1
+
+
 def apply(root, package, source='canonical'):
     rows, numbering = audit(root, source)
     with zipfile.ZipFile(package) as z:
@@ -65,7 +73,7 @@ def apply(root, package, source='canonical'):
         raw = {name: z.read(name) for name in names}
     entry = json.loads(raw['character.json'])
     ident = entry.get('id')
-    if type(ident) is not int or ident != max(r['id'] for r in rows) + 1 or ident in numbering['reservedUnassignedIds']:
+    if type(ident) is not int or ident != next_id(rows, numbering, source) or ident in numbering['reservedUnassignedIds']:
         raise ValueError('ID must be next unused number; reserved IDs cannot be filled')
     if not re.fullmatch(r'[a-z][a-z0-9-]*', entry.get('slug', '')) or entry['slug'] in {r['slug'] for r in rows}:
         raise ValueError('invalid/duplicate slug')

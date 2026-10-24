@@ -13,9 +13,13 @@
     55,
     56,
     57,
-    58
+    58,
+    60,
+    61,
+    62,
+    63
   ],
-  "nextRule": "Use max existing Gemini id + 1; never restart at 001 or reuse canonical-series IDs as Gemini numbering input.",
+  "nextRule": "New Gemini generation uses max(published IDs, reserved historical IDs) + 1. Reserved historical IDs can only be restored through a separately reviewed historical import.",
   "pendingHistoricalIds": [
     60,
     61,

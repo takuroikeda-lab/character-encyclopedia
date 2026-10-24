@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from PIL import Image
 from generate_gemini import Gemini, FIELDS, generate, parts
 from gemini_run_state import gate
-from character_import import apply, audit
+from character_import import apply, audit, next_id
 
 
 class FakeGemini:
@@ -56,8 +56,8 @@ class GenerationTests(unittest.TestCase):
     def test_generate_package_then_import_without_cross_series_changes(self):
         client = FakeGemini()
         before = self.snapshot()
-        rows, _ = audit(self.root, 'gemini')
-        expected = max(r['id'] for r in rows) + 1
+        rows, numbering = audit(self.root, 'gemini')
+        expected = next_id(rows, numbering, 'gemini')
         package = generate(self.root, self.out, client, '2026-10-24')
         self.assertEqual(client.calls, 5)
         self.assertEqual(before, self.snapshot())
