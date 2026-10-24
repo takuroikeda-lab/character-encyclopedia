@@ -52,6 +52,96 @@
     }
   },
   {
+    "id": 52,
+    "slug": "kasanoha",
+    "nameJa": "カサノハ",
+    "nameEn": "KASANOHA",
+    "animal": "ネズミ",
+    "concept": "雨もしのげる、大きな葉っぱのかげ。",
+    "emotionTheme": [
+      "不器用な優しさ",
+      "マイペース"
+    ],
+    "status": "MAYBE",
+    "verified": true,
+    "source": "gemini",
+    "images": {
+      "main": "/gemini/characters/052/main.webp"
+    }
+  },
+  {
+    "id": 53,
+    "slug": "tsunonohazure",
+    "nameJa": "ツノノハズレ",
+    "nameEn": "TSUNONOHAZURE",
+    "animal": "ツノ獣",
+    "concept": "ポロッと外れる、お気に入りのツノ。",
+    "emotionTheme": [
+      "おっちょこちょい",
+      "愛おしい不完全さ"
+    ],
+    "status": "MAYBE",
+    "verified": true,
+    "source": "gemini",
+    "images": {
+      "main": "/gemini/characters/053/main.webp"
+    }
+  },
+  {
+    "id": 54,
+    "slug": "chigirenomimi",
+    "nameJa": "チギレノミミ",
+    "nameEn": "CHIGIRENOMIMI",
+    "animal": "うさぎ",
+    "concept": "ポロリとちぎれる、愛おしい耳のかけら。",
+    "emotionTheme": [
+      "不器用な優しさ",
+      "哀愁"
+    ],
+    "status": "MAYBE",
+    "verified": true,
+    "source": "gemini",
+    "images": {
+      "main": "/gemini/characters/054/main.webp"
+    }
+  },
+  {
+    "id": 55,
+    "slug": "nukegara-no-nukesaku",
+    "nameJa": "ヌケガラのヌケサク",
+    "nameEn": "NUKEGARA NO NUKESAKU",
+    "animal": "セミ（の脱け殻）",
+    "concept": "いつの間にか、ぬけてました。",
+    "emotionTheme": [
+      "無気力な脱力感",
+      "忘れっぽさ"
+    ],
+    "status": "MAYBE",
+    "verified": true,
+    "source": "gemini",
+    "images": {
+      "main": "/gemini/characters/055/main.webp"
+    }
+  },
+  {
+    "id": 56,
+    "slug": "kage-no-kabado",
+    "nameJa": "カゲノカバード",
+    "nameEn": "KAGENOKABADO",
+    "animal": "カバ",
+    "concept": "大きなあごが、だれかのカゲになる。",
+    "emotionTheme": [
+      "不器用な過保護",
+      "お節介"
+    ],
+    "status": "MAYBE",
+    "verified": true,
+    "source": "gemini",
+    "images": {
+      "main": "/gemini/characters/056/main.webp"
+    }
+  },
+  {
     "id": 59,
     "slug": "mimizuku-no-nukebane",
     "nameJa": "ミミズクノヌケバネ",
@@ -67,6 +157,24 @@
     "source": "gemini",
     "images": {
       "main": "/gemini/characters/059/main.webp"
+    }
+  },
+  {
+    "id": 60,
+    "slug": "fujitsubo-no-mame",
+    "nameJa": "フジツボノマメ",
+    "nameEn": "FUJITUBO NO MAME",
+    "animal": "フジツボ（藤壺）",
+    "concept": "大きな頭の殻をかぶり、いつも同じ場所でじっと佇む、小さな影の主。",
+    "emotionTheme": [
+      "哀愁",
+      "そっと寄り添う"
+    ],
+    "status": "MAYBE",
+    "verified": true,
+    "source": "gemini",
+    "images": {
+      "main": "/gemini/characters/060/main.webp"
     }
   }
 ]

@@ -3,25 +3,24 @@
   "canonicalIds": [
     49,
     50,
-    59
-  ],
-  "reservedUnassignedIds": [
-    51,
     52,
     53,
     54,
     55,
     56,
+    59,
+    60
+  ],
+  "reservedUnassignedIds": [
+    51,
     57,
     58,
-    60,
     61,
     62,
     63
   ],
   "nextRule": "New Gemini generation uses max(published IDs, reserved historical IDs) + 1. Reserved historical IDs can only be restored through a separately reviewed historical import.",
   "pendingHistoricalIds": [
-    60,
     61,
     62,
     63
@@ -36,6 +35,66 @@
       "verifiedImageLabel": "059 ミミズクノヌケバネ / MIMIZUKU NO NUKEBANE",
       "imageSha256": "6bc0c44b763fa39118aa6cc3e90ac2953978ac8d0488ece52f7cd8b6c8f01eaa",
       "note": "Recovered a misfiled existing sheet by its visible identity; no character was renumbered. Other supplied images rejected."
+    },
+    {
+      "id": 52,
+      "dateTokyo": "2026-10-24",
+      "sourceConversation": "https://gemini.google.com/app/b308f8c09813dcb5",
+      "sourceMessageId": "70ec9870052d0ed7",
+      "sourceImageSha256": "21d5084dc56e2190a6534cb7f64ff87a8fba8b1f025a594c0b91c7152a5a46e2",
+      "imageSha256": "ee4ab40abc1a772d6edb4de0e277ae3fd10170763dffeb5180d42f7389359591",
+      "verifiedImageLabel": "052 カサノハ",
+      "note": "Original generated sheet recovered directly from visible Gemini image attachment; visually reviewed. Lossless WebP encoding, no regeneration."
+    },
+    {
+      "id": 53,
+      "dateTokyo": "2026-10-24",
+      "sourceConversation": "https://gemini.google.com/app/b308f8c09813dcb5",
+      "sourceMessageId": "b98161a84288abc6",
+      "sourceImageSha256": "be5c690402b642edcf1885a096bb262516dd2010b9b60aeff2b322e9891d90eb",
+      "imageSha256": "ce12c2fcd4f7d5a1d2200c506ca9b48569059a4aeeacfc86cfe2f1ddc26e6fa7",
+      "verifiedImageLabel": "053 ツノノハズレ",
+      "note": "Original generated sheet recovered directly from visible Gemini image attachment; visually reviewed. Lossless WebP encoding, no regeneration."
+    },
+    {
+      "id": 54,
+      "dateTokyo": "2026-10-24",
+      "sourceConversation": "https://gemini.google.com/app/b308f8c09813dcb5",
+      "sourceMessageId": "4404521dfc519cb1",
+      "sourceImageSha256": "424f74a36f423edc116a3b9451741a9487b47584d91a931bbafdda78c0b8442b",
+      "imageSha256": "a1193dcab186f171eb0dd8414f24a22fb990c1a3758bdf89f9dd855562a37ea4",
+      "verifiedImageLabel": "054 チギレノミミ",
+      "note": "Original generated sheet recovered directly from visible Gemini image attachment; visually reviewed. Lossless WebP encoding, no regeneration."
+    },
+    {
+      "id": 55,
+      "dateTokyo": "2026-10-24",
+      "sourceConversation": "https://gemini.google.com/app/b308f8c09813dcb5",
+      "sourceMessageId": "d5b8cf2b09f1af3a",
+      "sourceImageSha256": "8b22a7e6a1ec3b5ceff73d8a0774053683f7663f5bd563219b601d9c4e6592f5",
+      "imageSha256": "8a185acfdac70c105427b2e45fdd7dea89580015fbbc896d5566bf1690959232",
+      "verifiedImageLabel": "055 ヌケガラのヌケサク",
+      "note": "Original generated sheet recovered directly from visible Gemini image attachment; visually reviewed. Lossless WebP encoding, no regeneration."
+    },
+    {
+      "id": 56,
+      "dateTokyo": "2026-10-24",
+      "sourceConversation": "https://gemini.google.com/app/b308f8c09813dcb5",
+      "sourceMessageId": "69e341b312d218ef",
+      "sourceImageSha256": "fa9c273b0f665056c0417525386d148cd525b4e9db892cd0b74996adfc7e6585",
+      "imageSha256": "fb9fdc36b0a63daeff94d5dd2d1cf47bd4297a6d2b19aae145121d37458f8d22",
+      "verifiedImageLabel": "056 カゲノカバード",
+      "note": "Original generated sheet recovered directly from visible Gemini image attachment; visually reviewed. Lossless WebP encoding, no regeneration."
+    },
+    {
+      "id": 60,
+      "dateTokyo": "2026-10-24",
+      "sourceConversation": "https://gemini.google.com/app/b308f8c09813dcb5",
+      "sourceMessageId": "24f36cb12c1bc0c3",
+      "sourceImageSha256": "9850e21675f289bf378dceadcac05dc96b917a15ede52fd012f6bd3785eda920",
+      "imageSha256": "ac8fbf33941e6bf945086623d4ba94f17bb01d007dbab763b8327f993928952d",
+      "verifiedImageLabel": "060 フジツボノマメ",
+      "note": "Original generated sheet recovered directly from visible Gemini image attachment; visually reviewed. Lossless WebP encoding, no regeneration."
     }
   ]
 }
