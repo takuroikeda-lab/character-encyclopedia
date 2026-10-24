@@ -29,7 +29,7 @@ APIキー: https://aistudio.google.com/api-keys
 
 ## 引き継ぐ制作方針
 
-`prompts/gemini-creative-brief.md` を全API呼び出しへ適用し、最新Gemini図鑑シートを画風の参照画像として使う。既存の動物・名前・設定一覧も渡す。AをBの同一キャラクター参照、A/Bを図鑑シートの参照に使う。
+`prompts/gemini-creative-brief.md` を全API呼び出しへ適用し、ユーザーが好む#050タツミを画風の参照画像として使う（未登録の場合は最新シートにフォールバックする）。既存の動物・名前・設定一覧も渡す。AをBの同一キャラクター参照、A/Bを図鑑シートの参照に使う。
 
 この初期方針は公開済み#049とリポジトリ内の既存指示から復元したもの。Gemini Webチャットの全履歴や、未公開キャラクターの情報は自動取得しない。追加ルールを引き継ぐ場合はこのファイルを編集する。Gemini Web側の定期生成とAPI側を同時に動かすと別々のキャラクターが生成されるため、API側の成功確認後にWeb側の既存定期生成を整理する。
 
@@ -56,3 +56,11 @@ APIキー登録と実APIでの初回実行が済むまでは、実APIによる�
 - https://ai.google.dev/gemini-api/docs/structured-output
 - https://ai.google.dev/api/interactions-api
 - https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule
+
+## 2026-10-24 作風・納品方針の更新
+
+企画APIの1回の応答内でA/B/Cのポーズ案を比較し、自動で採用案を選ぶ。比較と採用理由が欠けた場合は画像生成前に停止する。感情・体型・姿勢・小物の情報を既存作品一覧に含め、次回の偏り防止に使う。バッグや手持ち小物、悲しげな長脚の立ち姿を標準にしない。参照タツミの威嚇ポーズ自体も固定しない。
+
+実際に納品するWebP3点を自動視覚検査へ渡し、採用ポーズ・小物・動物・番号・名前・画像同一性を検査する。生成途中のJSONはverified=false、検査成功後のみtrueとする。ZIP作成後に開き直し、検証対象画像との完全一致を確認し、全ファイルのSHA-256をmanifest.jsonに保存する。Artifactsにはポーズ比較・生成画像・ZIP・検査結果を保存。最大5回のAPI呼び出し制限、同日重複防止、番号予約、毎朝7時の運転は維持する。
+
+自動視覚検査は人間の目視ではなく、誤判定の可能性は残る。新方針の画像の出来栄えは次の実生成で確認する。オフライン試験で実API画像を生成したとは扱わない。

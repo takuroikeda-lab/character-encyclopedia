@@ -1,6 +1,7 @@
 """Bounded Gemini API generation. Never writes to public/ or commits by itself."""
 import argparse
 import base64
+import hashlib
 from datetime import datetime
 import io
 import json
@@ -19,7 +20,9 @@ from character_import import apply, audit, next_id
 
 ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/interactions'
 FIELDS = ('slug', 'nameJa', 'nameEn', 'animal', 'concept', 'silhouette', 'asymmetry', 'personality', 'signatureAction', 'plushConcept', 'internationalMessage')
-PLAN_SCHEMA = dict(type='object', properties={**{k: {'type': 'string'} for k in FIELDS}, 'emotionTheme': {'type': 'array', 'items': {'type': 'string'}}, 'comicIdeas': {'type': 'array', 'items': {'type': 'string'}}}, required=[*FIELDS, 'emotionTheme', 'comicIdeas'])
+POSE_SCHEMA = dict(type='object', properties={'option': {'type': 'string', 'enum': ['A', 'B', 'C']}, 'pose': {'type': 'string'}, 'comparison': {'type': 'string'}}, required=['option', 'pose', 'comparison'])
+DESIGN_FIELDS = ('selectedPose', 'poseSelectionReason', 'variationFromRecent', 'bodyType', 'mood', 'handProps', 'propReason')
+PLAN_SCHEMA = dict(type='object', properties={**{k: {'type': 'string'} for k in (*FIELDS, *DESIGN_FIELDS)}, 'poseOptions': {'type': 'array', 'items': POSE_SCHEMA}, 'emotionTheme': {'type': 'array', 'items': {'type': 'string'}}, 'comicIdeas': {'type': 'array', 'items': {'type': 'string'}}}, required=[*FIELDS, *DESIGN_FIELDS, 'poseOptions', 'emotionTheme', 'comicIdeas'])
 REVIEW_SCHEMA = {'type': 'object', 'properties': {'accepted': {'type': 'boolean'}, 'issues': {'type': 'array', 'items': {'type': 'string'}}}, 'required': ['accepted', 'issues']}
 
 
@@ -93,7 +96,7 @@ def generate(root, out, client, day=None):
     config = json.loads((root / 'config/gemini-automation.json').read_text())
     brief = (root / 'prompts/gemini-creative-brief.md').read_text()
     ident = next_id(rows, numbering, 'gemini')
-    existing = [{k: row.get(k) for k in ('id', 'slug', 'nameJa', 'animal', 'concept', 'emotionTheme')} for row in rows]
+    existing = [{k: row.get(k) for k in ('id', 'slug', 'nameJa', 'animal', 'concept', 'emotionTheme', 'silhouette', 'signatureAction', 'poseOptions', *DESIGN_FIELDS)} for row in rows]
     plan_prompt = f'{brief}\nCreate one NEW character for Gemini #{ident:03d}. Return Japanese settings and a unique lowercase ASCII slug, 3 comic ideas. Avoid these existing designs:\n' + json.dumps(existing, ensure_ascii=False)
     plan = client.structured(config['textModel'], [text(plan_prompt)], PLAN_SCHEMA)
     if any(not isinstance(plan.get(k), str) or not plan[k].strip() for k in FIELDS):
@@ -105,15 +108,24 @@ def generate(root, out, client, day=None):
             raise ValueError('Invalid plan list: ' + field)
     if len(plan['comicIdeas']) != 3:
         raise ValueError('Exactly three comic ideas required')
+    options = plan.get('poseOptions')
+    if (not isinstance(options, list) or len(options) != 3
+            or any(not isinstance(o, dict) for o in options)
+            or {o.get('option') for o in options} != {'A', 'B', 'C'}
+            or any(not isinstance(o.get(k), str) or not o[k].strip() for o in options for k in ('pose', 'comparison'))
+            or plan.get('selectedPose') not in ('A', 'B', 'C')
+            or any(not isinstance(plan.get(k), str) or not plan[k].strip() for k in DESIGN_FIELDS)):
+        raise ValueError('Complete A/B/C pose comparison and selected pose required')
     # Whitelist model fields: the model never controls IDs, source, verification or paths.
-    entry = {k: plan[k] for k in (*FIELDS, 'emotionTheme', 'comicIdeas')}
-    entry.update(id=ident, status='MAYBE', verified=True, source='gemini', generationDateTokyo=day, generationMethod='gemini-api', images=dict(main=f'/gemini/characters/{ident:03d}/main.webp', normal=f'/gemini/characters/{ident:03d}/a.webp', graphic=f'/gemini/characters/{ident:03d}/b.webp'))
+    entry = {k: plan[k] for k in (*FIELDS, *DESIGN_FIELDS, 'poseOptions', 'emotionTheme', 'comicIdeas')}
+    entry.update(id=ident, status='MAYBE', verified=False, source='gemini', generationDateTokyo=day, generationMethod='gemini-api', images=dict(main=f'/gemini/characters/{ident:03d}/main.webp', normal=f'/gemini/characters/{ident:03d}/a.webp', graphic=f'/gemini/characters/{ident:03d}/b.webp'))
     write_json(out / 'character.json', entry)
-    latest = max(rows, key=lambda row: row['id'])
-    reference = (root / 'public' / latest['images']['main'].lstrip('/')).read_bytes()
+    # Use the user's preferred Tatsumi style without inheriting the latest sheet's pose or props.
+    reference_row = next((row for row in rows if row['id'] == 50 and row['slug'] == 'tatsumi'), max(rows, key=lambda row: row['id']))
+    reference = (root / 'public' / reference_row['images']['main'].lstrip('/')).read_bytes()
     identity = json.dumps(entry, ensure_ascii=False)
     prompts = {'plan': plan_prompt}
-    prompts['a'] = brief + '\nGenerate A normal edition. The reference is STYLE ONLY; invent the new character described below, never copy the old animal, silhouette or number. Full body with clear margins, portrait, no lettering.\n' + identity
+    prompts['a'] = brief + '\nGenerate A normal edition. The reference is STYLE ONLY; invent the new character described below, never copy the old animal, silhouette, props, pose or number. Use the selected poseOptions entry, selectedPose, bodyType, mood and handProps from metadata. Full body with clear margins, portrait, no lettering.\n' + identity
     a = client.image(config['imageModel'], [text(prompts['a']), image_part(reference)], '4:5')
     image_part(a)
     (out / 'a-original').write_bytes(a)
@@ -129,21 +141,32 @@ def generate(root, out, client, day=None):
         with Image.open(io.BytesIO(data)) as im:
             im.convert('RGB').save(out / (name + '.webp'), 'WEBP', quality=90, method=6)
     write_json(out / 'prompts.json', prompts)
-    review_prompt = 'Review the actual three images A, B, sheet against metadata. Reject inconsistent identity, wrong animal/number/name, cropped limbs, obvious extra limbs, materially garbled Japanese text, or missing requested panels. Do not assume success. Return accepted boolean and issues.\n' + identity
-    review = client.structured(config['textModel'], [text(review_prompt), image_part(a), image_part(b), image_part(sheet)], REVIEW_SCHEMA)
+    encoded = [(out / (name + '.webp')).read_bytes() for name in ('a', 'b', 'main')]
+    review_prompt = 'Review the actual three images A, B, sheet against metadata. Reject inconsistent identity, wrong animal/number/name, cropped limbs, obvious extra limbs, materially garbled Japanese text, or missing requested panels. Check the selected pose, bodyType, mood and handProps: reject a materially wrong pose, unauthorized held objects/bags or unrelated human images. Judge actual pixels, not filenames or metadata claims. Do not assume success. Return accepted boolean and issues.\n' + identity
+    review = client.structured(config['textModel'], [text(review_prompt), *[image_part(data) for data in encoded]], REVIEW_SCHEMA)
     write_json(out / 'review.json', review)
     if review.get('accepted') is not True or review.get('issues') != []:
         raise ValueError('Automated visual review failed; artifacts retained, nothing published')
+    entry['verified'] = True
+    write_json(out / 'character.json', entry)
     package = out / f'{ident:03d}-{entry["slug"]}.zip'
     with zipfile.ZipFile(package, 'w', zipfile.ZIP_DEFLATED) as z:
         for name in ('character.json', 'main.webp', 'a.webp', 'b.webp'):
             z.write(out / name, name)
+    # Reopen the actual archive and require byte-for-byte identity with reviewed files.
+    hashes = {}
+    with zipfile.ZipFile(package) as z:
+        for name in ('character.json', 'main.webp', 'a.webp', 'b.webp'):
+            data = z.read(name)
+            if data != (out / name).read_bytes():
+                raise ValueError('ZIP content differs from reviewed delivery')
+            hashes[name] = hashlib.sha256(data).hexdigest()
     # Reuse the same importer in an isolated copy before allowing publication.
     with tempfile.TemporaryDirectory() as temp:
         sandbox = Path(temp)
         shutil.copytree(root / 'public', sandbox / 'public')
         apply(sandbox, package, 'gemini')
-    write_json(out / 'manifest.json', {'dateTokyo': day, 'id': ident, 'slug': entry['slug'], 'textModel': config['textModel'], 'imageModel': config['imageModel'], 'review': 'automated-pass', 'package': package.name})
+    write_json(out / 'manifest.json', {'dateTokyo': day, 'id': ident, 'slug': entry['slug'], 'textModel': config['textModel'], 'imageModel': config['imageModel'], 'review': 'automated-pass', 'package': package.name, 'sha256': hashes, 'selectedPose': entry['selectedPose'], 'poseSelectionReason': entry['poseSelectionReason']})
     return package
 
 

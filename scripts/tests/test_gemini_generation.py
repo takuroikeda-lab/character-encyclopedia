@@ -6,6 +6,8 @@ from pathlib import Path
 import shutil
 import sys
 import tempfile
+import zipfile
+import hashlib
 import unittest
 from unittest.mock import patch
 import urllib.error
@@ -25,7 +27,7 @@ class FakeGemini:
         self.calls += 1
         if 'accepted' in schema['properties']:
             return {'accepted': self.accepted, 'issues': [] if self.accepted else ['identity mismatch']}
-        return {**{k: 'fixture' for k in FIELDS}, 'slug': 'generation-test-only', 'emotionTheme': ['quiet kindness'], 'comicIdeas': ['one', 'two', 'three'], 'id': 1, 'source': 'canonical', 'images': {'main': '/characters/001/main.webp'}}
+        return {**{k: 'fixture' for k in FIELDS}, 'poseOptions': [{'option': label, 'pose': 'pose ' + label, 'comparison': 'comparison ' + label} for label in 'ABC'], 'selectedPose': 'B', 'poseSelectionReason': 'whole body action', 'variationFromRecent': 'round and confident', 'bodyType': 'round', 'mood': 'concentrating', 'handProps': 'none', 'propReason': 'no props needed', 'slug': 'generation-test-only', 'emotionTheme': ['quiet kindness'], 'comicIdeas': ['one', 'two', 'three'], 'id': 1, 'source': 'canonical', 'images': {'main': '/characters/001/main.webp'}}
 
     def image(self, model, inputs, aspect):
         self.calls += 1
@@ -78,6 +80,7 @@ class GenerationTests(unittest.TestCase):
         self.assertEqual(before, self.snapshot())
         self.assertTrue((self.out / 'a.webp').exists())
         self.assertFalse(list(self.out.glob('*.zip')))
+        self.assertFalse(json.loads((self.out / 'character.json').read_text())['verified'])
 
     def test_same_day_is_idempotent_without_calls(self):
         client = FakeGemini()
@@ -128,3 +131,37 @@ class GenerationTests(unittest.TestCase):
         self.assertTrue(gate({'dailyEnabled': True, 'lastVerifiedCommit': 'abc'}, 'schedule', '')['generate'])
         self.assertFalse(gate({}, 'push', 'publish-and-enable')['generate'])
         self.assertEqual(gate({}, 'workflow_dispatch', 'publish-and-enable'), dict(generate=True, publish=True, activate=True))
+
+    def test_selected_pose_delivery_bytes_and_reviewed_webp_are_preserved(self):
+        client = FakeGemini()
+        original = client.structured
+        reviewed = []
+        def capture(model, inputs, schema):
+            if 'accepted' in schema['properties']:
+                reviewed.extend(base64.b64decode(p['data']) for p in inputs if p['type'] == 'image')
+            return original(model, inputs, schema)
+        client.structured = capture
+        package = generate(self.root, self.out, client, '2026-10-24')
+        manifest = json.loads((self.out / 'manifest.json').read_text())
+        with zipfile.ZipFile(package) as z:
+            entry = json.loads(z.read('character.json'))
+            self.assertTrue(entry['verified'])
+            self.assertEqual(entry['selectedPose'], 'B')
+            self.assertEqual(len(entry['poseOptions']), 3)
+            for name, data in zip(('a.webp', 'b.webp', 'main.webp'), reviewed):
+                self.assertEqual(z.read(name), data)
+                self.assertEqual(manifest['sha256'][name], hashlib.sha256(data).hexdigest())
+        self.assertEqual(len(reviewed), 3)
+
+    def test_incomplete_pose_comparison_stops_before_image_generation(self):
+        client = FakeGemini()
+        original = client.structured
+        def incomplete(model, inputs, schema):
+            plan = original(model, inputs, schema)
+            plan['poseOptions'] = plan['poseOptions'][:2]
+            return plan
+        client.structured = incomplete
+        with self.assertRaisesRegex(ValueError, 'A/B/C'):
+            generate(self.root, self.out, client, '2026-10-24')
+        self.assertEqual(client.calls, 1)
+        self.assertFalse(list(self.out.glob('*.zip')))
