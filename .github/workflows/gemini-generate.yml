@@ -1,0 +1,150 @@
+name: Gemini daily generation
+on:
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: 'preflight: 設定確認 / preview: 生成のみ / publish: 公開 / publish-and-enable: 公開成功後に毎朝運転'
+        type: choice
+        default: preflight
+        options: [preflight, preview, publish, publish-and-enable, disable-daily]
+  schedule:
+    # 07:00 Asia/Tokyo. GitHub schedules may be delayed.
+    - cron: '0 22 * * *'
+  push:
+    branches: [main]
+    paths: ['scripts/generate_gemini.py', 'scripts/gemini_run_state.py', 'scripts/tests/test_gemini_generation.py', '.github/workflows/gemini-generate.yml', 'config/gemini-automation.json', 'prompts/gemini-creative-brief.md']
+permissions:
+  contents: read
+concurrency:
+  group: character-main-writer
+  cancel-in-progress: false
+jobs:
+  offline-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r scripts/requirements-import.txt
+      - run: python -m unittest discover -s scripts/tests -v
+      - run: |
+          python scripts/character_import.py
+          python scripts/character_import.py --source gemini
+      - name: Check whether API credential is configured
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python - <<'PY'
+          import os
+          configured = bool(os.environ.get('GEMINI_API_KEY', '').strip())
+          print('GEMINI_API_KEY configured:', configured)
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
+              f.write('Gemini API credential configured: ' + str(configured) + '\n')
+          PY
+  generate:
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
+    needs: offline-tests
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r scripts/requirements-import.txt
+      - name: Decide operation and daily release gate
+        id: gate
+        run: python scripts/gemini_run_state.py gate
+      - name: Disable daily generation
+        if: github.event.inputs.operation == 'disable-daily'
+        run: |
+          python scripts/gemini_run_state.py disable
+          git config user.name character-encyclopedia-bot
+          git config user.email actions@users.noreply.github.com
+          git add config/gemini-automation.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Pause Gemini daily generation"
+            git push origin HEAD:main
+          fi
+      - name: Check credential and pending deliveries
+        if: steps.gate.outputs.generate == 'true' || github.event.inputs.operation == 'preflight'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          if not os.environ.get('GEMINI_API_KEY', '').strip():
+              raise SystemExit('Missing repository Actions secret GEMINI_API_KEY. No API call made.')
+          if list(Path('imports/daily').glob('*.zip')) or list(Path('imports/gemini').glob('*.zip')):
+              raise SystemExit('Pending ZIP delivery exists; finish its import before generating.')
+          print('Credential is configured; pending delivery queue is empty. No API call made by preflight.')
+          PY
+      - name: Generate one character and validate actual images
+        if: steps.gate.outputs.generate == 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/generate_gemini.py
+      - name: Preserve generation files on success or failure
+        if: always() && steps.gate.outputs.generate == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: gemini-generation-${{ github.run_id }}-${{ github.run_attempt }}
+          path: output/gemini-run/
+          if-no-files-found: ignore
+          retention-days: 30
+      - name: Import and commit images with Gemini registry atomically
+        if: steps.gate.outputs.publish == 'true'
+        run: |
+          packages=(output/gemini-run/*.zip)
+          if [ -f "${packages[0]}" ]; then
+            [ "${#packages[@]}" -eq 1 ]
+            python scripts/character_import.py --source gemini --package "${packages[0]}"
+            python scripts/character_import.py
+            git config user.name character-encyclopedia-bot
+            git config user.email actions@users.noreply.github.com
+            git add public/gemini/characters public/gemini/characters.json public/gemini/numbering-audit.json
+            git commit -m "Generate and publish Gemini daily character"
+            git push origin HEAD:main
+          else
+            echo 'No new package: today already has a registered character. Verify existing publication.'
+          fi
+      - name: Verify exact production bytes
+        if: steps.gate.outputs.publish == 'true'
+        run: |
+          python scripts/verify_publication.py --source gemini --url https://character-encyclopedia.link-link.workers.dev --attempts 30
+          python scripts/verify_publication.py --url https://character-encyclopedia.link-link.workers.dev --attempts 30
+      - name: Enable daily generation only after verified publication
+        if: steps.gate.outputs.activate == 'true'
+        run: |
+          python scripts/gemini_run_state.py activate
+          git config user.name character-encyclopedia-bot
+          git config user.email actions@users.noreply.github.com
+          git add config/gemini-automation.json
+          git commit -m "Enable Gemini daily generation after verified publication"
+          git push origin HEAD:main
+      - name: Result
+        if: success()
+        env:
+          PUBLISHED: ${{ steps.gate.outputs.publish }}
+          ACTIVATED: ${{ steps.gate.outputs.activate }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          rows = json.loads(Path('public/gemini/characters.json').read_text())
+          day = datetime.now(ZoneInfo('Asia/Tokyo')).date().isoformat()
+          item = next((r for r in rows if r.get('generationDateTokyo') == day), None)
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
+              f.write(f"Published verification: {os.environ['PUBLISHED']}; daily activation: {os.environ['ACTIVATED']}\n\n")
+              if item:
+                  f.write(f"Character #{item['id']:03d} {item['nameJa']}\n\n")
+              f.write('Site: https://character-encyclopedia.link-link.workers.dev/gemini/\n')
+          PY

@@ -1,0 +1,7 @@
+{
+  "dailyEnabled": false,
+  "textModel": "gemini-3.8-flash",
+  "imageModel": "gemini-nano-banana-2.1",
+  "lastVerifiedCommit": null,
+  "lastVerifiedAt": null
+}

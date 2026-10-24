@@ -33,3 +33,7 @@ GitHub Actions will unpack the verified recent images and legacy archive into `p
 See [delivery contract and release gates](docs/character-import.md). Upload packages only to `imports/daily/`. The former unvalidated legacy extraction workflow is retired. Daily generation remains paused until a real package passes Actions and exact Cloudflare publication verification.
 
 Gemini packages use `imports/gemini/` and the same four-file contract. Follow [the current Gemini prompt](GEMINI_DAILY_PROMPT.md); the former #001 restart rule and hierarchical ZIP format are retired. MAGARI #037 has passed a real end-to-end import and publication check; daily scheduling remains paused.
+
+## Gemini API daily generation
+
+[Setup and operations](docs/gemini-automation.md): GitHub Actions calls Gemini directly, generates and checks three images, publishes atomically, and verifies Cloudflare. Add the repository secret `GEMINI_API_KEY`, then run **Gemini daily generation** with `publish-and-enable`. Daily generation starts only after a real publication succeeds; the checked-in default is disabled. The Web Gemini conversation is not used as an execution host.
