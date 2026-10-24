@@ -1,8 +1,8 @@
 {
-  "dailyEnabled": false,
+  "dailyEnabled": true,
   "textModel": "gemini-3.8-flash",
   "imageModel": "gemini-nano-banana-2.1",
-  "lastVerifiedCommit": "8854111c6d90966b43b1d54412f4a827e5f22c74",
-  "lastVerifiedAt": "2026-10-24T01:15:13.485005+00:00",
-  "pauseReason": "Import existing Gemini characters #051 onward before allocating new IDs"
+  "lastVerifiedCommit": "be0bb4e8d13c22f53702e8665620a9d3ac4d8b54",
+  "lastVerifiedAt": "2026-10-24T02:02:43.714533+00:00"
 }
+
