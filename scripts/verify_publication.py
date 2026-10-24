@@ -7,9 +7,10 @@ import time
 import urllib.request
 
 
-def verify(root, url):
-    paths = ['characters.json', 'numbering-audit.json']
-    for row in json.loads((root / 'characters.json').read_text()):
+def verify(root, url, source='canonical'):
+    prefix = 'gemini/' if source == 'gemini' else ''
+    paths = [prefix + 'characters.json', prefix + 'numbering-audit.json']
+    for row in json.loads((root / prefix / 'characters.json').read_text()):
         paths.extend(p.lstrip('/') for p in row['images'].values())
         if row.get('regeneratedDraft'):
             paths.append(row['regeneratedDraft'].lstrip('/'))
@@ -28,10 +29,11 @@ if __name__ == '__main__':
     p.add_argument('--root', type=Path, default=Path('public'))
     p.add_argument('--url', required=True)
     p.add_argument('--attempts', type=int, default=1)
+    p.add_argument('--source', choices=['canonical', 'gemini'], default='canonical')
     a = p.parse_args()
     for attempt in range(a.attempts):
         try:
-            verify(a.root, a.url)
+            verify(a.root, a.url, a.source)
             break
         except Exception as e:
             print(e, flush=True)

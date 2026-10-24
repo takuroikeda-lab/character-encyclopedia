@@ -14,6 +14,7 @@ def git(*args):
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
     p.add_argument('package', type=Path)
+    p.add_argument('--source', choices=['canonical', 'gemini'], default='canonical')
     a = p.parse_args()
     data = a.package.resolve()
     if git('status', '--porcelain'):
@@ -26,8 +27,9 @@ if __name__ == '__main__':
     with tempfile.TemporaryDirectory() as tmp:
         root = Path(tmp)
         shutil.copytree('public', root / 'public')
-        ident = apply(root, data)
-    dest = Path(f'imports/daily/{ident:03d}.zip')
+        ident = apply(root, data, a.source)
+    folder = 'gemini' if a.source == 'gemini' else 'daily'
+    dest = Path(f'imports/{folder}/{ident:03d}.zip')
     if dest.exists():
         raise SystemExit('Incoming package already exists')
     dest.parent.mkdir(parents=True, exist_ok=True)

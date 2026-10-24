@@ -31,3 +31,5 @@ GitHub Actions will unpack the verified recent images and legacy archive into `p
 ## Validated daily import
 
 See [delivery contract and release gates](docs/character-import.md). Upload packages only to `imports/daily/`. The former unvalidated legacy extraction workflow is retired. Daily generation remains paused until a real package passes Actions and exact Cloudflare publication verification.
+
+Gemini packages use `imports/gemini/` and the same four-file contract. Follow [the current Gemini prompt](GEMINI_DAILY_PROMPT.md); the former #001 restart rule and hierarchical ZIP format are retired. MAGARI #037 has passed a real end-to-end import and publication check; daily scheduling remains paused.

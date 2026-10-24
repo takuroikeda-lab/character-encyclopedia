@@ -1,5 +1,15 @@
 # Character delivery and import
 
+## Current release status — 2026-10-24
+
+MAGARI #037 was newly generated in this Codex session; no earlier ZIP was recovered. Built-in image generation produced A, B and the encyclopedia sheet, which were visually inspected and saved persistently before conversion to WebP. Delivery commit `867fe103fdba1f85474cd4975b4d674d278fd725` transferred the actual ZIP with the authenticated GitHub blob/tree/commit API. The real import workflow [40046677015](https://github.com/takuroikeda-lab/character-encyclopedia/actions/runs/40046677015) succeeded. Atomic publication commit `ea1b6d3441e347f7c66b57d4367d573a13abaf77` added three images and updated both JSON files together; the staging ZIP was consumed. Cloudflare's check on that commit succeeded, and published JSON plus all 56 referenced canonical-series images matched exact bytes. The old 36 records and reserved IDs 19–28 were unchanged. There are now 37 records, 27 verified, maximum ID 37.
+
+The source-to-GitHub handoff has therefore been proven in this environment: generate → persist local files → WebP package → base64 Git blob → staging commit → validated Actions import → atomic public commit → Cloudflare → exact byte verification. This proves this delivery path, not a scheduled runtime's capabilities. Daily scheduling remains paused; no automation was resumed.
+
+Gemini uses the same validator with `--source gemini`, input path `imports/gemini/*.zip`, registry `public/gemini/characters.json`, audit `public/gemini/numbering-audit.json`, and image prefix `/gemini/characters/`. Its existing #049 AMAOTO is preserved; next number is determined from current Gemini main, never reset to 001. The ZIP contract is the same four root members, with `source: "gemini"` and Gemini-prefixed paths. See [the Gemini execution prompt](../GEMINI_DAILY_PROMPT.md). The old hierarchical `imports/gemini_daily_import.zip` contract is retired.
+
+The sections below describe the original audit and release limitations before this real MAGARI import.
+
 ## Audit on 2026-10-24
 
 main at `68689b2b6d670be6e1f236fbb4359e0fc8280c4e` contains 36 entries, 26 verified, maximum ID 36. IDs 19–28 are unverified drafts and remain reserved. The audit file omitted canonical ID 36; only that omission is corrected. Existing character records and images are unchanged. Gemini's separate registry is not renumbered or merged.

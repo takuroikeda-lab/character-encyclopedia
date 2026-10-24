@@ -1,0 +1,8 @@
+{
+  "policy": "Gemini is a separate registry. Existing published IDs are preserved. Historical gaps must not be auto-filled.",
+  "canonicalIds": [
+    49
+  ],
+  "reservedUnassignedIds": [],
+  "nextRule": "Use max existing Gemini id + 1; never restart at 001 or reuse canonical-series IDs as Gemini numbering input."
+}

@@ -22,9 +22,16 @@ def webp(data):
         im.load()
 
 
-def audit(root):
-    rows = load(root / 'public/characters.json')
-    numbering = load(root / 'public/numbering-audit.json')
+def registry_dir(source):
+    if source not in ('canonical', 'gemini'):
+        raise ValueError('unknown character source')
+    return Path('public/gemini') if source == 'gemini' else Path('public')
+
+
+def audit(root, source='canonical'):
+    directory = registry_dir(source)
+    rows = load(root / directory / 'characters.json')
+    numbering = load(root / directory / 'numbering-audit.json')
     ids = [r['id'] for r in rows]
     if any(type(i) is not int or i < 1 for i in ids) or len(set(ids)) != len(ids):
         raise ValueError('duplicate/invalid IDs')
@@ -42,14 +49,14 @@ def audit(root):
         if row.get('regeneratedDraft'):
             paths.append(row['regeneratedDraft'])
         for path in paths:
-            if not re.fullmatch(r'/characters/' + f"{row['id']:03d}" + r'/[a-z]+\.webp', path):
+            if not re.fullmatch(('/gemini/characters/' if source == 'gemini' else '/characters/') + f"{row['id']:03d}" + r'/[a-z]+\.webp', path):
                 raise ValueError('invalid image path')
             webp((root / 'public' / path.lstrip('/')).read_bytes())
     return rows, numbering
 
 
-def apply(root, package):
-    rows, numbering = audit(root)
+def apply(root, package, source='canonical'):
+    rows, numbering = audit(root, source)
     with zipfile.ZipFile(package) as z:
         names = z.namelist()
         required = {'character.json', 'main.webp', 'a.webp', 'b.webp'}
@@ -65,14 +72,15 @@ def apply(root, package):
     for key in ('nameJa', 'nameEn', 'concept'):
         if not isinstance(entry.get(key), str) or not entry[key].strip():
             raise ValueError('missing ' + key)
-    if entry.get('verified') is not True or entry.get('provenance') != 'canonical' or entry.get('status') not in ('MAYBE', 'YES', 'NO'):
+    if entry.get('verified') is not True or (entry.get('source') != 'gemini' if source == 'gemini' else entry.get('provenance') != 'canonical') or entry.get('status') not in ('MAYBE', 'YES', 'NO'):
         raise ValueError('invalid registry metadata')
     if not isinstance(entry.get('emotionTheme'), list) or not all(isinstance(s, str) for s in entry['emotionTheme']):
         raise ValueError('invalid emotionTheme')
-    expected = dict(main=f'/characters/{ident:03d}/main.webp', normal=f'/characters/{ident:03d}/a.webp', graphic=f'/characters/{ident:03d}/b.webp')
+    prefix = '/gemini/characters' if source == 'gemini' else '/characters'
+    expected = dict(main=f'{prefix}/{ident:03d}/main.webp', normal=f'{prefix}/{ident:03d}/a.webp', graphic=f'{prefix}/{ident:03d}/b.webp')
     if entry.get('images') != expected or 'regeneratedDraft' in entry:
         raise ValueError('package image mapping mismatch')
-    dest = root / f'public/characters/{ident:03d}'
+    dest = root / registry_dir(source) / f'characters/{ident:03d}'
     if dest.exists():
         raise ValueError('destination already exists')
     for name in ('main.webp', 'a.webp', 'b.webp'):
@@ -84,8 +92,8 @@ def apply(root, package):
     rows.append(entry)
     numbering['canonicalIds'].append(ident)
     for path, value in [('characters.json', rows), ('numbering-audit.json', numbering)]:
-        (root / 'public' / path).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
-    audit(root)
+        (root / registry_dir(source) / path).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
+    audit(root, source)
     return ident
 
 
@@ -93,8 +101,9 @@ if __name__ == '__main__':
     p = argparse.ArgumentParser()
     p.add_argument('--root', type=Path, default=Path('.'))
     p.add_argument('--package', type=Path)
+    p.add_argument('--source', choices=['canonical', 'gemini'], default='canonical')
     args = p.parse_args()
     if args.package:
-        print('Imported', apply(args.root, args.package))
-    rows, _ = audit(args.root)
+        print('Imported', apply(args.root, args.package, args.source))
+    rows, _ = audit(args.root, args.source)
     print(f"PASS: {len(rows)} entries, {sum(r['verified'] is True for r in rows)} verified, max ID {max(r['id'] for r in rows)}")

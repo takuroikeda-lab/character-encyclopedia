@@ -16,6 +16,9 @@ jobs:
       - run: pip install -r scripts/requirements-import.txt
       - run: python -m unittest discover -s scripts/tests -v
       - run: python scripts/character_import.py
+      - run: python scripts/character_import.py --source gemini
       - name: Verify production on main
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: python scripts/verify_publication.py --url https://character-encyclopedia.link-link.workers.dev --attempts 30
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && hashFiles('imports/daily/*.zip', 'imports/gemini/*.zip') == ''
+        run: |
+          python scripts/verify_publication.py --url https://character-encyclopedia.link-link.workers.dev --attempts 30
+          python scripts/verify_publication.py --source gemini --url https://character-encyclopedia.link-link.workers.dev --attempts 30
