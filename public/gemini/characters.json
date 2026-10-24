@@ -50,5 +50,23 @@
       "normal": "/gemini/characters/050/a.webp",
       "graphic": "/gemini/characters/050/b.webp"
     }
+  },
+  {
+    "id": 59,
+    "slug": "mimizuku-no-nukebane",
+    "nameJa": "ミミズクノヌケバネ",
+    "nameEn": "MIMIZUKU NO NUKEBANE",
+    "animal": "フクロウ(ミミズク)",
+    "concept": "ポロリと抜ける、お気に入りの羽。",
+    "emotionTheme": [
+      "哀愁",
+      "そっと寄り添う"
+    ],
+    "status": "MAYBE",
+    "verified": true,
+    "source": "gemini",
+    "images": {
+      "main": "/gemini/characters/059/main.webp"
+    }
   }
 ]

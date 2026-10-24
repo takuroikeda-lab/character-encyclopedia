@@ -42,6 +42,12 @@ class GenerationTests(unittest.TestCase):
         repo = Path(__file__).resolve().parents[2]
         for directory in ('public', 'config', 'prompts'):
             shutil.copytree(repo / directory, self.root / directory)
+        # Keep generation fixtures independent of already published production dates.
+        registry = self.root / 'public/gemini/characters.json'
+        rows = json.loads(registry.read_text())
+        for row in rows:
+            row.pop('generationDateTokyo', None)
+        registry.write_text(json.dumps(rows, ensure_ascii=False))
         self.out = self.root / 'output/run'
 
     def snapshot(self):

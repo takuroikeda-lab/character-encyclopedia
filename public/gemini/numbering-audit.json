@@ -2,8 +2,36 @@
   "policy": "Gemini is a separate registry. Existing published IDs are preserved. Historical gaps must not be auto-filled.",
   "canonicalIds": [
     49,
-    50
+    50,
+    59
   ],
-  "reservedUnassignedIds": [],
-  "nextRule": "Use max existing Gemini id + 1; never restart at 001 or reuse canonical-series IDs as Gemini numbering input."
+  "reservedUnassignedIds": [
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58
+  ],
+  "nextRule": "Use max existing Gemini id + 1; never restart at 001 or reuse canonical-series IDs as Gemini numbering input.",
+  "pendingHistoricalIds": [
+    60,
+    61,
+    62,
+    63
+  ],
+  "historicalImports": [
+    {
+      "id": 59,
+      "dateTokyo": "2026-10-24",
+      "sourceArchive": "cleaned_gemini_characters.zip",
+      "archiveSha256": "7057a7f9bf878b2b8b67ed11a427ca5760d9100e9f37abe714d6dbfb2f79490f",
+      "sourceImagePath": "public/gemini/characters/057/main.webp",
+      "verifiedImageLabel": "059 ミミズクノヌケバネ / MIMIZUKU NO NUKEBANE",
+      "imageSha256": "6bc0c44b763fa39118aa6cc3e90ac2953978ac8d0488ece52f7cd8b6c8f01eaa",
+      "note": "Recovered a misfiled existing sheet by its visible identity; no character was renumbered. Other supplied images rejected."
+    }
+  ]
 }
