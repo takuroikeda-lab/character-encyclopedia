@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import shutil
 import sys
+import subprocess
 import tempfile
 import unittest
 import zipfile
@@ -53,6 +54,34 @@ class ImportTests(unittest.TestCase):
         self.assertEqual(before, after[:-1])
         self.assertEqual(numbering['reservedUnassignedIds'], new_numbering['reservedUnassignedIds'])
         self.reject(package)
+
+    def test_atomic_commit_and_concurrent_push_rejection(self):
+        def git(*args):
+            return subprocess.check_output(['git', '-C', str(self.root), *args], stderr=subprocess.STDOUT, text=True).strip()
+        git('init', '-b', 'main')
+        git('config', 'user.name', 'test')
+        git('config', 'user.email', 'test@example.invalid')
+        git('add', 'public')
+        git('commit', '-m', 'baseline')
+        remote = self.root / 'remote.git'
+        subprocess.check_output(['git', 'init', '--bare', str(remote)], stderr=subprocess.STDOUT)
+        git('remote', 'add', 'origin', str(remote))
+        git('push', 'origin', 'main')
+        baseline = git('rev-parse', 'HEAD')
+        apply(self.root, self.package())
+        git('add', 'public')
+        git('commit', '-m', 'atomic import')
+        changed = set(git('diff-tree', '--no-commit-id', '--name-only', '-r', 'HEAD').splitlines())
+        n = self.entry['id']
+        self.assertEqual(changed, {'public/characters.json', 'public/numbering-audit.json', *{f'public/characters/{n:03d}/{name}.webp' for name in ('main', 'a', 'b')}})
+        git('push', 'origin', 'main')
+        # A competing writer based on the old registry cannot overwrite the winner.
+        git('checkout', '-b', 'competing', baseline)
+        (self.root / 'other.txt').write_text('concurrent edit')
+        git('add', 'other.txt')
+        git('commit', '-m', 'competing writer')
+        with self.assertRaises(subprocess.CalledProcessError):
+            git('push', 'origin', 'HEAD:main')
 
     def test_reserved_and_out_of_sequence(self):
         for n in (19, 36, 38):

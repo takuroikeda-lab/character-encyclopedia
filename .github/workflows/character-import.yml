@@ -2,7 +2,7 @@ name: Validated character import
 on:
   push:
     branches: [main]
-    paths: ['imports/daily/*.zip']
+    paths: ['imports/daily/*.zip', 'scripts/**', '.github/workflows/character-import.yml']
   workflow_dispatch:
 permissions:
   contents: write

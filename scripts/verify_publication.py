@@ -14,7 +14,9 @@ def verify(root, url):
         if row.get('regeneratedDraft'):
             paths.append(row['regeneratedDraft'].lstrip('/'))
     for path in dict.fromkeys(paths):
-        with urllib.request.urlopen(url.rstrip('/') + '/' + path + '?verify=' + str(time.time_ns()), timeout=20) as response:
+        request = urllib.request.Request(url.rstrip('/') + '/' + path + '?verify=' + str(time.time_ns()),
+                                         headers={'User-Agent': 'character-encyclopedia-publication-check/1.0', 'Cache-Control': 'no-cache'})
+        with urllib.request.urlopen(request, timeout=20) as response:
             actual = response.read(10_000_001)
         if hashlib.sha256(actual).digest() != hashlib.sha256((root / path).read_bytes()).digest():
             raise ValueError('publication mismatch: ' + path)
