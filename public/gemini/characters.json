@@ -16,5 +16,39 @@
     "images": {
       "main": "/gemini/characters/049/main.webp"
     }
+  },
+  {
+    "slug": "tatsumi",
+    "nameJa": "タツミ",
+    "nameEn": "Tatsumi",
+    "animal": "コアリクイ",
+    "concept": "本気で威嚇しているのに、なぜか抱きしめられてしまう小さなファイター。",
+    "silhouette": "両手を水平にパッと広げたT字型のずんぐりしたシルエット。短い足と丸みのある胴体。",
+    "asymmetry": "背負った黒いベストのような毛模様の右肩部分だけが、だらしなく少しずり落ちている。",
+    "personality": "本人は至って硬派で真面目。威厳を保ちたいが、怒るほど周囲に和まれてしまうのが最大の弱点。",
+    "signatureAction": "危険を感じるとサッと立ち上がり、両手を大きく広げて無言で静止する（威嚇の構え）。",
+    "plushConcept": "両腕に緩いワイヤーが内蔵され、T字の威嚇ポーズのまま本やスマホを抱え込ませることができるぬいぐるみ。",
+    "internationalMessage": "Even when you try to be fierce, kindness might just hug you back.",
+    "emotionTheme": [
+      "からまわり",
+      "不器用な自己主張",
+      "予期せぬぬくもり"
+    ],
+    "comicIdeas": [
+      "1コマ目: 路地裏で大きな野良猫に出くわし、渾身の力で両手を広げて威嚇の仁王立ちをするタツミ。\n2コマ目: 猫が喉をゴロゴロ鳴らしながら、広げられた腕の隙間に頭をすり寄せてきて固まるタツミ。",
+      "1コマ目: 突風に向かって胸を張り、飛ばされないよう威風堂々と両手を広げて踏ん張る。\n2コマ目: 飛んできたレジ袋がすっぽり腕の中に収まり、まるで大事なお買い物を抱えているみたいになる。",
+      "1コマ目: ベンチでうなだれて泣いている見知らぬ人を見かけ、「しゃんと立て！」とばかりに威嚇ポーズを決める。\n2コマ目: その人が「ハグしてくれるの…？」と涙目で優しく抱きついてきて、腕を下ろせなくなる。"
+    ],
+    "id": 50,
+    "status": "MAYBE",
+    "verified": true,
+    "source": "gemini",
+    "generationDateTokyo": "2026-10-24",
+    "generationMethod": "gemini-api",
+    "images": {
+      "main": "/gemini/characters/050/main.webp",
+      "normal": "/gemini/characters/050/a.webp",
+      "graphic": "/gemini/characters/050/b.webp"
+    }
   }
 ]
