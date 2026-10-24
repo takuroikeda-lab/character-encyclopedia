@@ -560,5 +560,37 @@
       "normal": "/characters/036/a.webp",
       "graphic": "/characters/036/b.webp"
     }
+  },
+  {
+    "id": 37,
+    "slug": "magari",
+    "nameJa": "まがり",
+    "nameEn": "MAGARI",
+    "animal": "カマキリ",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "canonical",
+    "emotionTheme": [
+      "不器用な親切",
+      "照れ",
+      "静かな連帯"
+    ],
+    "concept": "曲がった腕は、誰かの休憩場所になる。",
+    "images": {
+      "main": "/characters/037/main.webp",
+      "normal": "/characters/037/a.webp",
+      "graphic": "/characters/037/b.webp"
+    },
+    "silhouette": "傾いた三角形の頭、細い胴体、長い脚。",
+    "asymmetry": "右前脚だけが大きく折れ曲がっている。",
+    "personality": "ひねくれ者に見えるが親切。感謝されると照れる。",
+    "signatureAction": "大きな腕を差し出し、小さな虫を休ませる。",
+    "plushConcept": "曲がった腕を可動式にし、小物を乗せられる。",
+    "internationalMessage": "Bent, not broken.",
+    "comicIdeas": [
+      "「そこに立つな」と言いながら腕を差し出す。",
+      "曲がった腕が、迷子の道しるべになる。",
+      "誰かが座ると、少しだけ背筋を伸ばす。"
+    ]
   }
 ]
