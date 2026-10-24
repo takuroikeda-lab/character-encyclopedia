@@ -27,3 +27,7 @@ Upload `character_encyclopedia_legacy_import.zip` into the repository path:
 `imports/character_encyclopedia_legacy_import.zip`
 
 GitHub Actions will unpack the verified recent images and legacy archive into `public/`, commit them, and trigger Cloudflare automatically.
+
+## Validated daily import
+
+See [delivery contract and release gates](docs/character-import.md). Upload packages only to `imports/daily/`. The former unvalidated legacy extraction workflow is retired. Daily generation remains paused until a real package passes Actions and exact Cloudflare publication verification.

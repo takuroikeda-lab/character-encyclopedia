@@ -1,0 +1,21 @@
+name: Character integrity
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r scripts/requirements-import.txt
+      - run: python -m unittest discover -s scripts/tests -v
+      - run: python scripts/character_import.py
+      - name: Verify production on main
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: python scripts/verify_publication.py --url https://character-encyclopedia.link-link.workers.dev --attempts 30

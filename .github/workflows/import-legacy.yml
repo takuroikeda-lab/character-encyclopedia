@@ -1,51 +1,12 @@
-name: Import character assets
-
+name: Legacy import retired
 on:
-  push:
-    paths:
-      - "imports/character_encyclopedia_legacy_import.zip"
-      - "imports/character_encyclopedia_regenerated_import.zip"
-      - "imports/gemini_daily_import.zip"
   workflow_dispatch:
-
 permissions:
-  contents: write
-
+  contents: read
 jobs:
-  import:
+  explain:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Extract legacy import
-        if: hashFiles('imports/character_encyclopedia_legacy_import.zip') != ''
-        run: |
-          unzip -o imports/character_encyclopedia_legacy_import.zip -d .
-          rm imports/character_encyclopedia_legacy_import.zip
-
-      - name: Extract regenerated import
-        if: hashFiles('imports/character_encyclopedia_regenerated_import.zip') != ''
-        run: |
-          unzip -o imports/character_encyclopedia_regenerated_import.zip -d .
-          rm imports/character_encyclopedia_regenerated_import.zip
-          node scripts/apply-regenerated.mjs
-
-      - name: Extract Gemini daily import
-        if: hashFiles('imports/gemini_daily_import.zip') != ''
-        run: |
-          unzip -o imports/gemini_daily_import.zip -d .
-          rm imports/gemini_daily_import.zip
-          node scripts/apply-gemini-import.mjs
-
-      - name: Commit imported assets
-        run: |
-          git config user.name "character-encyclopedia-bot"
-          git config user.email "actions@users.noreply.github.com"
-          git add public imports
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
-            exit 0
-          fi
-          git commit -m "Import regenerated character images"
-          git push
+      - run: |
+          echo 'Direct archive extraction is retired. Use the validated daily package contract in docs/character-import.md.'
+          exit 1

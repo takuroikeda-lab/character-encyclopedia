@@ -1,0 +1,44 @@
+name: Validated character import
+on:
+  push:
+    branches: [main]
+    paths: ['imports/daily/*.zip']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: character-main-writer
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r scripts/requirements-import.txt
+      - name: Validate and import packages
+        run: |
+          python -m unittest discover -s scripts/tests -v
+          python scripts/character_import.py
+          for package in imports/daily/*.zip; do
+            [ -f "$package" ] || continue
+            python scripts/character_import.py --package "$package"
+            rm -- "$package"
+          done
+      - name: Commit all images and registry atomically
+        run: |
+          git config user.name character-encyclopedia-bot
+          git config user.email actions@users.noreply.github.com
+          git add public/characters public/characters.json public/numbering-audit.json imports/daily
+          if ! git diff --cached --quiet; then
+            git commit -m "Import validated character package"
+            # A concurrent main change rejects this push; never force or rebase generated data.
+            git push origin HEAD:main
+          fi
+      - name: Verify Cloudflare publication
+        run: python scripts/verify_publication.py --url https://character-encyclopedia.link-link.workers.dev --attempts 30
