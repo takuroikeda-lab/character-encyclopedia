@@ -84,7 +84,7 @@ class ImportTests(unittest.TestCase):
             git('push', 'origin', 'HEAD:main')
 
     def test_reserved_and_out_of_sequence(self):
-        for n in (19, 36, 38):
+        for n in (19, self.entry['id'] - 1, self.entry['id'] + 1):
             entry = copy.deepcopy(self.entry)
             entry['id'] = n
             self.reject(self.package(entry))
