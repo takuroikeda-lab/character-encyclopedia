@@ -592,5 +592,40 @@
       "曲がった腕が、迷子の道しるべになる。",
       "誰かが座ると、少しだけ背筋を伸ばす。"
     ]
+  },
+  {
+    "id": 38,
+    "slug": "todokeya",
+    "nameJa": "とどけや",
+    "nameEn": "TODOKEYA",
+    "animal": "ハト（伝書鳩）",
+    "motif": "伝書鳩・届かなかった手紙",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "canonical",
+    "emotionTheme": [
+      "静かな優しさ",
+      "諦めの中の希望",
+      "不器用な親切"
+    ],
+    "concept": "届かない想いも、どこかに届いている。",
+    "silhouette": "縦長で少し傾いたハトの胴体、極端に細い脚、片側に大きく垂れる翼と斜め掛けの小さな鞄。",
+    "asymmetry": "右肩の鞄だけが重く下がり、帽子のつばが片側にずれている。",
+    "personality": "無口でマイペース。言葉より行動で気持ちを運ぶ。",
+    "weakness": "迷子になりやすく、宛先を間違えることがある。",
+    "routine": "落とし物や手紙を拾い、見つけた誰かにそっと届ける。",
+    "comicIdeas": [
+      "道を間違えたが、迷子の誰かの居場所に辿り着く。",
+      "落ちていた封筒を届けると、宛先のない手紙だった。",
+      "届けられなかった手紙を、いつか届く場所に置いて帰る。"
+    ],
+    "plush": "約15cm、丸い胴体と細い脚、脱着できる帽子と手紙ポケット付き鞄。",
+    "globalHook": "Even the lost letters find a home.",
+    "images": {
+      "main": "/characters/038/main.webp",
+      "normal": "/characters/038/a.webp",
+      "graphic": "/characters/038/b.webp"
+    },
+    "imageSource": "generated 2026-10-27; A/B crops and main encyclopedia sheet from one source image"
   }
 ]
