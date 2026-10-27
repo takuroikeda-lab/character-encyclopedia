@@ -627,5 +627,41 @@
       "graphic": "/characters/038/b.webp"
     },
     "imageSource": "generated 2026-10-27; A/B crops and main encyclopedia sheet from one source image"
+  },
+  {
+    "id": 39,
+    "slug": "kobore",
+    "nameJa": "こぼれ",
+    "nameEn": "KOBORE",
+    "animal": "カワウソ",
+    "motif": "水辺のカワウソ・こぼれる魚の水滴",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "canonical",
+    "concept": "うまく持てないけど、分けてあげたい。",
+    "emotionTheme": [
+      "不器用な優しさ",
+      "喪失感",
+      "あきらめきれない親切"
+    ],
+    "silhouette": "小さな丸い耳と縦長のずんぐりした胴体、地面を引きずるほど長い片側の尻尾。両腕で抱えた魚が横方向へ大きく突き出す。",
+    "asymmetry": "右側だけに大きく流れる尻尾、片側に傾いた魚、左右で高さが違う足。",
+    "personality": "静かでマイペース。うっかり落とし物が多いが、拾い直して誰かに渡そうとする。",
+    "weakness": "大切なものほど手から滑り落ちる。失敗すると数秒固まる。",
+    "routine": "見つけたいいものを分けようとする。途中でこぼしても、残った分をそっと差し出す。",
+    "comicIdeas": [
+      "魚を見つけて大喜び→抱えて歩くうちに落とし、空の手で相手に会う。",
+      "こぼれた水を拭こうとする→乾いた地面で小さな芽が出ていることに気づく。",
+      "贈り物の魚を落としてしまう→相手は魚より、拾いに戻った姿を見て笑う。"
+    ],
+    "plush": "約15cm。ずんぐりした本体に長い非対称の尻尾。マグネットで着脱できる青い魚と水滴型チャーム。",
+    "globalHook": "Good things always spill somewhere.",
+    "graphicDirection": "Aはビビッドなコーラル単色背景・抑えた茶と生成り。Bはターコイズ、黒、オレンジの退色スクリーンプリント風。",
+    "imageSource": "generated 2026-10-28; first canonical publication of previously unregistered concept sketch",
+    "images": {
+      "main": "/characters/039/main.webp",
+      "normal": "/characters/039/a.webp",
+      "graphic": "/characters/039/b.webp"
+    }
   }
 ]
