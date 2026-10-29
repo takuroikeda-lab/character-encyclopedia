@@ -663,5 +663,40 @@
       "normal": "/characters/039/a.webp",
       "graphic": "/characters/039/b.webp"
     }
+  },
+  {
+    "id": 40,
+    "slug": "tomeguse",
+    "nameJa": "とめぐせ",
+    "nameEn": "TOMEGUSE",
+    "motif": "曲がったペーパークリップ",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "canonical",
+    "concept": "ほどけそうなものだけ、留めておく。",
+    "emotionTheme": [
+      "執着",
+      "諦め",
+      "小さな親切"
+    ],
+    "silhouette": "頭上に大きく偏った輪、片側だけ長い脚。細い針金のような全身。",
+    "asymmetry": "左右で大きさが異なる輪、片側に曲がった先端。",
+    "personality": "無口で几帳面。忘れられるのが怖い。",
+    "weakness": "自分自身の気持ちは留めておけない。",
+    "routine": "飛ばされそうなメモを黙って留める。",
+    "comicIdeas": [
+      "忘れようと書いた紙を留め、誰より長く忘れない。",
+      "風で飛ぶ予定表を守ったが締切は昨日だった。",
+      "落とし物のありがとうメモを拾って固まる。"
+    ],
+    "plush": "16cm。偏心ループは柔らかいワイヤー入り、メモ着脱式。",
+    "globalHook": "HOLD ON, EVEN WHEN BENT.",
+    "graphicDirection": "Aはターコイズの少色フラット2D。Bはオレンジ、黒、生成りのレトロなスクリーンプリント調。",
+    "imageSource": "generated 2026-10-29; registered 2026-10-30 after recovering unsynced assets",
+    "images": {
+      "main": "/characters/040/main.webp",
+      "normal": "/characters/040/a.webp",
+      "graphic": "/characters/040/b.webp"
+    }
   }
 ]
