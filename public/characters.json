@@ -698,5 +698,40 @@
       "normal": "/characters/040/a.webp",
       "graphic": "/characters/040/b.webp"
     }
+  },
+  {
+    "id": 41,
+    "slug": "hikaeme",
+    "nameJa": "ひかえめ",
+    "nameEn": "HIKAEME",
+    "motif": "小さなランプをつけた、片側だけ長いフードの人物",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "canonical",
+    "concept": "見つけてほしくないけど、誰かのために灯す。",
+    "emotionTheme": [
+      "静かな優しさ",
+      "距離感",
+      "さりげない親切"
+    ],
+    "silhouette": "頭上へ大きく伸びて片側に折れた長いフード。その先に小さなランプが下がり、細い脚と背中の植物が対比を作る。",
+    "asymmetry": "ランプは片側だけに垂れ、植物は反対側の背中に偏る。フードの左右の長さも異なる。",
+    "personality": "人のそばにそっと寄り添うが、自分は目立たない場所を選ぶ。",
+    "weakness": "目立つことが苦手で、ありがとうを受け取るのが照れくさい。",
+    "routine": "暗い道や気づかれない場所に、小さな灯りを置いていく。",
+    "comicIdeas": [
+      "誰も気づかない暗い場所を見つける。→誰にも見つからないまま、小さな灯りを置く。",
+      "帰ろうとする。→暗がりで休む小さな生き物を見つけ、もう少しだけ待つ。",
+      "『ありがとう』は届かない。→それでも灯りが誰かの足元を照らしている。"
+    ],
+    "plush": "約16cm。片側に曲がったフードの先のランプと、背中の植物を特徴にする。",
+    "globalHook": "SMALL LIGHTS FOR SOMEONE.",
+    "graphicDirection": "Aは生成りとマスタードを基調にした太い黒線のシンプルな2D。Bはティール・オレンジ・黒の退色スクリーンプリント風。",
+    "imageSource": "generated 2026-10-30; original full-body character",
+    "images": {
+      "main": "/characters/041/main.webp",
+      "normal": "/characters/041/a.webp",
+      "graphic": "/characters/041/b.webp"
+    }
   }
 ]
