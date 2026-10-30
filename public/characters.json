@@ -733,5 +733,39 @@
       "normal": "/characters/041/a.webp",
       "graphic": "/characters/041/b.webp"
     }
+  },
+  {
+    "id": 42,
+    "slug": "zuremono",
+    "nameJa": "ずれもの",
+    "nameEn": "ZUREMONO",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-10-31",
+    "motif": "古びたメトロノーム",
+    "concept": "自分の拍子はずれても、誰かの歩幅には合わせたい。",
+    "emotionTheme": [
+      "孤独",
+      "焦り",
+      "不器用な共感",
+      "小さな伴走"
+    ],
+    "silhouette": "左上に大きく突き出す曲がった振り子、右に傾いた三角形の胴体、長さの違う脚。",
+    "asymmetry": "振り子の重りは左だけ、右腕だけ長く、靴の角度と足の長さも異なる。",
+    "personality": "まじめで少し頑固。誰かが遅れていると自分も歩幅を落とす。",
+    "weakness": "周囲のテンポに合わせようとしすぎ、ひとりになると動けなくなる。",
+    "routine": "遅れている誰かの横で、気づかれない程度に拍子をゆっくり刻む。",
+    "comicIdeas": [
+      "急ぐみんなから遅れる。→でも、もっと遅いカタツムリに合わせる。",
+      "みんなの拍手とずれてしまう。→ひとりの子がその拍子で踊り始める。",
+      "ひとりになって針が止まる。→遠くの足音に気づき、また動き出す。"
+    ],
+    "plush": "約16cm。大きく曲がった振り子は柔らかい布芯で固定。左右非対称の足、オレンジの靴。",
+    "globalHook": "OFF BEAT. ON YOUR SIDE.",
+    "images": {
+      "main": "/characters/042/main.webp",
+      "normal": "/characters/042/a.webp",
+      "graphic": "/characters/042/b.webp"
+    }
   }
 ]
