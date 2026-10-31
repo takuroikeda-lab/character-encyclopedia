@@ -767,5 +767,40 @@
       "normal": "/characters/042/a.webp",
       "graphic": "/characters/042/b.webp"
     }
+  },
+  {
+    "id": 43,
+    "slug": "nemuriba",
+    "nameJa": "ねむりば",
+    "nameEn": "NEMURIBA",
+    "motif": "片側に傾いたハンモックと休憩所",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-01",
+    "concept": "がんばりすぎたら、ここで少し休んでいきなさい。",
+    "emotionTheme": [
+      "休息",
+      "許し",
+      "再出発の余白"
+    ],
+    "silhouette": "深いC字のハンモック本体、片側だけ高く伸びるY字の木製支柱、細い脚。上部の小鳥と吊り下がる灯りが縦方向のアクセント。",
+    "asymmetry": "支柱は片側だけ高く伸び、反対側は短い杭で支える。吊り下がる灯りと小鳥も片側に偏る。",
+    "personality": "おおらかで受け入れ上手。疲れた相手には何も聞かず休む場所を差し出す。",
+    "weakness": "休ませるのが好きすぎて、自分まで眠り込んでしまう。",
+    "routine": "疲れている誰かを見つけると、ハンモックを少し下げて座りやすくする。",
+    "comicIdeas": [
+      "疲れた旅人が立ち止まる。→『ちょっと寝ていく？』と場所を差し出す。",
+      "『5分だけ』のつもりで眠る。→気づくと日が暮れて、ねむりばも寝ている。",
+      "旅人が『もう少し進めそう』と立ち上がる。→ねむりばは何も言わず、揺れを止める。"
+    ],
+    "plush": "約16cm。深いハンモック型の胴体、片側だけ長い支柱、小鳥と灯りは安全性を考慮した固定式。",
+    "globalHook": "A SMALL PLACE TO REST, FOR ANYONE.",
+    "graphicDirection": "A: 太い黒線、生成りとティール、橙の小さなアクセント。B: Kustom Kulture/lowbrow/1960s American Popを抽象化した、黒・オレンジ・退色ティールのスクリーンプリント風。",
+    "imageSource": "generated 2026-11-01; A/B crops and main sheet from one original concept board",
+    "images": {
+      "main": "/characters/043/main.webp",
+      "normal": "/characters/043/a.webp",
+      "graphic": "/characters/043/b.webp"
+    }
   }
 ]
