@@ -802,5 +802,40 @@
       "normal": "/characters/043/a.webp",
       "graphic": "/characters/043/b.webp"
     }
+  },
+  {
+    "id": 44,
+    "slug": "utsuroi",
+    "nameJa": "うつろい",
+    "nameEn": "UTSUROI",
+    "motif": "雪だるまと砂時計が一体になった、少しずつ溶ける生きもの",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-02",
+    "concept": "変わっていくのも、悪くない。",
+    "emotionTheme": [
+      "うつろい",
+      "手放し",
+      "やさしい諦め"
+    ],
+    "silhouette": "上半身は横に垂れた雪のかたまり、下半身はくびれた砂時計の形。片側だけ枝が伸びる、ひしゃげた全身シルエット。",
+    "asymmetry": "雪の頭は左側だけ大きく溶け、右側だけに枝と赤い葉があり、左右の裾の溶け方も違う。",
+    "personality": "静かでおおらか。変化を受け入れるのが上手で、誰かの変化も急かさない。",
+    "weakness": "『このままでいたい』と思うと、ほんの少し固まってしまう。",
+    "routine": "自分が溶けた水を、乾いた鉢植えや小さな芽に分けてあげる。",
+    "comicIdeas": [
+      "枯れかけた鉢植えに出会う。→自分の溶けた雫で芽が少し起き上がる。",
+      "雪が降り、元の形に戻りそうになる。→でも枝の葉は手放さず、今の姿を選ぶ。",
+      "朝日で輪郭が崩れる。→その水が小さな芽を育て、別の形で残る。"
+    ],
+    "plush": "約16cm。やわらかい溶けかけの帽子状フォルム、刺繍の砂時計、固定式の枝と葉。着脱できる小さな雫チャームを検討。",
+    "globalHook": "THINGS CHANGE. AND THAT'S OK.",
+    "graphicDirection": "Aは生成り・墨黒・赤茶の少色フラット2D。BはKustom Kulture / lowbrow / 1960s American Popの抽象的な退色スクリーンプリント調で、赤茶・ティール・黒の配色。",
+    "imageSource": "generated 2026-11-02; A/B panels cropped from original illustrated concept sheet",
+    "images": {
+      "main": "/characters/044/main.webp",
+      "normal": "/characters/044/a.webp",
+      "graphic": "/characters/044/b.webp"
+    }
   }
 ]
