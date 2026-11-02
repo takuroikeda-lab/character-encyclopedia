@@ -837,5 +837,40 @@
       "normal": "/characters/044/a.webp",
       "graphic": "/characters/044/b.webp"
     }
+  },
+  {
+    "id": 45,
+    "slug": "kemuridamari",
+    "nameJa": "けむりだまり",
+    "nameEn": "KEMURIDAMARI",
+    "motif": "古びた灰皿と、片側に伸びる煙の吹きだまり",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-03",
+    "concept": "消えきらない想いが、ここにたまっている。",
+    "emotionTheme": [
+      "余韻",
+      "未練",
+      "やすらぎ"
+    ],
+    "silhouette": "低く丸い欠けた灰皿の胴体から、大きなS字の煙が左上に伸びる。短く太い脚と片側の旗が輪郭を作る。",
+    "asymmetry": "煙は片側だけにうねり、右側だけに旗が立ち、左側に傾いた細い棒と垂れる灰がある。",
+    "personality": "聞き上手で、相手の言いそびれた言葉を否定せず受け止める。",
+    "weakness": "感情をため込みすぎると重くなって、動けなくなる。",
+    "routine": "誰かの言い残したことをしばらく預かり、煙とともにそっと空へ返す。",
+    "comicIdeas": [
+      "言葉が出てこない人が座る。→けむりだまりは黙って待ち、煙だけがゆっくり形を変える。",
+      "いろんな気持ちがたまる。→煙がハートや星やぐちゃぐちゃな雲になり、本人は無表情。",
+      "雨で火が消える。→それでも誰かが話し始め、けむりだまりはまた静かに聞く。"
+    ],
+    "plush": "約16cm。楕円の胴体に柔らかな煙のS字シルエット。旗は布製、灰の垂れは刺繍。たばこ部分は着脱可能な装飾として検討。",
+    "globalHook": "A PLACE WHERE UNFINISHED THOUGHTS REST.",
+    "graphicDirection": "Aは生成り・墨黒・灰色・くすんだ橙。BはKustom Kulture / lowbrow / 1960s American Popの抽象的なタイポグラフィと、ティール・橙・生成りの退色印刷調。",
+    "imageSource": "generated 2026-11-03; A/B crops from a single original character board",
+    "images": {
+      "main": "/characters/045/main.webp",
+      "normal": "/characters/045/a.webp",
+      "graphic": "/characters/045/b.webp"
+    }
   }
 ]
