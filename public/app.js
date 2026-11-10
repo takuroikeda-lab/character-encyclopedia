@@ -14,8 +14,14 @@ const empty = document.querySelector("#empty");
 let characters = [];
 const SOURCE = document.body.dataset.source || "chatgpt";
 const DATA_URL = document.body.dataset.dataUrl || "/characters.json";
-const STORAGE_KEY = `character-encyclopedia:${SOURCE}:selected`;
-let selected = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"));
+// Shared across ChatGPT, Gemini and OFFICIAL on this browser.
+// Source-prefixed keys avoid collisions between independently numbered archives.
+const STORAGE_KEY = "character-encyclopedia:official-selection:v2";
+const keyFor = (c) => `${c._archive || SOURCE}:${c.slug || c.id}`;
+let selected;
+try { selected = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]")); }
+catch { selected = new Set(); }
+if (![...selected].every(x => typeof x === "string")) selected = new Set();
 
 const pad = (n) => String(n).padStart(3, "0");
 const esc = (value = "") => String(value)
@@ -26,7 +32,7 @@ const esc = (value = "") => String(value)
   .replaceAll("'", "&#039;");
 
 function persistSelection() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify([...selected].sort((a,b) => a-b)));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify([...selected].sort()));
 }
 
 function imageFor(c) {
@@ -115,7 +121,7 @@ function render() {
       .toLowerCase();
     const searchOK = haystack.includes(q);
     const statusOK = statusFilter.value === "ALL" || (c.status || "MAYBE") === statusFilter.value;
-    const selectedOK = !selectedOnly.checked || selected.has(c.id);
+    const selectedOK = !selectedOnly.checked || selected.has(keyFor(c));
     const maxId = characters.length ? Math.max(...characters.map(x => Number(x.id) || 0)) : 0;
     const latestOK = !latestOnly.checked || c.id >= Math.max(1, maxId - 6);
     return searchOK && statusOK && selectedOK && latestOK;
@@ -137,7 +143,7 @@ function render() {
 
   grid.innerHTML = list.map((c) => {
     const img = imageFor(c);
-    const isSelected = selected.has(c.id);
+    const isSelected = selected.has(keyFor(c));
     return `
       <article class="card ${isSelected ? "is-selected" : ""}" data-id="${c.id}" tabindex="0" role="button" aria-label="${esc(c.nameJa)} の詳細を開く">
         <div class="card-top">
@@ -154,7 +160,7 @@ function render() {
         <div class="name-en">${esc(c.nameEn)}</div>
         ${c.animal ? `<div class="meta">MOTIF · ${esc(c.animal)}</div>` : ""}
         ${c.concept ? `<p class="concept">${esc(c.concept)}</p>` : ""}
-        <button class="select-btn ${isSelected ? "active" : ""}" type="button" data-select="${c.id}" aria-pressed="${isSelected}">
+        <button class="select-btn ${isSelected ? "active" : ""}" type="button" data-select="${esc(keyFor(c))}" aria-pressed="${isSelected}">
           ${isSelected ? "✓ 正式候補に選択中" : "＋ 正式候補に追加"}
         </button>
       </article>
@@ -178,23 +184,31 @@ function render() {
 
   grid.querySelectorAll("[data-select]").forEach((button) => {
     button.addEventListener("click", () => {
-      const id = Number(button.dataset.select);
+      const id = button.dataset.select;
       if (selected.has(id)) selected.delete(id);
       else selected.add(id);
       persistSelection();
+      if (SOURCE === "official") characters = characters.filter(c => selected.has(keyFor(c)));
       render();
     });
   });
 }
 
 async function init() {
-  const res = await fetch(DATA_URL, { cache: "no-store" });
-  if (!res.ok) throw new Error("characters.json could not be loaded");
-  characters = await res.json();
-
-  const validIds = new Set(characters.map(c => c.id));
-  selected = new Set([...selected].filter(id => validIds.has(id)));
-  persistSelection();
+  if (SOURCE === "official") {
+    const urls = [["chatgpt", "/characters.json"], ["gemini", "/gemini/characters.json"]];
+    const responses = await Promise.all(urls.map(async ([archive, url]) => {
+      const response = await fetch(url, {cache:"no-store"});
+      if (!response.ok) throw new Error(url + " could not be loaded");
+      const data = await response.json();
+      return data.map(c => ({...c, _archive:archive}));
+    }));
+    characters = responses.flat().filter(c => selected.has(keyFor(c)));
+  } else {
+    const res = await fetch(DATA_URL, { cache: "no-store" });
+    if (!res.ok) throw new Error("characters.json could not be loaded");
+    characters = (await res.json()).map(c => ({...c, _archive:SOURCE}));
+  }
   render();
 }
 
@@ -210,7 +224,7 @@ clearSelection.addEventListener("click", () => {
 });
 
 exportSelection.addEventListener("click", () => {
-  const data = characters.filter(c => selected.has(c.id));
+  const data = characters.filter(c => selected.has(keyFor(c)));
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
