@@ -23,6 +23,43 @@ try { selected = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"));
 catch { selected = new Set(); }
 if (![...selected].every(x => typeof x === "string")) selected = new Set();
 
+const NAME_DRAFT_KEY = "character-encyclopedia:name-drafts:v1";
+let nameDrafts = {};
+try { nameDrafts = JSON.parse(localStorage.getItem(NAME_DRAFT_KEY) || "{}") || {}; }
+catch { nameDrafts = {}; }
+function applyNameDraft(c) {
+  const draft = nameDrafts[keyFor(c)];
+  if (!draft) return c;
+  return {...c, nameJa: draft.nameJa, nameEn: draft.nameEn};
+}
+function downloadNameDrafts() {
+  const edits = Object.entries(nameDrafts).map(([key, names]) => ({
+    key, nameJa:names.nameJa, nameEn:names.nameEn
+  }));
+  const blob = new Blob([JSON.stringify({version:1, edits}, null, 2)], {type:"application/json"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "character-name-revisions.json";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+function editNames(c) {
+  const nameJa = prompt("日本語名（正式IDは変わりません）", c.nameJa);
+  if (nameJa === null) return;
+  const ja = nameJa.trim();
+  if (!ja || ja.length > 80) { alert("日本語名は1〜80文字で入力してください。"); return; }
+  const nameEn = prompt("英語名", c.nameEn || "");
+  if (nameEn === null) return;
+  const en = nameEn.trim();
+  if (!en || en.length > 80) { alert("英語名は1〜80文字で入力してください。"); return; }
+  nameDrafts[keyFor(c)] = {nameJa:ja, nameEn:en};
+  try { localStorage.setItem(NAME_DRAFT_KEY, JSON.stringify(nameDrafts)); }
+  catch { alert("このブラウザには保存できませんでした。"); return; }
+  characters = characters.map(item => keyFor(item) === keyFor(c) ? applyNameDraft(item) : item);
+  render();
+  alert("名前の改訂案をこのブラウザに保存しました。正式反映にはJSONの登録が必要です。");
+}
 const pad = (n) => String(n).padStart(3, "0");
 const esc = (value = "") => String(value)
   .replaceAll("&", "&amp;")
@@ -160,6 +197,7 @@ function render() {
         <div class="name-en">${esc(c.nameEn)}</div>
         ${c.animal ? `<div class="meta">MOTIF · ${esc(c.animal)}</div>` : ""}
         ${c.concept ? `<p class="concept">${esc(c.concept)}</p>` : ""}
+        <button class="name-edit-btn" type="button" data-edit="${esc(keyFor(c))}" aria-label="${esc(c.nameJa)} の名前を編集">✎ NAME</button>
         <button class="select-btn ${isSelected ? "active" : ""}" type="button" data-select="${esc(keyFor(c))}" aria-pressed="${isSelected}">
           ${isSelected ? "✓ SELECTED" : "＋SELECT"}
         </button>
@@ -171,14 +209,21 @@ function render() {
     const id = Number(card.dataset.id);
     const character = characters.find(c => c.id === id);
     card.addEventListener("click", (e) => {
-      if (e.target.closest("[data-select]")) return;
+      if (e.target.closest("[data-select], [data-edit]")) return;
       openDetail(character);
     });
     card.addEventListener("keydown", (e) => {
-      if ((e.key === "Enter" || e.key === " ") && !e.target.closest("[data-select]")) {
+      if ((e.key === "Enter" || e.key === " ") && !e.target.closest("[data-select], [data-edit]")) {
         e.preventDefault();
         openDetail(character);
       }
+    });
+  });
+
+  grid.querySelectorAll("[data-edit]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const c = characters.find(item => keyFor(item) === button.dataset.edit);
+      if (c) editNames(c);
     });
   });
 
@@ -203,11 +248,11 @@ async function init() {
       const data = await response.json();
       return data.map(c => ({...c, _archive:archive}));
     }));
-    characters = responses.flat().filter(c => selected.has(keyFor(c)));
+    characters = responses.flat().filter(c => selected.has(keyFor(c))).map(applyNameDraft);
   } else {
     const res = await fetch(DATA_URL, { cache: "no-store" });
     if (!res.ok) throw new Error("characters.json could not be loaded");
-    characters = (await res.json()).map(c => ({...c, _archive:SOURCE}));
+    characters = (await res.json()).map(c => applyNameDraft({...c, _archive:SOURCE}));
   }
   render();
 }
@@ -234,6 +279,12 @@ exportSelection.addEventListener("click", () => {
   a.click();
   URL.revokeObjectURL(url);
 });
+
+const exportNameButton = document.createElement("button");
+exportNameButton.type = "button";
+exportNameButton.textContent = "名前の改訂案をJSON保存";
+exportNameButton.addEventListener("click", downloadNameDrafts);
+exportSelection.parentElement.appendChild(exportNameButton);
 
 init().catch((err) => {
   console.error(err);
