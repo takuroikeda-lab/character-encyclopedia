@@ -220,6 +220,7 @@ clearSelection.addEventListener("click", () => {
   if (!selected.size) return;
   selected.clear();
   persistSelection();
+  if (SOURCE === "official") characters = [];
   render();
 });
 
