@@ -872,5 +872,77 @@
       "normal": "/characters/045/a.webp",
       "graphic": "/characters/045/b.webp"
     }
+  },
+  {
+    "id": 46,
+    "slug": "nagareboshi",
+    "nameJa": "ながれぼし",
+    "nameEn": "NAGAREBOSHI",
+    "motif": "継ぎはぎの流れ星と願い袋",
+    "concept": "消えていくからこそ、ちょっとだけ願いをのせて。",
+    "emotionTheme": [
+      "儚さ",
+      "願い",
+      "旅立ち"
+    ],
+    "silhouette": "星形の頭、長く裂けた尾、細い脚",
+    "asymmetry": "片側だけ伸びる尾と吊り下げた小袋",
+    "personality": "のんびりした旅人。人の願いをこっそり運ぶ",
+    "weakness": "願いを背負いすぎると光が弱くなる",
+    "routine": "夜空を旅しながら小さな願いを集める",
+    "comicIdeas": [
+      "小さな願いを拾う",
+      "願い袋がいっぱいになって疲れる",
+      "消えかけても誰かの夜を照らす"
+    ],
+    "plush": "約16cm。柔らかな尾、刺繍の縫い目、願い袋",
+    "globalHook": "A TRAVELING STAR THAT CARRIES YOUR LITTLE WISHES.",
+    "status": "MAYBE",
+    "verified": true,
+    "images": {
+      "main": "/characters/046/main.webp",
+      "normal": "/characters/046/a.webp",
+      "graphic": "/characters/046/b.webp"
+    }
+  },
+  {
+    "id": 47,
+    "slug": "anaguma-no-hakasenu",
+    "nameJa": "アナグマのハカセヌ",
+    "nameEn": "HAKASENU",
+    "concept": "長すぎる胴体を持て余して隠れるのが下手だが、突風の日にはその長い身体を活かして小さな虫たちのための頑丈な風除けになってあげるアナグマ",
+    "emotionTheme": [
+      "隠れるのが下手な不条理（長すぎる胴体）",
+      "突風から虫たちを守る風除けの優しさ"
+    ],
+    "status": "MAYBE",
+    "verified": true,
+    "source": "gemini",
+    "images": {
+      "main": "/characters/047/main.webp"
+    },
+    "sourceId": "011",
+    "provenance": "gemini-import",
+    "motif": "アナグマ"
+  },
+  {
+    "id": 48,
+    "slug": "baku-no-yumekui",
+    "nameJa": "バクのユメクイ",
+    "nameEn": "YUMEKUI",
+    "concept": "鼻が掃除機の蛇腹のように長く垂れ下がりすぎてよく自分で踏んづけて転ぶが、誰かが悪夢にうなされていると、その長すぎる鼻先をそっと枕元へ伸ばし、悪い夢のモヤだけを静かに吸い取って代わりに自分が胸焼けを起こしているバク",
+    "emotionTheme": [
+      "長すぎる鼻の空回り（自分で踏む）",
+      "悪夢を吸い取って肩代わりする優しさ"
+    ],
+    "status": "MAYBE",
+    "verified": true,
+    "source": "gemini",
+    "images": {
+      "main": "/characters/048/main.webp"
+    },
+    "sourceId": "012",
+    "provenance": "gemini-import",
+    "motif": "バク"
   }
 ]

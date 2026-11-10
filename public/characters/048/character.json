@@ -1,0 +1,20 @@
+{
+  "id": 48,
+  "slug": "baku-no-yumekui",
+  "nameJa": "バクのユメクイ",
+  "nameEn": "YUMEKUI",
+  "concept": "鼻が掃除機の蛇腹のように長く垂れ下がりすぎてよく自分で踏んづけて転ぶが、誰かが悪夢にうなされていると、その長すぎる鼻先をそっと枕元へ伸ばし、悪い夢のモヤだけを静かに吸い取って代わりに自分が胸焼けを起こしているバク",
+  "emotionTheme": [
+    "長すぎる鼻の空回り（自分で踏む）",
+    "悪夢を吸い取って肩代わりする優しさ"
+  ],
+  "status": "MAYBE",
+  "verified": true,
+  "source": "gemini",
+  "images": {
+    "main": "/characters/048/main.webp"
+  },
+  "sourceId": "012",
+  "provenance": "gemini-import",
+  "motif": "バク"
+}

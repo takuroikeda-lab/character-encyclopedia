@@ -1,0 +1,32 @@
+{
+  "id": 46,
+  "slug": "nagareboshi",
+  "nameJa": "ながれぼし",
+  "nameEn": "NAGAREBOSHI",
+  "motif": "継ぎはぎの流れ星と願い袋",
+  "concept": "消えていくからこそ、ちょっとだけ願いをのせて。",
+  "emotionTheme": [
+    "儚さ",
+    "願い",
+    "旅立ち"
+  ],
+  "silhouette": "星形の頭、長く裂けた尾、細い脚",
+  "asymmetry": "片側だけ伸びる尾と吊り下げた小袋",
+  "personality": "のんびりした旅人。人の願いをこっそり運ぶ",
+  "weakness": "願いを背負いすぎると光が弱くなる",
+  "routine": "夜空を旅しながら小さな願いを集める",
+  "comicIdeas": [
+    "小さな願いを拾う",
+    "願い袋がいっぱいになって疲れる",
+    "消えかけても誰かの夜を照らす"
+  ],
+  "plush": "約16cm。柔らかな尾、刺繍の縫い目、願い袋",
+  "globalHook": "A TRAVELING STAR THAT CARRIES YOUR LITTLE WISHES.",
+  "status": "MAYBE",
+  "verified": true,
+  "images": {
+    "main": "/characters/046/main.webp",
+    "normal": "/characters/046/a.webp",
+    "graphic": "/characters/046/b.webp"
+  }
+}

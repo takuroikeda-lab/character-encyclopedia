@@ -1,0 +1,20 @@
+{
+  "id": 47,
+  "slug": "anaguma-no-hakasenu",
+  "nameJa": "アナグマのハカセヌ",
+  "nameEn": "HAKASENU",
+  "concept": "長すぎる胴体を持て余して隠れるのが下手だが、突風の日にはその長い身体を活かして小さな虫たちのための頑丈な風除けになってあげるアナグマ",
+  "emotionTheme": [
+    "隠れるのが下手な不条理（長すぎる胴体）",
+    "突風から虫たちを守る風除けの優しさ"
+  ],
+  "status": "MAYBE",
+  "verified": true,
+  "source": "gemini",
+  "images": {
+    "main": "/characters/047/main.webp"
+  },
+  "sourceId": "011",
+  "provenance": "gemini-import",
+  "motif": "アナグマ"
+}
