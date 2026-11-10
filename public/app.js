@@ -161,7 +161,7 @@ function render() {
         ${c.animal ? `<div class="meta">MOTIF · ${esc(c.animal)}</div>` : ""}
         ${c.concept ? `<p class="concept">${esc(c.concept)}</p>` : ""}
         <button class="select-btn ${isSelected ? "active" : ""}" type="button" data-select="${esc(keyFor(c))}" aria-pressed="${isSelected}">
-          ${isSelected ? "✓ 正式候補に選択中" : "＋ 正式候補に追加"}
+          ${isSelected ? "✓ SELECTED" : "＋SELECT"}
         </button>
       </article>
     `;
