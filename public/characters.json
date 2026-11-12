@@ -944,5 +944,69 @@
     "sourceId": "012",
     "provenance": "gemini-import",
     "motif": "バク"
+  },
+  {
+    "id": 49,
+    "slug": "rabbit-riot",
+    "nameJa": "ラビット・ライオット",
+    "nameEn": "RABBIT RIOT",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "canonical",
+    "motif": "パンク、スケート、ストリートアートを組み合わせた反骨心の強いウサギ",
+    "concept": "パンク、スケート、ストリートアートを組み合わせた、反骨心の強いウサギ。",
+    "emotionTheme": [
+      "反骨",
+      "高揚",
+      "焦燥",
+      "悪戯心"
+    ],
+    "silhouette": "長く非対称な耳、鋭い前傾姿勢",
+    "asymmetry": "耳の折れ方と角度、ピアスや安全ピンの配置、衣装の裂け方が左右で異なる。",
+    "personality": "自由奔放、仲間には義理堅い",
+    "weakness": "勢いでトラブルを起こす",
+    "routine": "スケート、ストリートアート、ギグ",
+    "comicIdeas": [
+      "いたずらな計画：仲間を驚かせようとスケートの登場演出を仕込む。→自分が先に驚いて転び、仲間の笑いをさらう。",
+      "スケートのごほうび：何度転んでも大技に挑む。→成功の瞬間より、仲間と分ける休憩のおやつで一番うれしそうになる。",
+      "仲間とのギグ：誰より派手に登場しようと張り切る。→緊張した仲間に気づき、隣でリズムを刻んで支える。"
+    ],
+    "plush": "補足案：約20cm。左右で折れ方の違う長い耳、刺繍の目と口、布製の黒いベスト。スタッズ・ピアス・チェーンは柔らかい布や刺繍で表現し、スケートボードは布製アクセサリーとして検討。",
+    "globalHook": "Punk / Skate / DIY Culture",
+    "graphicDirection": "太い黒線、かすれたスクリーンプリント風の質感。生成り・黒・ホットピンク・黄・ティール。mainは白系背景の全身、Aは橙とティールの放射背景で大技、Bはピンクの毛色で滑走するバリエーション。",
+    "imageSource": "User-supplied three original PNG attachments; lossless WebP conversion without cropping, resizing or image regeneration.",
+    "images": {
+      "main": "/characters/049/main.webp",
+      "normal": "/characters/049/a.webp",
+      "graphic": "/characters/049/b.webp"
+    },
+    "supplementation": {
+      "note": "元の設定JSONは未取得。ユーザー提示の設定を転記し、不足項目は今回補足した提案。comicIdeasは元の3タイトルを保持して2コマの展開を新規補足。",
+      "addedFields": [
+        "asymmetry",
+        "plush",
+        "graphicDirection"
+      ],
+      "expandedFields": [
+        "comicIdeas"
+      ],
+      "variantNote": "毛色、目、衣装などは3画像間で異なる。統一設定画や新規画像は制作していない。",
+      "schemaReferenceCommit": "b286a7e6351e9faaedcdb1a70594782bb0eae93a",
+      "verifiedMeaning": "このパッケージの画像とメタデータを検査済み。GitHub登録・公開完了を意味しない。"
+    },
+    "imageSources": {
+      "main.webp": {
+        "originalFilename": "パンクウサギのスケートボードアート-1.png",
+        "sha256": "cedf7eec64579c9293e980fc5715b9637bdfe1525062d3e7e461b07762ecb5f2"
+      },
+      "a.webp": {
+        "originalFilename": "パンク反逆ウサギのスケートボード大技-2.png",
+        "sha256": "738a0ee7e4f2707171b585e681c46cdb9fff2a80f16f2b1e221e78794473c3e4"
+      },
+      "b.webp": {
+        "originalFilename": "パンク・スケートうさぎの疾走-3.png",
+        "sha256": "c6dc725ee0ff3f0e6f2304bc1b895867d2684c8600a35cb65b70d76de050bcd6"
+      }
+    }
   }
 ]
