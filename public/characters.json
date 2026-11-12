@@ -974,7 +974,7 @@
     "plush": "補足案：約20cm。左右で折れ方の違う長い耳、刺繍の目と口、布製の黒いベスト。スタッズ・ピアス・チェーンは柔らかい布や刺繍で表現し、スケートボードは布製アクセサリーとして検討。",
     "globalHook": "Punk / Skate / DIY Culture",
     "graphicDirection": "太い黒線、かすれたスクリーンプリント風の質感。生成り・黒・ホットピンク・黄・ティール。mainは白系背景の全身、Aは橙とティールの放射背景で大技、Bはピンクの毛色で滑走するバリエーション。",
-    "imageSource": "User-supplied three original PNG attachments; lossless WebP conversion without cropping, resizing or image regeneration.",
+    "imageSource": "User-supplied PNG attachments; main replaced with user-supplied encyclopedia sheet on 2026-11-12. Lossless WebP conversion without cropping or resizing. A/B images retained.",
     "images": {
       "main": "/characters/049/main.webp",
       "normal": "/characters/049/a.webp",
@@ -992,12 +992,13 @@
       ],
       "variantNote": "毛色、目、衣装などは3画像間で異なる。統一設定画や新規画像は制作していない。",
       "schemaReferenceCommit": "b286a7e6351e9faaedcdb1a70594782bb0eae93a",
-      "verifiedMeaning": "このパッケージの画像とメタデータを検査済み。GitHub登録・公開完了を意味しない。"
+      "verifiedMeaning": "このパッケージの画像とメタデータを検査済み。GitHub登録・公開完了を意味しない。",
+      "mainReplacementNote": "図鑑メイン画像のみ差し替え。画像に描かれたA/B・設定・漫画・ぬいぐるみはシート内の内容であり、既存A/Bファイルや設定JSONは変更していない。シート内のコミット番号817f67f・公開確認表示は画像の一部で、実際の登録証跡として検証していない。"
     },
     "imageSources": {
       "main.webp": {
-        "originalFilename": "パンクウサギのスケートボードアート-1.png",
-        "sha256": "cedf7eec64579c9293e980fc5715b9637bdfe1525062d3e7e461b07762ecb5f2"
+        "originalFilename": "c56a0874-b180-4520-8ecd-aa0fd7d077de.png",
+        "sha256": "3b60fa07763280f9d684e04638c4838e2d22cf2460718baf4bc8da1d68f93eee"
       },
       "a.webp": {
         "originalFilename": "パンク反逆ウサギのスケートボード大技-2.png",
