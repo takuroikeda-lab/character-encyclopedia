@@ -1009,5 +1009,40 @@
         "sha256": "c6dc725ee0ff3f0e6f2304bc1b895867d2684c8600a35cb65b70d76de050bcd6"
       }
     }
+  },
+  {
+    "id": 50,
+    "slug": "gatta-beat",
+    "nameJa": "ガタビート",
+    "nameEn": "GATTA BEAT",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-13",
+    "motif": "左右で大きさが違うスピーカーを持つ、古びたポータブルカセットラジカセ",
+    "concept": "ずれたビートで、となりを歩く。",
+    "emotionTheme": [
+      "反骨",
+      "孤独",
+      "不器用な連帯"
+    ],
+    "silhouette": "ずんぐりした横長のラジカセ型の体、左に巨大スピーカー、右に小さなスピーカー、短い脚と橙色のスニーカー。",
+    "asymmetry": "左右で異なるスピーカーの大きさ、左に曲がったアンテナ、右肩のティール色のストラップ。",
+    "personality": "頑固なストリートミュージシャン。実は人のことをさりげなく気づかう。",
+    "weakness": "地面がデコボコだとリズムがずれてしまう。",
+    "routine": "ひとりで歩く誰かを見かけると、その歩調に合わせて少しずつビートをゆっくりにする。",
+    "comicIdeas": [
+      "にぎやかな群れが去る。→ひとりのカタツムリの隣で静かなビートを奏でる。",
+      "大きなドラムソロに挑む。→デコボコ道でリズムがずれて面白い拍子になる。",
+      "電池が切れそうになる。→仲間が手拍子をして、そのビートで一緒に歩く。"
+    ],
+    "plush": "約18cm。箱型の柔らかな胴体、大小の刺繍スピーカー、布製アンテナ、ティール色のストラップと橙色の靴。",
+    "globalHook": "OFF BEAT. WALK TOGETHER. / Punk, DIY Culture, Street Music, Community Solidarity",
+    "graphicDirection": "生成り・墨黒・橙・ティールにピンクの文字。太い線と退色したスクリーンプリント。A通常版は静止した全身、Bは街を歩くポスター。",
+    "imageSource": "Generated 2026-11-13 from original boombox concept; reference #049 used only for sheet layout. Main is full sheet; A/B are matching upper left/right panels. Footer records pre-registration production state, not live publication status.",
+    "images": {
+      "main": "/characters/050/main.webp",
+      "normal": "/characters/050/a.webp",
+      "graphic": "/characters/050/b.webp"
+    }
   }
 ]
