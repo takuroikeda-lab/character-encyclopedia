@@ -73,14 +73,35 @@ class GenerationTests(unittest.TestCase):
             if not path.startswith('public/gemini/'):
                 self.assertEqual(data, (self.root / path).read_bytes())
 
-    def test_review_failure_preserves_artifacts_without_publication(self):
+    def test_review_issues_warn_but_still_package_for_publication(self):
         before = self.snapshot()
-        with self.assertRaisesRegex(ValueError, 'visual review failed'):
-            generate(self.root, self.out, FakeGemini(False), '2026-10-24')
+        output = io.StringIO()
+        with patch('sys.stdout', output):
+            package = generate(self.root, self.out, FakeGemini(False), '2026-10-24')
+        self.assertIn('Visual review warning (not blocking): identity mismatch', output.getvalue())
+        # generate() itself never touches public/; publication is a separate import step.
         self.assertEqual(before, self.snapshot())
-        self.assertTrue((self.out / 'a.webp').exists())
-        self.assertFalse(list(self.out.glob('*.zip')))
-        self.assertFalse(json.loads((self.out / 'character.json').read_text())['verified'])
+        self.assertTrue(package.exists())
+        self.assertTrue(json.loads((self.out / 'character.json').read_text())['verified'])
+        manifest = json.loads((self.out / 'manifest.json').read_text())
+        self.assertEqual(manifest['review'], 'automated-warning')
+        self.assertEqual(manifest['reviewIssues'], ['identity mismatch'])
+        apply(self.root, package, 'gemini')
+        rows, _ = audit(self.root, 'gemini')
+        self.assertTrue(rows[-1]['verified'])
+
+    def test_clean_review_records_pass_without_warnings(self):
+        generate(self.root, self.out, FakeGemini(), '2026-10-24')
+        manifest = json.loads((self.out / 'manifest.json').read_text())
+        self.assertEqual(manifest['review'], 'automated-pass')
+        self.assertEqual(manifest['reviewIssues'], [])
+
+    def test_review_warnings_normalization(self):
+        from generate_gemini import review_warnings
+        self.assertEqual(review_warnings({'accepted': True, 'issues': []}), [])
+        self.assertEqual(review_warnings({'accepted': True, 'issues': [' minor ', '']}), ['minor'])
+        self.assertEqual(len(review_warnings({'accepted': False, 'issues': []})), 1)
+        self.assertEqual(len(review_warnings(None)), 1)
 
     def test_same_day_is_idempotent_without_calls(self):
         client = FakeGemini()

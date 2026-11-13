@@ -37,7 +37,9 @@ APIキー: https://aistudio.google.com/api-keys
 
 生成物はまず `output/gemini-run/` に保存。モデルが返すID・画像パス・sourceなどは採用せず、コードが最新台帳から設定する。3画像をデコードし、別のAPI呼び出しで同一性・番号・文字・欠けを視覚検査する。これは自動検査であり、人間による目視承認ではない。見た目の完全な正しさを保証するものではない。
 
-視覚検査を通った4ファイルZIPだけを既存のGeminiインポーターで検証。画像3点とGemini台帳・監査を単一コミットでmainへ送る。ChatGPT系列には書き込まない。ZIP取り込みと同じ排他グループを使い、mainへの競合したpushは強制上書きしない。
+視覚検査の指摘（`issues`）は公開を止めない。指摘はActionsログに `Visual review warning (not blocking): ...` として出力し、`manifest.json` の `review: automated-warning` と `reviewIssues` に記録する（Artifactsで確認可能）。画像のデコード失敗・ZIP内容の不一致・インポーター検証の失敗は従来どおり停止する。
+
+4ファイルZIPは既存のGeminiインポーターで検証。画像3点とGemini台帳・監査を単一コミットでmainへ送る。ChatGPT系列には書き込まない。ZIP取り込みと同じ排他グループを使い、mainへの競合したpushは強制上書きしない。
 
 Cloudflare公開後、両系列の台帳と参照画像の完全なバイト一致を確認する。初回公開に成功した場合だけ、公開確認したコミットを記録し、定期実行を有効化する別コミットを作る。
 

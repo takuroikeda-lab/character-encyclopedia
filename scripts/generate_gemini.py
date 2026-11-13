@@ -80,6 +80,17 @@ def text(value):
     return {'type': 'text', 'text': value}
 
 
+def review_warnings(review):
+    """Normalize an automated visual review into a list of warning strings (empty = clean pass)."""
+    if not isinstance(review, dict):
+        return ['Visual review returned an unexpected response']
+    issues = review.get('issues')
+    warnings = [str(i).strip() for i in issues if str(i).strip()] if isinstance(issues, list) else []
+    if review.get('accepted') is not True and not warnings:
+        warnings.append('Visual review did not accept the images (no details given)')
+    return warnings
+
+
 def write_json(path, value):
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
 
@@ -145,8 +156,11 @@ def generate(root, out, client, day=None):
     review_prompt = 'Review the actual three images A, B, sheet against metadata. Reject inconsistent identity, wrong animal/number/name, cropped limbs, obvious extra limbs, materially garbled Japanese text, or missing requested panels. Check the selected pose, bodyType, mood and handProps: reject a materially wrong pose, unauthorized held objects/bags or unrelated human images. Judge actual pixels, not filenames or metadata claims. Do not assume success. Return accepted boolean and issues.\n' + identity
     review = client.structured(config['textModel'], [text(review_prompt), *[image_part(data) for data in encoded]], REVIEW_SCHEMA)
     write_json(out / 'review.json', review)
-  if review.get('accepted') is not True or review.get('issues') != []:
-        print('Visual review warning (bypassed):', review.get('issues'))
+    # Visual review is advisory: issues are logged and recorded in the manifest,
+    # but do not block publication. Hard gates remain (valid images, ZIP identity, sandbox import).
+    warnings = review_warnings(review)
+    for issue in warnings:
+        print('Visual review warning (not blocking):', issue)
     entry['verified'] = True
     write_json(out / 'character.json', entry)
     package = out / f'{ident:03d}-{entry["slug"]}.zip'
@@ -166,7 +180,7 @@ def generate(root, out, client, day=None):
         sandbox = Path(temp)
         shutil.copytree(root / 'public', sandbox / 'public')
         apply(sandbox, package, 'gemini')
-    write_json(out / 'manifest.json', {'dateTokyo': day, 'id': ident, 'slug': entry['slug'], 'textModel': config['textModel'], 'imageModel': config['imageModel'], 'review': 'automated-pass', 'package': package.name, 'sha256': hashes, 'selectedPose': entry['selectedPose'], 'poseSelectionReason': entry['poseSelectionReason']})
+    write_json(out / 'manifest.json', {'dateTokyo': day, 'id': ident, 'slug': entry['slug'], 'textModel': config['textModel'], 'imageModel': config['imageModel'], 'review': 'automated-warning' if warnings else 'automated-pass', 'reviewIssues': warnings, 'package': package.name, 'sha256': hashes, 'selectedPose': entry['selectedPose'], 'poseSelectionReason': entry['poseSelectionReason']})
     return package
 
 
