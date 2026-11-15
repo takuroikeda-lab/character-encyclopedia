@@ -1044,5 +1044,40 @@
       "normal": "/characters/050/a.webp",
       "graphic": "/characters/050/b.webp"
     }
+  },
+  {
+    "id": 51,
+    "slug": "detour-cone",
+    "nameJa": "ヨリミチ・コーン",
+    "nameEn": "DETOUR CONE",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-15",
+    "motif": "左へ大きく曲がった橙色の交通コーンと、右側のティール色の道しるべ",
+    "concept": "遠回りにも、居場所はある。",
+    "emotionTheme": [
+      "反骨",
+      "迷い",
+      "さりげない親切"
+    ],
+    "silhouette": "先端が左へ大きく曲がった細長いコーン、二本の生成り色の帯、幅広い黒いゴム台座のスカート、細い脚と左右違う生成り色のブーツ。",
+    "asymmetry": "左へ折れた先端と右側だけのティール色の布ペナント。左右で違うブーツ。",
+    "personality": "ちょっと反骨的でマイペース。でも困っている人はそっと守る。",
+    "weakness": "自分がどこへ行きたいのかは、はっきり言えない。",
+    "routine": "迷っている人に、思いがけない安全な回り道をさりげなく指し示す。",
+    "comicIdeas": [
+      "急ぐ群れの前に水たまり。→小さな虫に安全な回り道を教える。",
+      "曲がった先端が変な方向を示す。→その先に隠れた花を見つける。",
+      "通行止めでひとりになる。→いつのまにか仲間が集まり、路上のギグが始まる。"
+    ],
+    "plush": "約20cm。曲がった円錐形のやわらかい本体、刺繍の目、幅広いゴム台座風の布スカート、布製ペナントと左右違うブーツ。",
+    "globalHook": "DETOUR / ALTERNATIVE ROUTE / PUNK / QUIET KINDNESS",
+    "graphicDirection": "橙・ティール・墨黒・生成りとピンクの文字。太い輪郭とかすれたスクリーンプリント。Aは通常全身、Bは街を歩くポスター。",
+    "imageSource": "Generated 2026-11-15. Original traffic-cone concept; #050 used only as layout reference. Main is the complete encyclopedia sheet; A/B exported from matching upper left/right panels. Footer points to the site for live registration status.",
+    "images": {
+      "main": "/characters/051/main.webp",
+      "normal": "/characters/051/a.webp",
+      "graphic": "/characters/051/b.webp"
+    }
   }
 ]
