@@ -1079,5 +1079,40 @@
       "normal": "/characters/051/a.webp",
       "graphic": "/characters/051/b.webp"
     }
+  },
+  {
+    "id": 52,
+    "slug": "night-moth",
+    "nameJa": "ナイト・モス",
+    "nameEn": "NIGHT MOTH",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-16",
+    "motif": "左右で色と傷みが異なる大きな三角形の翼と、消えかけた電球を持つ夜の蛾",
+    "concept": "消えかけの灯りも、見捨てない。",
+    "emotionTheme": [
+      "反骨",
+      "未練",
+      "小さな希望"
+    ],
+    "silhouette": "巨大な三角形の翼をブランケットのように広げた、小さく丸い墨黒の体。生成りの顔、黄色い眠たげな目、細い脚と赤茶の編み上げブーツ。",
+    "asymmetry": "左翼は橙色で下端が大きく裂け、右翼はティール色のスカラップ縁。左右の翼に生成りの目玉模様が一つずつあり、左の触角だけが鋭く折れ曲がる。",
+    "personality": "静かで頑固な夜の旅人。取り残された誰かのそばに黙って居続ける。",
+    "weakness": "小さな灯りのちらつきにも気を取られ、つい寄り道してしまう。",
+    "routine": "ほとんど消えかけた電球を集め、それらに灯をともして帰り道をつくる。",
+    "comicIdeas": [
+      "ちらつく看板を追って路地へ。→その下で迷っていた人に出会い、一緒に帰る。",
+      "古いランプを直そうとするが、もう点かない。→小さなホタルたちが集まって灯りを貸してくれる。",
+      "破れた翼を隠そうとする。→雨の中、小さな虫の傘としてその翼を広げる。"
+    ],
+    "plush": "約18cm。左右異色の大きな翼、橙色側だけ裂けた形の布端、折れた触角と生成りのマフラー、刺繍の眠たげな目。電球は柔らかな布製アクセサリー。",
+    "globalHook": "UNDERGROUND / NIGHT CULTURE / DIY / QUIET KINDNESS",
+    "graphicDirection": "墨黒・生成り・橙・ティール・赤茶とピンクの文字。Aは通常全身、Bは夜の街を歩く退色スクリーンプリント風ポスター。",
+    "imageSource": "Generated 2026-11-16 with built-in image generation. Original moth concept; #051 used only for sheet layout. Main is full encyclopedia sheet; A/B exported from matching upper panels. Footer refers to site for live registration status.",
+    "images": {
+      "main": "/characters/052/main.webp",
+      "normal": "/characters/052/a.webp",
+      "graphic": "/characters/052/b.webp"
+    }
   }
 ]
