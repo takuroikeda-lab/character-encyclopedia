@@ -1114,5 +1114,75 @@
       "normal": "/characters/052/a.webp",
       "graphic": "/characters/052/b.webp"
     }
+  },
+  {
+    "id": 53,
+    "slug": "rustsaw",
+    "nameJa": "サビノコ",
+    "nameEn": "RUSTSAW",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-14",
+    "motif": "ノコギリ型の長い頭を持つ、廃材を改造するパンクなリビルド職人",
+    "concept": "壊れたモノに、もう一度火を入れる。",
+    "emotionTheme": [
+      "興奮",
+      "探究",
+      "執着"
+    ],
+    "silhouette": "ノコギリ型の横長頭部、細い胴体、極端に大きい左右非対称の靴",
+    "asymmetry": "片足はワークブーツ、もう片足はローラースケート。片側に長いスカーフ。",
+    "personality": "廃材を集め、独自の改造で復活させる少し無鉄砲な職人。",
+    "weakness": "完成前に次の改造に手を出し、作業が終わらない。",
+    "routine": "廃材を拾う、分解する、組み直す、夜な夜なテストラン。",
+    "comicIdeas": [
+      "いいモノ発見：捨てられたエンジンを拾う→その場で改造を始める。",
+      "再始動の瞬間：ガラクタが動かない→大きな音とともに突然走り出す。",
+      "仲間とのガレージ：増やしたの？→そのうち全部動かすよ！"
+    ],
+    "plush": "約20cm。フェルト製のノコギリ歯、柔らかいオレンジ色のスカーフ、左右異なる靴。",
+    "globalHook": "Rebuild / Upcycle / Garage / Punk / DIY / Zine",
+    "graphicDirection": "生成り・橙・ティール・黒・マゼンタのスクリーンプリント調。A全身、main横長図鑑シート、Bギグポスター。",
+    "imageSource": "Newly generated composite sheet 2026-11-14; A and B cropped from same composite for consistent design. 2026-11-16: printed ID corrected #051→#053 and registration-status text updated on main only; artwork, colours and layout unchanged (lossless WebP).",
+    "images": {
+      "main": "/characters/053/main.webp",
+      "normal": "/characters/053/a.webp",
+      "graphic": "/characters/053/b.webp"
+    }
+  },
+  {
+    "id": 54,
+    "slug": "valve-viper",
+    "nameJa": "バルブ・ヴァイパー",
+    "nameEn": "VALVE VIPER",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-15",
+    "motif": "工業用バルブとパイプを背負ったヘビの改造屋",
+    "concept": "錆びたパイプに、もう一度、圧をかける。",
+    "emotionTheme": [
+      "反骨",
+      "焦燥",
+      "高揚"
+    ],
+    "silhouette": "長い蛇体、巨大な赤いバルブ、片側の機械クロー、ローラースケート",
+    "asymmetry": "左右で異なる手足の装備、片側の圧力計",
+    "personality": "壊れた配管を勝手に改造する騒がしい発明家。",
+    "weakness": "勢い余って圧力を上げすぎ、いつも自分で後始末する。",
+    "routine": "廃材集め、改造、夜のパイプライン走行",
+    "comicIdeas": [
+      "廃パーツを見つける→最高の部品だと喜ぶ",
+      "圧力を上げる→爆発して煤だらけになる",
+      "夜の試走→街の配管から音楽が鳴る"
+    ],
+    "plush": "赤いフェルト製バルブと長い蛇体、片腕のクローを再現",
+    "globalHook": "Industrial / Factory / Punk / DIY / Skate / Noise",
+    "graphicDirection": "生成り・赤・黄・ティール・マゼンタ・黒のスクリーンプリント調。A全身、main横長図鑑シート、Bは「PIPE NOISE PUNK!!」のポスター。",
+    "imageSource": "single composite generated 2026-11-15, A and B cropped from same image. 2026-11-16: printed ID corrected #052→#054 and registration-status text updated on main only; artwork, colours and layout unchanged (lossless WebP).",
+    "images": {
+      "main": "/characters/054/main.webp",
+      "normal": "/characters/054/a.webp",
+      "graphic": "/characters/054/b.webp"
+    }
   }
 ]
