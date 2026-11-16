@@ -1184,5 +1184,40 @@
       "normal": "/characters/054/a.webp",
       "graphic": "/characters/054/b.webp"
     }
+  },
+  {
+    "id": 55,
+    "slug": "kettle-runner",
+    "nameJa": "ヤカン・ランナー",
+    "nameEn": "KETTLE RUNNER",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-17",
+    "motif": "欠けた生成り色のホーローヤカン、横に長い注ぎ口と大きな輪の取っ手",
+    "concept": "冷めた夜にも、一杯ぶんの熱を。",
+    "emotionTheme": [
+      "反骨",
+      "照れ",
+      "小さなぬくもり"
+    ],
+    "silhouette": "ずんぐりしたヤカンの体から左へ長い注ぎ口が伸び、黒い輪の取っ手は高く右に傾く。細い脚に大きな赤い編み上げブーツ。",
+    "asymmetry": "左の長い注ぎ口と右に傾く取っ手、右目の下のティール色の布パッチ。橙色のフタは斜めになり、ホーローはところどころ欠けている。",
+    "personality": "反骨的で口数は少ないが、急ぎながらも誰かのために最後の一杯を残しておく。",
+    "weakness": "ありがとうと言われると照れて沸騰し、中の湯をあふれさせてしまう。",
+    "routine": "夜遅くまで働く人のところへ、走って温かいお茶を届ける。",
+    "comicIdeas": [
+      "疲れた夜勤の人を急いで通り過ぎる。→戻ってきて、温かいお茶をそっと注ぐ。",
+      "友人にありがとうと言われる。→照れて蒸気が噴き出し、言葉が出てこない。",
+      "残ったお茶はほんの一杯。→小さな二つのカップに半分ずつ分ける。"
+    ],
+    "plush": "約18cm。生成り色の丸い本体と長い注ぎ口、柔らかな輪の取っ手、斜めの橙色のフタ、刺繍の欠けとティール色のパッチ、赤い靴。",
+    "globalHook": "PUNK / NIGHT SHIFT / DIY / SMALL WARMTH",
+    "graphicDirection": "生成り・墨黒・橙・ティール・赤とピンクの文字。A通常全身、Bは夜勤の街を走るスクリーンプリント風ポスター。",
+    "imageSource": "Generated 2026-11-17 with built-in image generation. Original kettle concept; #052 used only as layout reference. Main is full encyclopedia sheet; A/B exported from matching upper panels. Footer refers to site for live registration status.",
+    "images": {
+      "main": "/characters/055/main.webp",
+      "normal": "/characters/055/a.webp",
+      "graphic": "/characters/055/b.webp"
+    }
   }
 ]
