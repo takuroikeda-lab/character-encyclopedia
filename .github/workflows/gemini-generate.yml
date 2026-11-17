@@ -8,8 +8,14 @@ on:
         default: preflight
         options: [preflight, preview, publish, publish-and-enable, disable-daily]
   schedule:
-    # 07:00 Asia/Tokyo. GitHub schedules may be delayed.
-    - cron: '0 22 * * *'
+    # GitHub may delay or silently drop scheduled runs, especially at the top of the hour
+    # (2026-11-17 the single 22:00 UTC run never started). Primary run plus backups, all
+    # off the hour. generate_gemini.py exits without any API call once today's (Asia/Tokyo)
+    # character exists, so backup runs after a successful day cost no Gemini API usage.
+    - cron: '13 22 * * *'   # 07:13 JST primary
+    - cron: '47 23 * * *'   # 08:47 JST backup
+    - cron: '37 1 * * *'    # 10:37 JST backup
+    - cron: '23 4 * * *'    # 13:23 JST backup
   push:
     branches: [main]
     paths: ['scripts/generate_gemini.py', 'scripts/gemini_run_state.py', 'scripts/tests/test_gemini_generation.py', '.github/workflows/gemini-generate.yml', 'config/gemini-automation.json', 'prompts/gemini-creative-brief.md']
