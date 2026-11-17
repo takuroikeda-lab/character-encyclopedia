@@ -1219,5 +1219,40 @@
       "normal": "/characters/055/a.webp",
       "graphic": "/characters/055/b.webp"
     }
+  },
+  {
+    "id": 56,
+    "slug": "zine-crab",
+    "nameJa": "ジン・クラブ",
+    "nameEn": "ZINE CRAB",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-18",
+    "motif": "手作りのジンを配る、巨大な縞模様の片ばさみを持つカニ",
+    "concept": "言えないことは、折って渡す。",
+    "emotionTheme": [
+      "反骨",
+      "気まずさ",
+      "小さな勇気"
+    ],
+    "silhouette": "背の低い横広の赤い甲羅と、片側だけ巨大なクリーム色のはさみ。四本の短い黒い脚に小さな生成りのスニーカー。",
+    "asymmetry": "左の巨大なクリーム色のはさみに赤い斜め縞。右の小さなティール色のはさみでジンを持つ。墨黒の甲羅の右側に橙色のテープ補修、左に傾いた目の軸。",
+    "personality": "本音はぶっきらぼうで対面ではそっけない。でも匿名のジンには誰かを励ますやさしい言葉を書く。",
+    "weakness": "自分のジンを強く握りすぎて折り目をつけ、しわだらけにしてしまう。",
+    "routine": "夜明けにジンを折って製本し、ひとりでいる人のもとへそっと置く。",
+    "comicIdeas": [
+      "あいさつしたいのに言葉が出ない。→伝えたい気持ちを折ったジンにしてそっと置く。",
+      "新しいジンができて誇らしげ。→大きなはさみでつぶしてしまい、紙がハートの形になる。",
+      "誰もジンを持っていかない。→一冊を折り、小さな虫の雨宿りの屋根にする。"
+    ],
+    "plush": "約16cm。低く横広の甲羅、クリーム色と赤の縞模様の大ばさみ、ティール色の小ばさみ、四本の短い脚、刺繍の黄色い目、布製の小さなジン。",
+    "globalHook": "ZINE / DIY / PUNK / QUIET COURAGE",
+    "graphicDirection": "赤・クリーム・墨黒・ティール・橙とピンクの文字。A通常全身、Bはジンを配るカニのスクリーンプリント風ポスター。",
+    "imageSource": "Generated 2026-11-18 with built-in image generation. Original fiddler-crab concept; #055 used only for grid reference. Two targeted edits corrected leg counts before export. Main is full encyclopedia sheet; A/B exported from matching upper panels. Footer refers to site for live registration status.",
+    "images": {
+      "main": "/characters/056/main.webp",
+      "normal": "/characters/056/a.webp",
+      "graphic": "/characters/056/b.webp"
+    }
   }
 ]
