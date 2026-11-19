@@ -1254,5 +1254,40 @@
       "normal": "/characters/056/a.webp",
       "graphic": "/characters/056/b.webp"
     }
+  },
+  {
+    "id": 57,
+    "slug": "encore-crow",
+    "nameJa": "アンコール・カラス",
+    "nameEn": "ENCORE CROW",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-19",
+    "motif": "ライブの余韻を集め、終演後も小さな応援を残すカラス",
+    "concept": "誰もいなくても、拍手は残る。",
+    "emotionTheme": [
+      "反骨",
+      "名残惜しさ",
+      "小さな応援"
+    ],
+    "silhouette": "極端に長いクリーム色のくちばし、後ろへ流れる三本の冠羽、細長い墨黒の体。大きな橙色の片翼と細い脚、赤茶色の靴。",
+    "asymmetry": "大きな橙色の翼に生成りの縫いパッチ。反対側は小さな墨黒の翼でつぶれた缶を持つ。くちばし先端には黒いテープ、ティール色のマフラーは片側へ長く流れる。",
+    "personality": "無愛想でひねくれ者に見えるが、誰かの表現を心から応援している熱心な観客。",
+    "weakness": "感動すると終演後も止まらず拍手してしまう。",
+    "routine": "誰もいない会場で残った反響を集め、出演者への励ましのメモをそっと置く。",
+    "comicIdeas": [
+      "ライブが終わり、みんな帰っていく。→カラスだけはまだ拍手している。",
+      "緊張する演者によかったと伝えたい。→うまく言えず、励ましの小さなメモを差し出す。",
+      "空き缶のマイクは鳴らない。→小さな虫が缶をたたき、一緒にリズムを刻む。"
+    ],
+    "plush": "約20cm。長い布製のくちばしと先端の黒いテープ風刺繍、三本の冠羽、橙色の大きな翼と生成りのパッチ、小さな缶の布アクセサリー、ティール色のマフラー。",
+    "globalHook": "UNDERGROUND / LIVE MUSIC / DIY / SMALL APPLAUSE",
+    "graphicDirection": "墨黒・生成り・橙・ティール・赤茶とピンクの文字。A通常全身、Bはライブの余韻を残すスクリーンプリント風ポスター。",
+    "imageSource": "Generated 2026-11-19 with built-in image generation after one transient connection failure. Original crow concept; #056 used only as grid reference. Main is full sheet; A/B exported from matching upper panels. Footer refers to site for live registration status.",
+    "images": {
+      "main": "/characters/057/main.webp",
+      "normal": "/characters/057/a.webp",
+      "graphic": "/characters/057/b.webp"
+    }
   }
 ]
