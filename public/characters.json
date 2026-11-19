@@ -1289,5 +1289,40 @@
       "normal": "/characters/057/a.webp",
       "graphic": "/characters/057/b.webp"
     }
+  },
+  {
+    "id": 58,
+    "slug": "thread-trail",
+    "nameJa": "イトマイ",
+    "nameEn": "THREAD TRAIL",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-20",
+    "motif": "大きな糸巻きの殻を背負い、ほどけたものをつなぎ直すカタツムリ",
+    "concept": "ほどけても、またつなげる。",
+    "emotionTheme": [
+      "反骨",
+      "迷い",
+      "つなぎ直す勇気"
+    ],
+    "silhouette": "低く長い生成り色のカタツムリの体に巨大な丸い糸巻き。手足はなく、二本の細い目の触角と地面を引く橙色の糸が輪郭をつくる。",
+    "asymmetry": "左の目の触角だけが外へ大きく曲がる。糸巻きには橙色の渦とティール色の補修パッチ。首元には赤茶色のバンダナ。",
+    "personality": "頑固で寡黙な修繕職人。壊れたものをあきらめずにつなぎ直す。",
+    "weakness": "自分の通った糸を巻き取りながら進み、気づくと出発点へ戻ってしまう。",
+    "routine": "破れた旗や布を縫い、迷った誰かのために橙色の糸を道しるべとして残す。",
+    "comicIdeas": [
+      "破れたギグの旗が垂れている。→イトマイが黙って二つの布を縫いつなぐ。",
+      "糸を巻き取っていい道ができたと思う。→気づくと最初の場所へ戻っている。",
+      "夕暮れに小さな虫が迷う。→橙色の糸をたどり、無事に帰り道を見つける。"
+    ],
+    "plush": "約18cm。生成り色の長い本体、橙色の糸を巻いた大きな円筒形の殻、刺繍の渦とティール色のパッチ、左右非対称の目の触角、赤茶色のバンダナ。",
+    "globalHook": "DIY / REPAIR / SLOW CULTURE / RECONNECT",
+    "graphicDirection": "生成り・墨黒・橙・ティール・赤茶とピンクの文字。A通常全身、Bはゆっくりと道をつなぐスクリーンプリント風ポスター。",
+    "imageSource": "Generated 2026-11-20 with built-in image generation. Original spool-snail concept; #057 used only for grid reference. Main is full sheet; A/B exported from matching upper panels. Footer refers to site for live registration status.",
+    "images": {
+      "main": "/characters/058/main.webp",
+      "normal": "/characters/058/a.webp",
+      "graphic": "/characters/058/b.webp"
+    }
   }
 ]
