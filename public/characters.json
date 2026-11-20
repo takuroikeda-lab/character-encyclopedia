@@ -1324,5 +1324,40 @@
       "normal": "/characters/058/a.webp",
       "graphic": "/characters/058/b.webp"
     }
+  },
+  {
+    "id": 59,
+    "slug": "basement-mole",
+    "nameJa": "アナバ",
+    "nameEn": "BASEMENT MOLE",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-21",
+    "motif": "地下に小さなステージをつくり、見落とされがちな表現者に出番を用意するモグラ",
+    "concept": "地面の下にも、出番はある。",
+    "emotionTheme": [
+      "反骨",
+      "探究心",
+      "小さな居場所"
+    ],
+    "silhouette": "ずんぐりした墨黒の体に、極端に長い生成り色の尖った鼻とピンクの鼻先。巨大な片手と短い脚、橙色の作業靴。",
+    "asymmetry": "左の巨大なシャベル形の手には三本の黒い爪、右は小さな手。ゴーグルは左が丸い琥珀色、右が四角いティール色。ティール色の前掛けに橙色の補修パッチと破れた裾。",
+    "personality": "頑固で内向的だが探究心が強い。地道な準備で誰かの居場所をつくる職人。",
+    "weakness": "掘ることに夢中になりすぎて、自分が入ってきた入口を忘れてしまう。",
+    "routine": "地下に小さなライブスペースを開き、見過ごされがちな出演者に一度きりでも出番を用意する。",
+    "comicIdeas": [
+      "小さな演奏家に出る場所がない。→アナバが小さな地下ステージを紹介する。",
+      "夢中で地下を掘り進む。→戻ろうとして、入口がどちらだったか分からなくなる。",
+      "新しい会場に誰もいない。→小さな虫たちが観客として集まる。"
+    ],
+    "plush": "約18cm。長い柔らかな鼻、左右で形と色が違うゴーグル、左だけ大きな三本爪の手、橙色の補修パッチ付き前掛け、橙色の作業靴。",
+    "globalHook": "UNDERGROUND / DIY VENUE / GARAGE / SMALL BELONGING",
+    "graphicDirection": "墨黒・生成り・ティール・橙・琥珀色とピンクの文字。A通常全身、Bは小さな地下会場をつくるモグラのスクリーンプリント風ポスター。",
+    "imageSource": "Generated 2026-11-21 with built-in image generation. Original mole concept; #058 used only for grid reference. Main is full sheet; A/B exported from matching upper panels. Footer refers to site for live registration status.",
+    "images": {
+      "main": "/characters/059/main.webp",
+      "normal": "/characters/059/a.webp",
+      "graphic": "/characters/059/b.webp"
+    }
   }
 ]
