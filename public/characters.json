@@ -1359,5 +1359,150 @@
       "normal": "/characters/059/a.webp",
       "graphic": "/characters/059/b.webp"
     }
+  },
+  {
+    "id": 60,
+    "slug": "neon-slug",
+    "nameJa": "ネオン・ナメクジ",
+    "nameEn": "NEON SLUG",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-18",
+    "motif": "スケートとホットロッドを愛する、スピード中毒のナメクジレーサー",
+    "concept": "夜のアスファルトを這いまわる、スピード中毒のナメクジレーサー！",
+    "emotionTheme": [
+      "高揚",
+      "不敵",
+      "焦り",
+      "中毒",
+      "ときどき虚脱"
+    ],
+    "silhouette": "低くうねる車輪付きの体、二本の長い眼柄、背中の巨大な排気管",
+    "asymmetry": "左右で大きさと表情が違う眼、片側だけの破れマント",
+    "personality": "改造が大好きな反骨タイプ",
+    "weakness": "塩と乾燥。速さを求めすぎて自分の粘液でスリップする",
+    "routine": "夜の路地で廃パーツを拾いエンジンを吹かす",
+    "comicIdeas": [
+      "今日は最速で走るぞ。→自分の粘液でスリップ。",
+      "これを付ければもっと速い。→排気管が重すぎて動けない。",
+      "レースのあとも興奮。→そのまま寝落ち。"
+    ],
+    "plush": "柔らかなネオン色のボディ、取り外せる排気管と大きな眼柄",
+    "globalHook": "SKATE / HOT ROD / DIY / SPEED",
+    "graphicDirection": "紫・ネオンイエロー・橙・鉄色。A通常全身、Bはマゼンタとイエローのスクリーンプリント風ポスター。",
+    "imageSource": "2026-11-18 image generation. Delivered in COUNTERCULTURE_4CHARACTERS_20261118-21.zip (neon_slug_20261118_pending.zip); provisional ZIP number not used. Main sheet: only the provisional number/registration labels were replaced with #060 and a site-reference footer; artwork unchanged.",
+    "images": {
+      "main": "/characters/060/main.webp",
+      "normal": "/characters/060/a.webp",
+      "graphic": "/characters/060/b.webp"
+    }
+  },
+  {
+    "id": 61,
+    "slug": "bad-antenna",
+    "nameJa": "バッド・アンテナ",
+    "nameEn": "BAD ANTENNA",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-19",
+    "motif": "壊れた送信塔に宿る、海賊ラジオの反骨キャラクター",
+    "concept": "ノイズで世界をかき回す、反骨の電波塔。",
+    "emotionTheme": [
+      "高揚",
+      "挑発",
+      "不満",
+      "孤独"
+    ],
+    "silhouette": "尖った三角塔、極端に細い四肢、巨大メガホン",
+    "asymmetry": "左右で形の違う腕と目、片側だけのパラボラアンテナ",
+    "personality": "騒がしく挑発的だが弱者の味方",
+    "weakness": "受信が苦手で他人の話を最後まで聞けない",
+    "routine": "廃工場の屋上から勝手放送する",
+    "comicIdeas": [
+      "勝手放送を始める。→誰も聞いていない。",
+      "受信はニガテ。→自分の声でかき消す。",
+      "ノイズも仲間。→街の音が番組になる。"
+    ],
+    "plush": "三角塔を柔らかい布で作り、メガホンと靴を大きくする",
+    "globalHook": "PIRATE RADIO / DIY / NOISE / STREET",
+    "graphicDirection": "マゼンタ・ティール・黄・墨黒。A通常全身、Bは稲妻とロゴのパンク調ポスター。",
+    "imageSource": "2026-11-19 image generation. Delivered in COUNTERCULTURE_4CHARACTERS_20261118-21.zip (bad_antenna_20261119_pending.zip); provisional ZIP number not used. Main sheet: only the provisional number/registration labels were replaced with #061 and a site-reference footer; artwork unchanged.",
+    "images": {
+      "main": "/characters/061/main.webp",
+      "normal": "/characters/061/a.webp",
+      "graphic": "/characters/061/b.webp"
+    }
+  },
+  {
+    "id": 62,
+    "slug": "spike-siren",
+    "nameJa": "スパイク・サイレン",
+    "nameEn": "SPIKE SIREN",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-20",
+    "motif": "壊れた非常警報機が街の自由を守るために走り出した反骨の警報塔",
+    "concept": "鳴らせ、俺の非常事態。",
+    "emotionTheme": [
+      "興奮",
+      "挑発",
+      "苛立ち",
+      "連帯"
+    ],
+    "silhouette": "縦長の警報灯ヘッドと極端に長い脚、巨大な片側スパイク",
+    "asymmetry": "左右で違う腕の装甲と片側だけの巨大スパイク",
+    "personality": "騒がしく皮肉屋だが困っている仲間を見捨てない",
+    "weakness": "静かな場所が苦手で、緊張すると誤報を鳴らす",
+    "routine": "サイレンを鳴らしながら街を疾走する",
+    "comicIdeas": [
+      "遅刻の仲間をサイレンで起こす。→街中が目覚めてしまう。",
+      "トラックに勝負を挑む。→音だけで先にゴールする。",
+      "静かに励まそうとする。→小さな声でも警報が鳴る。"
+    ],
+    "plush": "柔らかな長脚と赤い警報灯ヘッド、取り外せる旗",
+    "globalHook": "PUNK / SKATE / HOT ROD / ALARM",
+    "graphicDirection": "赤・黄・ロイヤルブルー・墨黒。A通常全身、Bは放射状の爆発とロゴのパンク調ポスター。",
+    "imageSource": "2026-11-20 ImageGen original sheet, cropped without regenerating character. Delivered in COUNTERCULTURE_4CHARACTERS_20261118-21.zip (spike_siren_20261120_pending.zip); provisional ZIP number not used. Main sheet: only the provisional number/registration labels were replaced with #062 and a site-reference footer; artwork unchanged.",
+    "images": {
+      "main": "/characters/062/main.webp",
+      "normal": "/characters/062/a.webp",
+      "graphic": "/characters/062/b.webp"
+    }
+  },
+  {
+    "id": 63,
+    "slug": "scrap-ghost",
+    "nameJa": "ガラクタ・ゴースト",
+    "nameEn": "SCRAP GHOST",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-21",
+    "motif": "廃材や壊れたパーツの走りたい気持ちが寄り集まった、ストリートの亡霊",
+    "concept": "捨てられたモノたちが、いまも走りたがってる。",
+    "emotionTheme": [
+      "いたずら心",
+      "高揚",
+      "反骨",
+      "ノスタルジー"
+    ],
+    "silhouette": "布で翻る三角形の上半身、極端に長い脚、大きなスパナ腕。",
+    "asymmetry": "左右の手の大きさ、ヘッドライトの種類、破れ方、布の長さが異なる。",
+    "personality": "ガラクタにも魂があると信じる熱く自由なリサイクル・レベル。",
+    "weakness": "きれいすぎる新品のモノを見ると少ししょんぼりする。",
+    "routine": "廃車場や高架下でパーツを集め、スケボーで街を流しながら仲間を増やす。",
+    "comicIdeas": [
+      "いいモノみつけた！→捨てられたタイヤを宝物として持ち帰る。",
+      "新品は…ちょっと…→ピカピカの新車の前で萎縮する。",
+      "まだ、走れる！→ガラクタを組み立てたスケボーで疾走。"
+    ],
+    "plush": "チェック柄の柔らかいマント、左右異色のランプ目、片腕の大きな布製スパナ。",
+    "globalHook": "UPCYCLE / STREET / DIY / ROAD CULTURE",
+    "graphicDirection": "紫・黄・赤・チェッカー白黒。A通常全身、Bは炎とロゴのジャンク・ストリートポスター。",
+    "imageSource": "2026-11-21 image generation. Delivered in COUNTERCULTURE_4CHARACTERS_20261118-21.zip (scrap_ghost_20261121_pending.zip); provisional ZIP number not used. Main sheet: only the provisional number/registration labels were replaced with #063 and a site-reference footer; artwork unchanged. A trimmed 18px at bottom to drop provisional label strip.",
+    "images": {
+      "main": "/characters/063/main.webp",
+      "normal": "/characters/063/a.webp",
+      "graphic": "/characters/063/b.webp"
+    }
   }
 ]
