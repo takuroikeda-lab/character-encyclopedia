@@ -1504,5 +1504,40 @@
       "normal": "/characters/063/a.webp",
       "graphic": "/characters/063/b.webp"
     }
+  },
+  {
+    "id": 64,
+    "slug": "rattle-key",
+    "nameJa": "ガチャリ",
+    "nameEn": "RATTLE KEY",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-22",
+    "motif": "閉ざされた場所の前で鳴り、忘れられたコミュニティの場へ人を誘う古いカギ",
+    "concept": "閉じたままなら、鳴らしてみる。",
+    "emotionTheme": [
+      "反骨",
+      "好奇心",
+      "飛び込む勇気"
+    ],
+    "silhouette": "大きく開いた六角リングの頭と、長く曲がった真鍮色の軸。右向きの三つの歯、細い二本の脚、橙色の大きなスニーカー。",
+    "asymmetry": "三つの歯の大きさが不揃いで中央だけティール色のテープ。左には長い黒い鎖が垂れ、軸は片側へ曲がる。",
+    "personality": "いたずら好きで場を動かすムードメーカー。知らない場所にもひるまず、まずは鳴らしてみる。",
+    "weakness": "鳴らしすぎてうるさくなり、何を言いたかったか自分でも忘れてしまう。",
+    "routine": "閉ざされた扉の前でガチャガチャと鳴り、中の人に声をかけ、忘れられた場所へみんなを誘う。",
+    "comicIdeas": [
+      "閉じた会場の前でためらう。→ガチャリと鳴らすと友人が扉を開ける。",
+      "にぎやかに会場へ飛び込む。→あいさつを忘れ、みんなと笑う。",
+      "使われていなかった部屋を見つける。→みんなでジン交換の小さな場所をつくる。"
+    ],
+    "plush": "約20cm。中央が開いた六角リングの頭、曲がった軸と右側の三つの歯、中央のテープ風パッチ、柔らかな黒い鎖、橙色の靴。腕はつけない。",
+    "globalHook": "PUNK / DIY / COMMUNITY / OPEN DOORS",
+    "graphicDirection": "真鍮色・生成り・墨黒・ティール・橙とピンクの文字。A通常全身、Bはコミュニティの扉を開くカギのスクリーンプリント風ポスター。",
+    "imageSource": "Generated 2026-11-22 with built-in image generation. Original living-key concept; #059 used only for grid reference. Main is full sheet; A/B exported from matching upper panels. Footer refers to site for live registration status.",
+    "images": {
+      "main": "/characters/064/main.webp",
+      "normal": "/characters/064/a.webp",
+      "graphic": "/characters/064/b.webp"
+    }
   }
 ]
