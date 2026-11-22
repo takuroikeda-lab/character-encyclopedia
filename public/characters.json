@@ -1539,5 +1539,40 @@
       "normal": "/characters/064/a.webp",
       "graphic": "/characters/064/b.webp"
     }
+  },
+  {
+    "id": 65,
+    "slug": "dent-rhino",
+    "nameJa": "ヘコミ",
+    "nameEn": "DENT RHINO",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-23",
+    "motif": "うっかりぶつかってへこませても、自分の失敗を認めて直すサイ",
+    "concept": "ぶつかったぶん、直していく。",
+    "emotionTheme": [
+      "反骨",
+      "気まずさ",
+      "やり直す勇気"
+    ],
+    "silhouette": "横に広く低い灰色の体と、額へ大きく反り返る生成り色のフック状の角。短い二本の脚に墨黒の作業靴。",
+    "asymmetry": "片耳に安全ピン。橙色の作業前掛けにはティール色の四角い補修パッチと破れた裾。片手には小さな木製の修理用マレット。",
+    "personality": "やんちゃで無鉄砲だが、失敗を認め、壊したものは必ず直す。",
+    "weakness": "幅の感覚があまく、ドアの枠や看板などによくぶつかってしまう。",
+    "routine": "街のベンチや棚、看板を直し、ついでに少し広くして誰かが使いやすいよう手を加える。",
+    "comicIdeas": [
+      "狭い入口にぶつかって枠をへこませる。→失敗を認めて、前より少し広く直す。",
+      "小さすぎるベンチを直す。→板を足して、小さな友達も一緒に座れるようにする。",
+      "看板の修理が完成する。→うっかり角で傾けてしまい、今度は丁寧に直す。"
+    ],
+    "plush": "約18cm。横広の灰色の体、大きく反り返った柔らかな角、橙色の前掛けとティール色のパッチ、墨黒の靴。安全ピンは布と刺繍、マレットも柔らかな布で表現する。",
+    "globalHook": "PUNK / DIY REPAIR / SECOND CHANCES / MAKE ROOM",
+    "graphicDirection": "灰色・生成り・橙・ティール・墨黒とピンクの文字。A通常全身、Bはやり直す勇気を持ったサイのスクリーンプリント風ポスター。",
+    "imageSource": "Generated 2026-11-23 with built-in image generation. Original rhino concept; #064 used only for grid reference. Main is full sheet; A/B exported from matching upper panels. Footer refers to site for live registration status.",
+    "images": {
+      "main": "/characters/065/main.webp",
+      "normal": "/characters/065/a.webp",
+      "graphic": "/characters/065/b.webp"
+    }
   }
 ]
