@@ -1574,5 +1574,40 @@
       "normal": "/characters/065/a.webp",
       "graphic": "/characters/065/b.webp"
     }
+  },
+  {
+    "id": 66,
+    "slug": "patch-bat",
+    "nameJa": "トジメ",
+    "nameEn": "PATCH BAT",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-24",
+    "motif": "破れた手作りライブのバナーを、縫い目を見せたまま直すパンクなコウモリ",
+    "concept": "ほつれたままじゃ、終われない。",
+    "emotionTheme": [
+      "反骨",
+      "気まずさ",
+      "つながる勇気"
+    ],
+    "silhouette": "巨大な紫の三角耳、小さく丸い墨黒の体。広い波形の紫の翼二枚と、黄色いブーツを履いた短い二本の脚。",
+    "asymmetry": "左耳に生成り色の補修ステッチ。右の翼に黄色い四角いパッチ。翼にも生成り色の縫い目が走る。",
+    "personality": "はっきりものを言い、行動的で明るい。繕った跡を隠さず、人と人をつなぐことに熱い。",
+    "weakness": "熱中しすぎて、自分の生成り色のスカーフまでバナーに縫い付けてしまう。",
+    "routine": "夜のDIY音楽ショーのバナーを修繕し、あえて縫い目を見せて残す。",
+    "comicIdeas": [
+      "破れたショーのバナーを見つける。→縫い目を見せながらつなぎ直す。",
+      "修理が完成して得意になる。→スカーフまで縫い付けたことに気づく。",
+      "初参加の子が緊張している。→一緒に繕ったバナーを持ち、人の輪へ迎える。"
+    ],
+    "plush": "約18cm。紫の巨大な耳と柔らかな波形の翼、丸い墨黒の体、生成り色のスカーフ、黄色いブーツ。補修の縫い目と黄色いパッチは刺繍と布で表現する。",
+    "globalHook": "PUNK / VISIBLE MENDING / DIY / CONNECTION",
+    "graphicDirection": "紫・マスタードイエロー・生成り・墨黒、ピンクの文字。A通常全身、Bは縫い目でつながる勇気を描くスクリーンプリント風ポスター。",
+    "imageSource": "Generated 2026-11-24 with built-in image generation. Original bat concept; #065 used only for grid reference. Main is full sheet; A/B exported from matching upper panels. Footer refers to site for live registration status.",
+    "images": {
+      "main": "/characters/066/main.webp",
+      "normal": "/characters/066/a.webp",
+      "graphic": "/characters/066/b.webp"
+    }
   }
 ]
