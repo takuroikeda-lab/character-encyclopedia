@@ -1609,5 +1609,40 @@
       "normal": "/characters/066/a.webp",
       "graphic": "/characters/066/b.webp"
     }
+  },
+  {
+    "id": 67,
+    "slug": "magnet-misfit",
+    "nameJa": "ヒキヨセ",
+    "nameEn": "MAGNET MISFIT",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-25",
+    "motif": "落とし物の缶バッジや安全ピンを引き寄せて、持ち主や仲間につなぐU字磁石",
+    "concept": "はぐれたものにも、引力を。",
+    "emotionTheme": [
+      "反骨",
+      "さびしさ",
+      "出会う勇気"
+    ],
+    "silhouette": "下に開いた大きな赤い逆U字の磁石。中央の隙間が見え、生成り色の二つの極から細い黒い脚が伸び、ティール色の大きなブーツを履く。腕はない。",
+    "asymmetry": "向かって左の極に斜めの黒い電気テープ、右の極には生成り色の塗装の欠け。",
+    "personality": "にぎやかで好奇心いっぱい。ひとりでいる人が、仲間と出会えるよう願う。",
+    "weakness": "ボトルキャップを引き寄せすぎて身動きできなくなったり、金属フェンスにくっついて動けなくなる。",
+    "routine": "小さなDIYのライブのあと、落ちた缶バッジや安全ピンを集め、落とし物ボードに掛けておく。",
+    "comicIdeas": [
+      "落ちていたバッジを見つける。→落とし物ボードを通じて持ち主に戻る。",
+      "ボトルキャップを引き寄せて得意になる。→フェンスにもくっつき動けなくなる。",
+      "初めてライブに来た人がひとりでいる。→落とし物ボードのバッジをきっかけに同じ音楽が好きな仲間と出会う。"
+    ],
+    "plush": "約20cm。赤い逆U字の体と中央の開いた隙間、生成り色の極、黒いテープの刺繍、細い脚とティール色のブーツ。腕はつけない。",
+    "globalHook": "PUNK / LOST & FOUND / DIY / BELONGING",
+    "graphicDirection": "赤・生成り・ティール・墨黒、黄色のアクセント。A通常全身、BはFIND YOUR PULLを掲げたスクリーンプリント風ポスター。",
+    "imageSource": "Generated 2026-11-25 with built-in image generation. Original horseshoe-magnet concept; #066 used only for grid reference. Main is full sheet; A/B exported from matching upper panels. Footer refers to site for live registration status.",
+    "images": {
+      "main": "/characters/067/main.webp",
+      "normal": "/characters/067/a.webp",
+      "graphic": "/characters/067/b.webp"
+    }
   }
 ]
