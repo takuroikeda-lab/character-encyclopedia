@@ -1644,5 +1644,40 @@
       "normal": "/characters/067/a.webp",
       "graphic": "/characters/067/b.webp"
     }
+  },
+  {
+    "id": 68,
+    "slug": "sideways-skunk",
+    "nameJa": "スキマ",
+    "nameEn": "SIDEWAYS SKUNK",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-26",
+    "motif": "騒がしい場所で疲れた仲間のため、ひと息つける静かな場所をつくるスカンク",
+    "concept": "騒がしい夜にも、スキマを。",
+    "emotionTheme": [
+      "反骨",
+      "照れ",
+      "ひと息つく勇気"
+    ],
+    "silhouette": "低く長い洋ナシ形の黒い体と、体より大きく巻き上がる尾。尾には生成り色の太いジグザグ模様が一本。短い二本の脚に黄色いスニーカー。",
+    "asymmetry": "左耳だけにティール色の布パッチ。生成り色の頬毛と短いティール色の袖なしデニムベスト。",
+    "personality": "にぎやかな音楽も好きだが、疲れた仲間の様子に気づくと静かな場所へそっと誘う。少しひねくれた反骨の気持ちも持つ。",
+    "weakness": "自分の風船が割れる音に驚き、照れて大きな尾がさらに膨らんでしまう。",
+    "routine": "ライブ会場の裏などに手作りのQUIET CORNERの看板を掛け、クッションを持ち込み、静かに過ごせる場所をつくる。",
+    "comicIdeas": [
+      "大音量に仲間が疲れてしまう。→スキマが静かなクッションの場所へ案内する。",
+      "勇気を出して静かな場所の看板を掛ける。→風船が割れ、驚いて尾が膨らむ。",
+      "ひとりで静かに休む。→仲間も隣に座り、話さず一緒に休む。"
+    ],
+    "plush": "約20cm。黒い体、太い生成り色のジグザグ一本が入った大きく柔らかな巻き尾、頬毛、左耳のティール色パッチ、同色のベスト、黄色いスニーカー。",
+    "globalHook": "PUNK / QUIET CORNER / DIY / BELONGING",
+    "graphicDirection": "墨黒・生成り・ティール・黄色、ピンクの文字。A通常全身、BはMAKE A LITTLE SPACEを掲げるスクリーンプリント風ポスター。",
+    "imageSource": "Generated 2026-11-26 with built-in image generation. Original skunk concept; #067 used only for grid reference. Main is full sheet; A/B exported from matching upper panels. Footer refers to site for live registration status.",
+    "images": {
+      "main": "/characters/068/main.webp",
+      "normal": "/characters/068/a.webp",
+      "graphic": "/characters/068/b.webp"
+    }
   }
 ]
