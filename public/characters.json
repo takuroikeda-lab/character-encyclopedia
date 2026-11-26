@@ -1679,5 +1679,40 @@
       "normal": "/characters/068/a.webp",
       "graphic": "/characters/068/b.webp"
     }
+  },
+  {
+    "id": 69,
+    "slug": "fold-rebel",
+    "nameJa": "オリトビ",
+    "nameEn": "FOLD REBEL",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-27",
+    "motif": "紙に小さな願いを書き、着地が不格好でも次の場所へ飛び出す折り紙の紙飛行機",
+    "concept": "折れ目の先へ、飛んでみる。",
+    "emotionTheme": [
+      "反骨",
+      "不安",
+      "踏み出す勇気"
+    ],
+    "silhouette": "大きな生成り色の三角の紙飛行機。長いノーズと左右の広い折り翼、黒い折り目。二本の細い黒い脚に橙色のスニーカー。腕はない。",
+    "asymmetry": "片方の翼に赤いジグザグの手書き線。後ろの翼先に小さなティール色のテープ。",
+    "personality": "せっかちで楽観的な挑戦者。まずやってみることと、初めての挑戦が大好き。",
+    "weakness": "雨に濡れると紙が柔らかくなり、しんなりして飛べなくなる。",
+    "routine": "スケートコートの古いジンの山に登り、水たまりを飛び越える。濡れたら物干しロープで乾かし、また飛んでみる。",
+    "comicIdeas": [
+      "小さなジャンプをためらう。→思い切って飛び、鼻から着地しても笑う。",
+      "雨に濡れて飛べなくなる。→物干しロープで乾かして再挑戦する。",
+      "初挑戦を怖がる仲間に出会う。→一緒に小さなジャンプから始める。"
+    ],
+    "plush": "約20cm。生成り色の三角の折り紙飛行機、黒い折り目の刺繍、赤いジグザグ、後ろの翼先のティール色のテープ、二本の脚と橙色の靴。腕はつけない。",
+    "globalHook": "PUNK / ZINE / FIRST TRY / KEEP FOLDING",
+    "graphicDirection": "生成り・墨黒・橙・ティール・赤、ピンクの文字。A通常全身、BはTRY THE NEXT FOLDのスクリーンプリント風ポスター。",
+    "imageSource": "Generated 2026-11-27 with built-in image generation. Original paper-airplane concept; #068 used only for grid reference. Main is full sheet; A/B exported from matching upper panels. Footer refers to site for live registration status.",
+    "images": {
+      "main": "/characters/069/main.webp",
+      "normal": "/characters/069/a.webp",
+      "graphic": "/characters/069/b.webp"
+    }
   }
 ]
