@@ -1714,5 +1714,40 @@
       "normal": "/characters/069/a.webp",
       "graphic": "/characters/069/b.webp"
     }
+  },
+  {
+    "id": 70,
+    "slug": "cactus-queue",
+    "nameJa": "トゲマチ",
+    "nameEn": "CACTUS QUEUE",
+    "status": "MAYBE",
+    "verified": true,
+    "provenance": "original-2026-11-28",
+    "motif": "初めてのオープンマイクの出番を待ちきれず、待つ時間にもリズムがあると気づくパンクなサボテン",
+    "concept": "待ってるあいだも、ビートはある。",
+    "emotionTheme": [
+      "反骨",
+      "焦り",
+      "出番を待つ勇気"
+    ],
+    "silhouette": "細長く緑のサボテン体。二つの枝腕が上へ曲がり、向かって左が短く右が長い。頭頂に黒い三本の棘。短い二本の脚にマゼンタの厚底ブーツ。",
+    "asymmetry": "短い左枝腕に黄土色の布の包帯。生成り色の点状の棘、丸い生成り色のバックル付き黒いスタッズベルト。",
+    "personality": "せっかちで負けず嫌い。自分の出番を待ちわびながらも、先に立つ人をひそかに応援している。",
+    "weakness": "列でのリハーサルが大きすぎて、自分の番号が呼ばれたことに気づかない。",
+    "routine": "DIYのオープンマイクの列で厚底ブーツを鳴らし、小さな曲を練習する。緊張した新人のために場所を取ってあげる。",
+    "comicIdeas": [
+      "出番待ちが長く感じる。→足で刻んだリズムに仲間が加わる。",
+      "リハーサルに熱中する。→番号を呼ばれていたと気づき慌てる。",
+      "緊張した新人が来る。→場所を取り、新人の初舞台を応援する。"
+    ],
+    "plush": "約20cm。細長い緑の体、左が短く右が長い枝腕、黄土色の布の包帯、黒いベルト、マゼンタの厚底ブーツ。棘は柔らかな布と刺繍で表現。",
+    "globalHook": "PUNK / OPEN MIC / PATIENCE / YOUR TURN",
+    "graphicDirection": "緑・生成り・墨黒・マゼンタ・黄土色。A通常全身、BはYOUR TURN WILL COMEを掲げるスクリーンプリント風ポスター。",
+    "imageSource": "Generated 2026-11-28 with built-in image generation. Original cactus concept; #069 used only for grid reference. Main is full sheet; A/B exported from matching upper panels. Footer refers to site for live registration status.",
+    "images": {
+      "main": "/characters/070/main.webp",
+      "normal": "/characters/070/a.webp",
+      "graphic": "/characters/070/b.webp"
+    }
   }
 ]
